@@ -6,6 +6,7 @@
 package fdb;
 
 import java.net.URL;
+import java.sql.*;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,8 +24,22 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+        System.out.println("Connection attempted");
+        label.setText("Connection attempted, check terminal");
+        try{  
+        Class.forName("com.mysql.jdbc.Driver");  
+        Connection con=DriverManager.getConnection("jdbc:mysql://10.128.48.198/Test","INSE","root");  
+        //here sonoo is database name, root is username and password  
+        Statement stmt=con.createStatement();  
+        ResultSet rs=stmt.executeQuery("select * from Student");  
+        while(rs.next())  
+            System.out.println(rs.getString(1));  
+            con.close();  }
+    catch(Exception e){
+        System.out.println(e);
+        System.out.println("Connection Failed");
+        label.setText("Connection Failed, check terminal");
+    }
     }
     
     @Override
