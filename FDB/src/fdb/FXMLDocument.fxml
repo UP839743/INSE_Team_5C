@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Connect to database" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        <Label fx:id="label" alignment="CENTER" layoutX="500" layoutY="400" minHeight="16" minWidth="69" />
+      <Label alignment="TOP_CENTER" layoutX="459.0" layoutY="133.0" prefHeight="81.0" prefWidth="293.0" text="WELCOME">
+         <font>
+            <Font name="Monospaced Regular" size="68.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="194.0" fitWidth="198.0" layoutX="417.0" layoutY="294.0">
+         <image>
+            <Image url="@ChelseaLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="194.0" fitWidth="198.0" layoutX="768.0" layoutY="300.0">
+         <image>
+            <Image url="@ManCityLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="224.0" fitWidth="119.0" layoutX="633.0" layoutY="294.0">
+         <image>
+            <Image url="@TottenhamLogo.png" />
+         </image>
+      </ImageView>
+      <Label alignment="TOP_CENTER" layoutX="517.0" layoutY="221.0" text="pick your team..">
+         <font>
+            <Font name="Microsoft Sans Serif" size="25.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="194.0" fitWidth="158.0" layoutX="235.0" layoutY="294.0">
+         <image>
+            <Image url="@ArsenalLogo.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
