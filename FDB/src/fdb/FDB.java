@@ -34,4 +34,23 @@ public class FDB extends Application {
     public static void main(String[] args) {
         launch(args); 
     }     
+        public static void initDatabase(){
+        System.out.println("Connection attempted");
+        try{  
+        Class.forName("com.mysql.jdbc.Driver");  
+        Connection con=DriverManager.getConnection("jdbc:mysql://localhost/homes","root","password");  
+        //here sonoo is database name, root is username and password  
+        Statement stmt=con.createStatement();  
+        con.close();  }
+        /**
+        ResultSet rs=stmt.executeQuery("select * from branch");  
+        while(rs.next())  
+            System.out.println(rs.getString(1));  
+            */
+           
+        catch(Exception e){
+            System.out.println(e);
+            System.out.println("Connection Failed");
+        }
+    }
 }
