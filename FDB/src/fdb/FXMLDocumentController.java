@@ -13,8 +13,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -25,19 +26,30 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private Button btnChelsea;
-    
     @FXML
-    private void handleButtonAction(ActionEvent event) throws IOException{
-        Stage stage; 
-        Parent root;
-        if(event.getSource()==btnChelsea){
-           //get reference to the button's stage         
-           stage=(Stage) btnChelsea.getScene().getWindow();
-           //load up OTHER FXML document
-     root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-         }
-       }
+    private Button btnArsenal;
+    @FXML
+    private Button btnTottenham;
+    @FXML
+    private Button btnManCity;
+            
     
+    
+     @FXML
+    private void handleButtonAction(ActionEvent event) throws IOException{
+     Stage stage; 
+     Parent root;
+     if(event.getSource()==btnChelsea || event.getSource()==btnArsenal || event.getSource()==btnTottenham || event.getSource()==btnManCity){
+        //get reference to the button's stage         
+        stage=(Stage) btnChelsea.getScene().getWindow();
+        //load up OTHER FXML document
+        root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+     //create a new scene with root and set the stage
+      Scene scene = new Scene(root);
+      stage.setScene(scene);
+      stage.show();
+    }
+ }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

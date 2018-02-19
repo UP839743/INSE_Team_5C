@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,68 +12,142 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="fdb.FXMLDocumentController">
    <children>
-      <Pane layoutY="1.0" prefHeight="800.0" prefWidth="204.0" style="-fx-background-color: grey;">
-         <children>
-            <Pane layoutX="1.0" layoutY="150.0" prefHeight="146.0" prefWidth="200.0" style="-fx-background-color: #EF0107;" />
-            <ImageView fitHeight="114.0" fitWidth="97.0" layoutX="53.0" layoutY="166.0">
-               <image>
-                  <Image url="@ArsenalLogo.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="114.0" fitWidth="112.0" layoutX="47.0" layoutY="672.0">
-               <image>
-                  <Image url="@ManCityLogo.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="114.0" fitWidth="112.0" layoutX="45.0" layoutY="316.0">
-               <image>
-                  <Image url="@ChelseaLogo.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="12.0" layoutY="464.0">
-               <image>
-                  <Image url="@TottenhamLogo.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
       <Label layoutX="222.0" layoutY="124.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
          <font>
             <Font name="Monospaced Regular" size="68.0" />
          </font>
       </Label>
-      <HBox layoutX="-1.0" prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
-         <children>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Lato Regular" size="40.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Team" textAlignment="CENTER">
-               <font>
-                  <Font name="Lato Regular" size="40.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Fixtures" textAlignment="CENTER">
-               <font>
-                  <Font name="Lato Regular" size="40.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Club" textAlignment="CENTER">
-               <font>
-                  <Font name="Lato Regular" size="40.0" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
       <Label layoutX="222.0" layoutY="218.0" text="News and Gossip">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
       <VBox layoutX="222.0" layoutY="263.0" prefHeight="495.0" prefWidth="397.0" style="-fx-background-color: grey; -fx-border-color: black;" />
+      <Label layoutX="650.0" layoutY="149.0" text="Club Details">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="809.0" layoutY="463.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: grey;" text="More Details" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Label layoutX="650.0" layoutY="538.0" text="Season:">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="975.0" layoutY="538.0" text="Position:">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="650.0" layoutY="595.0" prefHeight="71.0" prefWidth="188.0" style="-fx-background-color: grey; -fx-border-color: black;" />
+      <Label layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" style="-fx-background-color: grey; -fx-text-alignment: center;" text="-" textAlignment="CENTER" textFill="WHITE" />
+      <Label layoutX="727.0" layoutY="209.0" text="Stadium:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="726.0" layoutY="245.0" text="Founder:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="720.0" layoutY="281.0" text="Manager:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="714.0" layoutY="317.0" text="Chairman:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="736.0" layoutY="353.0" text="League:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Pane layoutX="1.0" layoutY="1.0" prefHeight="800.0" prefWidth="204.0" style="-fx-background-color: grey;">
+         <children>
+            <Pane layoutX="1.0" layoutY="150.0" prefHeight="146.0" prefWidth="200.0" style="-fx-background-color: #EF0107;" />
+            <ImageView fitHeight="114.0" fitWidth="97.0" layoutX="53.0" layoutY="166.0">
+               <image>
+                  <Image url="@Images/ArsenalLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="114.0" fitWidth="112.0" layoutX="47.0" layoutY="672.0">
+               <image>
+                  <Image url="@Images/ManCityLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="114.0" fitWidth="112.0" layoutX="45.0" layoutY="316.0">
+               <image>
+                  <Image url="@Images/ChelseaLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="12.0" layoutY="464.0">
+               <image>
+                  <Image url="@Images/TottenhamLogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="2.0" layoutY="150.0" prefHeight="146.0" prefWidth="200.0" style="-fx-background-color: #EF0107;" />
+      <ImageView fitHeight="114.0" fitWidth="97.0" layoutX="54.0" layoutY="166.0">
+         <image>
+            <Image url="@Images/ArsenalLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="114.0" fitWidth="112.0" layoutX="48.0" layoutY="672.0">
+         <image>
+            <Image url="@Images/ManCityLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="114.0" fitWidth="112.0" layoutX="46.0" layoutY="316.0">
+         <image>
+            <Image url="@Images/ChelseaLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="13.0" layoutY="464.0">
+         <image>
+            <Image url="@Images/TottenhamLogo.png" />
+         </image>
+      </ImageView>
+      <HBox prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Lato Light" size="23.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Team Details" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Lato Light" size="29.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Lato Light" size="29.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Club Details" textAlignment="CENTER">
+               <font>
+                  <Font name="Lato Light" size="29.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Lato Light" size="29.0" />
+         </font>
+      </Button>
+      <ComboBox layoutX="1066.0" layoutY="27.0" prefHeight="53.0" prefWidth="94.0" style="-fx-border-color: black;" />
+      <TextField layoutX="890.0" layoutY="27.0" prefHeight="53.0" prefWidth="171.0" />
    </children>
 </AnchorPane>
