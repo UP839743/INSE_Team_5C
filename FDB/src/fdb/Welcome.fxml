@@ -12,21 +12,21 @@
 <AnchorPane id="AnchorPane" fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
     <children>
         <Label fx:id="label" alignment="CENTER" layoutX="500" layoutY="400" minHeight="16" minWidth="69" />
-      <Label alignment="TOP_CENTER" layoutX="459.0" layoutY="133.0" prefHeight="81.0" prefWidth="293.0" text="WELCOME">
+      <Label alignment="TOP_CENTER" layoutX="390.0" layoutY="116.0" prefHeight="113.0" prefWidth="422.0" text="WELCOME" textAlignment="CENTER">
          <font>
-            <Font name="Monospaced Regular" size="68.0" />
+            <Font name="Monospaced Regular" size="96.0" />
          </font>
       </Label>
-      <Label alignment="TOP_CENTER" layoutX="517.0" layoutY="221.0" text="pick your team..">
+      <Label alignment="TOP_CENTER" layoutX="481.0" layoutY="282.0" text="pick your team..">
          <font>
-            <Font name="Microsoft Sans Serif" size="25.0" />
+            <Font name="Microsoft Sans Serif" size="34.0" />
          </font>
       </Label>
       <HBox alignment="CENTER" layoutX="105.0" layoutY="311.0" prefHeight="240.0" prefWidth="991.0" spacing="60.0" AnchorPane.bottomAnchor="225.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="310.0">
          <children>
             <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction">
                <graphic>
-                  <ImageView fitHeight="194.0" fitWidth="158.0">
+                  <ImageView id="arsenalButton" fitHeight="194.0" fitWidth="198.0">
                      <image>
                         <Image url="@Images/ArsenalLogo.png" />
                      </image>
@@ -36,7 +36,7 @@
           <Button fx:id="btnChelsea" onAction="#handleButtonAction">
                <graphic>
              
-                                      <ImageView fitHeight="194.0" fitWidth="198.0">
+                                            <ImageView id="chelseaButton" fitHeight="194.0" fitWidth="198.0">
                   <image>
                       <Image url="@Images/ChelseaLogo.png" />
                   </image>
@@ -48,7 +48,7 @@
             </Button>
             <Button fx:id="btnTottenham" mnemonicParsing="false" onAction="#handleButtonAction">
                <graphic>
-                  <ImageView fitHeight="224.0" fitWidth="119.0">
+                  <ImageView id="tottenhamButton" fitHeight="194.0" fitWidth="198.0">
                      <image>
                         <Image url="@Images/TottenhamLogo.png" />
                      </image>
@@ -57,7 +57,7 @@
             </Button>
             <Button fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction">
                <graphic>
-                  <ImageView fitHeight="194.0" fitWidth="198.0">
+                  <ImageView id="manCItyButton" fitHeight="194.0" fitWidth="198.0">
                      <image>
                         <Image url="@Images/ManCityLogo.png" />
                      </image>
