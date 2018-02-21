@@ -20,24 +20,40 @@
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
+<<<<<<< HEAD
             <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Team Details" textAlignment="CENTER" wrapText="true">
+=======
+            <Button fx:id="btnTeamDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Team Details" textAlignment="CENTER" wrapText="true">
+>>>>>>> a52da65f817b1dd23e27d06028c49bf4a925ab08
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
+<<<<<<< HEAD
             <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
+=======
+            <Button fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
+>>>>>>> a52da65f817b1dd23e27d06028c49bf4a925ab08
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
+<<<<<<< HEAD
             <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: #e6e6e6;" text="Club Details" textAlignment="CENTER" textFill="WHITE">
+=======
+            <Button fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: #e6e6e6;" text="Club Details" textAlignment="CENTER" textFill="WHITE">
+>>>>>>> a52da65f817b1dd23e27d06028c49bf4a925ab08
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
          </children>
       </HBox>
+<<<<<<< HEAD
       <Button layoutX="1.0" mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: white;" text="Home" textAlignment="CENTER">
+=======
+      <Button fx:id="btnHome" layoutX="1.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: white;" text="Home" textAlignment="CENTER">
+>>>>>>> a52da65f817b1dd23e27d06028c49bf4a925ab08
          <font>
             <Font name="Lato Light" size="30.0" />
          </font>
@@ -83,7 +99,11 @@
             </Button>
          </children>
       </VBox>
+<<<<<<< HEAD
       <TextField layoutX="893.0" layoutY="37.0" prefHeight="53.0" prefWidth="180.0" promptText="Search" style="-fx-background-color: grey;" />
+=======
+      <TextField layoutX="893.0" layoutY="37.0" prefHeight="53.0" prefWidth="180.0" style="-fx-background-color: grey;" />
+>>>>>>> a52da65f817b1dd23e27d06028c49bf4a925ab08
       <Label layoutX="232.0" layoutY="134.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
          <font>
             <Font name="Monospaced Regular" size="68.0" />

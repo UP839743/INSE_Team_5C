@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="fdb.FXMLDocumentController">
    <children>
       <HBox prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
          <children>
@@ -21,24 +21,24 @@
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Team Details" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="btnTeamDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Team Details" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: #e6e6e6;" text="Fixtures and Results" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: #e6e6e6;" text="Fixtures and Results" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Club Details" textAlignment="CENTER">
+            <Button fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Club Details" textAlignment="CENTER">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
          </children>
       </HBox>
-      <Button layoutX="1.0" mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: white;" text="Home" textAlignment="CENTER">
+      <Button fx:id="btnHome" layoutX="1.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: white;" text="Home" textAlignment="CENTER">
          <font>
             <Font name="Lato Light" size="30.0" />
          </font>
