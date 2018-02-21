@@ -32,23 +32,47 @@ public class FXMLDocumentController implements Initializable {
     private Button btnTottenham;
     @FXML
     private Button btnManCity;
-            
+    @FXML
+    private Button btnTeamDetails;
+    @FXML
+    private Button btnHome;
+    @FXML
+    private Button btnFixtures;
+    @FXML
+    private Button btnClubDetails;
     
     
      @FXML
     private void handleButtonAction(ActionEvent event) throws IOException{
-     Stage stage; 
-     Parent root;
-     if(event.getSource()==btnChelsea || event.getSource()==btnArsenal || event.getSource()==btnTottenham || event.getSource()==btnManCity){
-        //get reference to the button's stage         
-        stage=(Stage) btnChelsea.getScene().getWindow();
+     Stage stage = null; 
+     Parent root = null;
+     if(event.getSource()== btnChelsea || event.getSource()== btnArsenal || event.getSource()== btnTottenham || event.getSource()== btnManCity || event.getSource() == btnHome){
+        
+        Button btn = (Button) event.getSource(); 
+        stage=(Stage) btn.getScene().getWindow();
         //load up OTHER FXML document
         root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+     }
+     else if (event.getSource() == btnTeamDetails){
+        stage = (Stage) btnTeamDetails.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("Team Details.fxml"));
+     }
+     
+     else if (event.getSource() == btnFixtures){
+         stage = (Stage) btnFixtures.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("Fixtures and Results.fxml"));
+     }
+     
+     else if (event.getSource() == btnClubDetails){
+         stage = (Stage) btnClubDetails.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
+     }
      //create a new scene with root and set the stage
       Scene scene = new Scene(root);
       stage.setScene(scene);
       stage.show();
-    }
+    
+     
  } 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
