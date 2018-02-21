@@ -32,7 +32,9 @@ public class FDB extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args); 
+        launch(args);
+        Player plr = new Player();
+        plr.loadPlayer("PLAYERID = 1");
     }     
         public static void initDatabase(){
         System.out.println("Connection attempted");
