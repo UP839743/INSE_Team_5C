@@ -8,7 +8,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -76,37 +75,35 @@
          <children>
             <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Lato Light" size="23.0" />
+                  <Font name="Lato Light" size="30.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Team Details" textAlignment="CENTER" wrapText="true">
                <font>
-                  <Font name="Lato Light" size="29.0" />
+                  <Font name="Lato Light" size="30.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
                <font>
-                  <Font name="Lato Light" size="29.0" />
+                  <Font name="Lato Light" size="30.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Club Details" textAlignment="CENTER">
                <font>
-                  <Font name="Lato Light" size="29.0" />
+                  <Font name="Lato Light" size="30.0" />
                </font>
             </Button>
          </children>
       </HBox>
       <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Lato Light" size="29.0" />
+            <Font name="Lato Light" size="30.0" />
          </font>
       </Button>
-      <ComboBox layoutX="1066.0" layoutY="27.0" prefHeight="53.0" prefWidth="94.0" style="-fx-border-color: black;" />
-      <TextField layoutX="890.0" layoutY="27.0" prefHeight="53.0" prefWidth="171.0" style="-fx-background-color: grey;" />
-      <Pane layoutX="649.0" layoutY="377.0" prefHeight="146.0" prefWidth="200.0" style="-fx-background-color: #EF0107;" />
-      <VBox layoutY="127.0" prefHeight="678.0" prefWidth="204.0" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="996.0" AnchorPane.topAnchor="127.0">
+      <ComboBox layoutX="1061.0" layoutY="27.0" prefHeight="53.0" prefWidth="94.0" style="-fx-border-color: black;" />
+      <VBox layoutY="124.0" prefHeight="681.0" prefWidth="204.0" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="996.0" AnchorPane.topAnchor="124.0">
          <children>
-            <Button fx:id="navBtnArsenal" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
+            <Button fx:id="navBtnArsenal" mnemonicParsing="false" prefHeight="169.5" prefWidth="204.0" style="-fx-background-color: #EF0107;">
                <graphic>
                   <ImageView fitHeight="132.0" fitWidth="112.0">
                      <image>
@@ -143,5 +140,6 @@
             </Button>
          </children>
       </VBox>
+      <TextField layoutX="883.0" layoutY="27.0" prefHeight="53.0" prefWidth="180.0" style="-fx-background-color: grey;" />
    </children>
 </AnchorPane>

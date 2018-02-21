@@ -26,7 +26,7 @@
          <children>
             <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction">
                <graphic>
-                  <ImageView id="arsenalButton" fitHeight="194.0" fitWidth="198.0">
+                  <ImageView id="arsenalButton" fitHeight="194.0" fitWidth="175.0">
                      <image>
                         <Image url="@Images/ArsenalLogo.png" />
                      </image>
