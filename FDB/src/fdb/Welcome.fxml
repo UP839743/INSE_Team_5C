@@ -17,7 +17,7 @@
             <Font name="Monospaced Regular" size="96.0" />
          </font>
       </Label>
-      <Label alignment="TOP_CENTER" layoutX="481.0" layoutY="282.0" text="pick your team..">
+      <Label alignment="TOP_CENTER" layoutX="481.0" layoutY="263.0" text="pick your team..">
          <font>
             <Font name="Microsoft Sans Serif" size="34.0" />
          </font>

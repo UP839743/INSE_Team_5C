@@ -44,7 +44,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <ComboBox layoutX="650.0" layoutY="595.0" prefHeight="71.0" prefWidth="188.0" style="-fx-background-color: grey; -fx-border-color: black;" />
+      <ComboBox layoutX="650.0" layoutY="595.0" prefHeight="71.0" prefWidth="188.0" promptText="Select a Season" style="-fx-background-color: grey; -fx-border-color: black;" />
       <Label layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" style="-fx-background-color: grey; -fx-text-alignment: center;" text="-" textAlignment="CENTER" textFill="WHITE" />
       <Label layoutX="727.0" layoutY="209.0" text="Stadium:">
          <font>
@@ -140,6 +140,6 @@
             </Button>
          </children>
       </VBox>
-      <TextField layoutX="883.0" layoutY="27.0" prefHeight="53.0" prefWidth="180.0" style="-fx-background-color: grey;" />
+      <TextField layoutX="883.0" layoutY="27.0" prefHeight="53.0" prefWidth="180.0" promptText="Search" style="-fx-background-color: grey;" />
    </children>
 </AnchorPane>
