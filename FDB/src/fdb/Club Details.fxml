@@ -20,7 +20,7 @@
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: #e6e6e6;" text="Team Details" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Team Details" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
@@ -30,7 +30,7 @@
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Club Details" textAlignment="CENTER">
+            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: #e6e6e6;" text="Club Details" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
@@ -87,11 +87,6 @@
       <Label layoutX="232.0" layoutY="134.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
          <font>
             <Font name="Monospaced Regular" size="68.0" />
-         </font>
-      </Label>
-      <Label layoutX="232.0" layoutY="228.0" text="Starting XI">
-         <font>
-            <Font size="30.0" />
          </font>
       </Label>
    </children>
