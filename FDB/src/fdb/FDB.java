@@ -23,9 +23,9 @@ public class FDB extends Application {
         
         Scene scene = new Scene(root);
         
-        stage.setMaxHeight(800);
+        stage.setMaxHeight(830);
         stage.setMaxWidth(1200);
-        stage.setMinHeight(800);
+        stage.setMinHeight(830);
         stage.setMinWidth(1200);
         stage.setScene(scene);
         stage.show();

@@ -84,22 +84,17 @@
             </Button>
          </children>
       </VBox>
-      <TextField layoutX="893.0" layoutY="37.0" prefHeight="53.0" prefWidth="180.0" style="-fx-background-color: grey;" />
+      <TextField layoutX="893.0" layoutY="37.0" prefHeight="53.0" prefWidth="180.0" promptText="Search" style="-fx-background-color: grey;" />
       <Label layoutX="232.0" layoutY="134.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
          <font>
             <Font name="Monospaced Regular" size="68.0" />
          </font>
       </Label>
-<<<<<<< HEAD
       <Label layoutX="227.0" layoutY="213.0" text="Starting XI">
-=======
-      <Label layoutX="232.0" layoutY="228.0" text="Starting XI">
->>>>>>> a52da65f817b1dd23e27d06028c49bf4a925ab08
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-<<<<<<< HEAD
       <Label layoutX="500.0" layoutY="551.0" text="Formation">
          <font>
             <Font size="30.0" />
@@ -219,27 +214,27 @@
                </padding></Label>
          </children>
       </VBox>
-      <Label layoutX="949.0" layoutY="124.0" text="Form">
+      <Label layoutX="956.0" layoutY="102.0" text="Form">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="804.0" layoutY="206.0" text="Top Goal Scorers (All Time)">
+      <Label layoutX="805.0" layoutY="200.0" text="Top Goal Scorers (All Time)">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="831.0" layoutY="401.0" text="Top Assisters (All Time)">
+      <Label layoutX="831.0" layoutY="391.0" text="Top Assisters (All Time)">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="800.0" layoutY="596.0" text="Most Appearances (All Time)">
+      <Label layoutX="801.0" layoutY="582.0" text="Most Appearances (All Time)">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <HBox layoutX="800.0" layoutY="163.0" prefHeight="53.0" prefWidth="380.0" style="-fx-background-color: #D8D8D8;">
+      <HBox layoutX="800.0" layoutY="147.0" prefHeight="53.0" prefWidth="380.0" style="-fx-background-color: #D8D8D8;">
          <children>
             <Label prefHeight="55.0" prefWidth="38.0" text="Label" />
             <Label prefHeight="55.0" prefWidth="38.0" text="Label" />
@@ -253,7 +248,7 @@
             <Label layoutX="314.0" layoutY="10.0" prefHeight="55.0" prefWidth="38.0" text="Label" />
          </children>
       </HBox>
-      <VBox layoutX="800.0" layoutY="251.0" prefHeight="146.0" prefWidth="380.0" style="-fx-background-color: #D8D8D8;">
+      <VBox layoutX="801.0" layoutY="245.0" prefHeight="146.0" prefWidth="380.0" style="-fx-background-color: #D8D8D8;">
          <children>
             <Label prefHeight="29.2" prefWidth="399.0" text="Label">
                <VBox.margin>
@@ -297,7 +292,7 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="800.0" layoutY="446.0" prefHeight="146.0" prefWidth="380.0" style="-fx-background-color: #D8D8D8;">
+      <VBox layoutX="800.0" layoutY="436.0" prefHeight="146.0" prefWidth="380.0" style="-fx-background-color: #D8D8D8;">
          <children>
             <Label prefHeight="29.2" prefWidth="399.0" text="Label">
                <VBox.margin>
@@ -341,7 +336,7 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="800.0" layoutY="646.0" prefHeight="146.0" prefWidth="380.0" style="-fx-background-color: #D8D8D8;">
+      <VBox layoutX="800.0" layoutY="627.0" prefHeight="146.0" prefWidth="380.0" style="-fx-background-color: #D8D8D8;">
          <children>
             <Label prefHeight="29.2" prefWidth="399.0" text="Label">
                <VBox.margin>
@@ -385,7 +380,5 @@
             </Label>
          </children>
       </VBox>
-=======
->>>>>>> a52da65f817b1dd23e27d06028c49bf4a925ab08
    </children>
 </AnchorPane>
