@@ -40,7 +40,8 @@ public class FXMLDocumentController implements Initializable {
     private Button btnFixtures;
     @FXML
     private Button btnClubDetails;
-    
+    @FXML
+    private Button btnMoreDetails;
     
      @FXML
     private void handleButtonAction(ActionEvent event) throws IOException{
@@ -63,7 +64,7 @@ public class FXMLDocumentController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("Fixtures and Results.fxml"));
      }
      
-     else if (event.getSource() == btnClubDetails){
+     else if (event.getSource() == btnClubDetails || event.getSource() == btnMoreDetails){
          stage = (Stage) btnClubDetails.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
      }
