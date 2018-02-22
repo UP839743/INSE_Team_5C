@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="fdb.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
    <children>
       <HBox prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
          <children>
@@ -46,7 +46,7 @@
       <ComboBox layoutX="1076.0" layoutY="37.0" prefHeight="53.0" prefWidth="94.0" style="-fx-border-color: black;" />
       <VBox layoutX="1.0" layoutY="124.0" prefHeight="678.0" prefWidth="204.0">
          <children>
-            <Button fx:id="navBtnArsenal" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
+            <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
                <graphic>
                   <ImageView fitHeight="132.0" fitWidth="112.0">
                      <image>
@@ -55,7 +55,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="navBtnChelsea" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
+            <Button fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="112.0">
                      <image>
@@ -64,7 +64,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="navBtnTottenham" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
+            <Button fx:id="btnTottenham" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
                <graphic>
                   <ImageView fitHeight="155.0" fitWidth="155.0">
                      <image>
@@ -73,7 +73,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="navBtnManCity" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
+            <Button fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="112.0">
                      <image>
@@ -90,12 +90,12 @@
             <Font name="Monospaced Regular" size="68.0" />
          </font>
       </Label>
-      <Label layoutX="293.0" layoutY="218.0" text="Season Fixtures">
+      <Label layoutX="293.0" layoutY="206.0" text="Season Fixtures">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <VBox layoutX="213.0" layoutY="263.0" prefHeight="530.0" prefWidth="120.0" style="-fx-background-color: #D8D8D8;">
+      <VBox layoutX="214.0" layoutY="251.0" prefHeight="530.0" prefWidth="120.0" style="-fx-background-color: #D8D8D8;">
          <children>
             <Label prefHeight="53.0" prefWidth="120.0" text="team1" textAlignment="CENTER">
                <VBox.margin>
@@ -179,7 +179,7 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="335.0" layoutY="263.0" prefHeight="530.0" prefWidth="120.0" style="-fx-background-color: #D8D8D8;">
+      <VBox layoutX="336.0" layoutY="251.0" prefHeight="530.0" prefWidth="120.0" style="-fx-background-color: #D8D8D8;">
          <children>
             <Label prefHeight="53.0" prefWidth="158.5" text="Date" textAlignment="CENTER">
                <VBox.margin>
@@ -263,7 +263,7 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="457.0" layoutY="263.0" prefHeight="530.0" prefWidth="120.0" style="-fx-background-color: #D8D8D8;">
+      <VBox layoutX="458.0" layoutY="251.0" prefHeight="530.0" prefWidth="120.0" style="-fx-background-color: #D8D8D8;">
          <children>
             <Label prefHeight="53.0" prefWidth="158.5" text="team2" textAlignment="CENTER">
                <VBox.margin>

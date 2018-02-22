@@ -29,7 +29,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="809.0" layoutY="463.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: grey;" text="More Details" textFill="WHITE">
+      <Button fx:id="btnMoreDetails" layoutX="809.0" layoutY="463.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: grey;" text="More Details" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
@@ -103,7 +103,7 @@
       <ComboBox layoutX="1061.0" layoutY="27.0" prefHeight="53.0" prefWidth="94.0" style="-fx-border-color: black;" />
       <VBox layoutY="124.0" prefHeight="677.0" prefWidth="204.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="996.0" AnchorPane.topAnchor="124.0">
          <children>
-            <Button fx:id="navBtnArsenal" mnemonicParsing="false" prefHeight="169.5" prefWidth="204.0" style="-fx-background-color: #EF0107;">
+            <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="204.0" style="-fx-background-color: #EF0107;">
                <graphic>
                   <ImageView fitHeight="132.0" fitWidth="112.0">
                      <image>
@@ -112,7 +112,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="navBtnChelsea" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
+            <Button fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="112.0">
                      <image>
@@ -121,7 +121,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="navBtnTottenham" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
+            <Button fx:id="btnTottenham" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
                <graphic>
                   <ImageView fitHeight="155.0" fitWidth="155.0">
                      <image>
@@ -129,7 +129,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="navBtnManCity" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
+            <Button fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="112.0">
                      <image>
