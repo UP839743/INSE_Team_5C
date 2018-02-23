@@ -1,0 +1,11 @@
+.btnChelsea :hover {
+  -fx-background-colour: black;
+}
+
+.btnTottenham :hover {
+  -fx-background-colour: black;
+}
+
+.btnManCity :hover {
+  -fx-background-colour: black;
+}
