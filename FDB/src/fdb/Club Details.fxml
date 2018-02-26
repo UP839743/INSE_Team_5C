@@ -11,78 +11,38 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
    <children>
       <HBox prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
          <children>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
-            <Button fx:id="btnTeamDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Team Details" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="btnTeamDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Team Details" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
-            <Button fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
-            <Button fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: #e6e6e6;" text="Club Details" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Club Details" textAlignment="CENTER">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
          </children>
       </HBox>
-      <Button fx:id="btnHome" layoutX="1.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: white;" text="Home" textAlignment="CENTER">
+      <Button fx:id="btnHome" layoutX="1.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER">
          <font>
             <Font name="Lato Light" size="30.0" />
          </font>
       </Button>
       <ComboBox layoutX="1076.0" layoutY="37.0" prefHeight="53.0" prefWidth="94.0" style="-fx-border-color: black;" />
-      <VBox layoutX="1.0" layoutY="124.0" prefHeight="678.0" prefWidth="204.0">
-         <children>
-            <Button fx:id="btnArsenal" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
-               <graphic>
-                  <ImageView fitHeight="132.0" fitWidth="112.0">
-                     <image>
-                        <Image url="@Images/ArsenalLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnChelsea" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
-               <graphic>
-                  <ImageView fitHeight="114.0" fitWidth="112.0">
-                     <image>
-                        <Image url="@Images/ChelseaLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnTottenham" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
-               <graphic>
-                  <ImageView fitHeight="155.0" fitWidth="155.0">
-                     <image>
-                        <Image url="@Images/TottenhamLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnManCity" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
-               <graphic>
-                  <ImageView fitHeight="114.0" fitWidth="112.0">
-                     <image>
-                        <Image url="@Images/ManCityLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
-      </VBox>
       <TextField layoutX="893.0" layoutY="37.0" prefHeight="53.0" prefWidth="180.0" promptText="Search" style="-fx-background-color: grey;" />
       <Label layoutX="232.0" layoutY="134.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
          <font>
@@ -109,5 +69,45 @@
             <Font size="30.0" />
          </font>
       </Label>
+      <VBox layoutX="1.0" layoutY="124.0" prefHeight="846.0" prefWidth="204.0">
+         <children>
+            <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="204.0">
+               <graphic>
+                  <ImageView fitHeight="132.0" fitWidth="112.0">
+                     <image>
+                        <Image url="@Images/ArsenalLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0" styleClass="btnChelsea" stylesheets="@css/Arsenal.css">
+               <graphic>
+                  <ImageView fitHeight="114.0" fitWidth="112.0">
+                     <image>
+                        <Image url="@Images/ChelseaLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnTottenham" mnemonicParsing="false" prefHeight="211.5" prefWidth="205.0">
+               <graphic>
+                  <ImageView fitHeight="155.0" fitWidth="155.0">
+                     <image>
+                        <Image url="@Images/TottenhamLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
+               <graphic>
+                  <ImageView fitHeight="114.0" fitWidth="112.0">
+                     <image>
+                        <Image url="@Images/ManCityLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

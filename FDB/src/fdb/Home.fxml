@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" stylesheets="@css/Arsenal.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1400.0" style="-fx-background-color: white;" stylesheets="@css/Arsenal.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
     <stylesheets>
          <URL value="@css/Arsenal.css" />
     </stylesheets>
@@ -27,13 +27,16 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <VBox layoutX="222.0" layoutY="263.0" prefHeight="495.0" prefWidth="397.0" style="-fx-background-color: grey; -fx-border-color: black;" />
+      <VBox layoutX="222.0" layoutY="263.0" prefHeight="495.0" prefWidth="397.0">
+         <children>
+            <Label text="Story 1" />
+         </children></VBox>
       <Label layoutX="650.0" layoutY="149.0" text="Club Details">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="btnMoreDetails" layoutX="808.0" layoutY="417.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: grey;" text="More Details" textFill="WHITE">
+      <Button fx:id="btnMoreDetails" layoutX="808.0" layoutY="417.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="180.0" text="More Details" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
@@ -48,8 +51,8 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <ComboBox layoutX="650.0" layoutY="595.0" prefHeight="71.0" prefWidth="188.0" promptText="Select a Season" style="-fx-background-color: grey; -fx-border-color: black;" />
-      <Label alignment="CENTER" layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" style="-fx-background-color: grey;" text="werwer" textFill="WHITE" />
+      <ComboBox layoutX="650.0" layoutY="595.0" prefHeight="71.0" prefWidth="188.0" promptText="Select a Season" />
+      <Label alignment="CENTER" layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" text="werwer" textFill="WHITE" />
       <Label layoutX="727.0" layoutY="209.0" text="Stadium:">
          <font>
             <Font size="21.0" />
@@ -99,15 +102,15 @@
             </Button>
          </children>
       </HBox>
-      <Button fx:id="btnHome" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btnHome" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER">
          <font>
             <Font name="Lato Light" size="30.0" />
          </font>
       </Button>
-      <ComboBox layoutX="1061.0" layoutY="27.0" prefHeight="53.0" prefWidth="94.0" style="-fx-border-color: black;" />
-      <VBox layoutY="124.0" prefHeight="677.0" prefWidth="204.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="996.0" AnchorPane.topAnchor="124.0">
+      <ComboBox layoutX="1061.0" layoutY="27.0" prefHeight="53.0" prefWidth="94.0" />
+      <VBox layoutY="124.0" prefHeight="846.0" prefWidth="204.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1196.0" AnchorPane.topAnchor="124.0">
          <children>
-            <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="204.0">
+            <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="204.0">
                <graphic>
                   <ImageView fitHeight="132.0" fitWidth="112.0">
                      <image>
@@ -116,7 +119,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="205.0" styleClass="btnChelsea" stylesheets="@css/Arsenal.css">
+            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0" styleClass="btnChelsea" stylesheets="@css/Arsenal.css">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="112.0">
                      <image>
@@ -125,7 +128,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnTottenham" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0">
+            <Button fx:id="btnTottenham" mnemonicParsing="false" prefHeight="211.5" prefWidth="205.0">
                <graphic>
                   <ImageView fitHeight="155.0" fitWidth="155.0">
                      <image>
@@ -133,7 +136,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="205.0">
+            <Button fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="112.0">
                      <image>
@@ -144,6 +147,6 @@
             </Button>
          </children>
       </VBox>
-      <TextField layoutX="883.0" layoutY="27.0" prefHeight="53.0" prefWidth="180.0" promptText="Search" style="-fx-background-color: grey;" />
+      <TextField layoutX="883.0" layoutY="27.0" prefHeight="53.0" prefWidth="180.0" promptText="Search" />
    </children>
 </AnchorPane>
