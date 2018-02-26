@@ -10,6 +10,8 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -59,6 +61,16 @@ public class Player{
     catch(Exception e){
         System.out.println(e);
         System.out.println("Error");}
+    }
+    
+    public void loadAllPlayers(String clubID){
+        List players = new ArrayList();
+        Boolean complete = false;
+        int i = 1;
+        while (!complete){
+            loadPlayer("PlayerID = " +  i + "AND ClubID = " + clubID); //Wont work right now.. no club ID in player
+            i++;
+        }
     }
     
     //Getters
