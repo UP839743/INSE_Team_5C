@@ -6,6 +6,7 @@
 package fdb;
 
 import java.sql.*;
+import java.io.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -31,7 +32,8 @@ public class FDB extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        readIniFile();
         launch(args);
         Player plr = new Player();
         plr.loadPlayer("PLAYERID = 1");
@@ -53,6 +55,48 @@ public class FDB extends Application {
         catch(Exception e){
             System.out.println(e);
             System.out.println("Connection Failed");
+        }
+    }
+    
+    public static void readIniFile() throws Exception{
+        try{
+            String file = "C:\\FDB\\ini.txt";
+            String line;
+            try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+                while ((line = br.readLine()) != null) {
+                    System.out.println(line);
+                }
+            }
+        }
+        catch(Exception e){
+            System.out.println(e);
+            System.out.println("File Read Failed, Creating ini File");
+            //Change this later - call welcome page, then call create.
+            createIniFile("spurs");
+        }
+    }
+    
+    public static void createIniFile(String team) throws Exception{
+        try{
+            //Create directory and file
+            File dir = new File("C:\\FDB");
+            dir.mkdir();
+            File file = new File("C:\\FDB\\ini.txt");
+            
+            //Create the file
+            if (file.createNewFile()){
+                System.out.println("File is created!");}
+            else{
+                System.out.println("File already exists.");}
+
+            //Write team to file
+            FileWriter writer = new FileWriter(file);
+            writer.write(team);
+            writer.close();
+        }
+        catch(Exception e){
+            System.out.println(e);
+            System.out.println("File creation Failed");
         }
     }
 }

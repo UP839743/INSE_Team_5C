@@ -15,7 +15,7 @@ import java.sql.Statement;
  *
  * @author Samuel
  */
-public class Player extends Staff{
+public class Player{
     String playerFirstName;
     String playerLastName;
     int squadNumber;
@@ -47,7 +47,7 @@ public class Player extends Staff{
             position = rs.getString(5);
             height = rs.getString(6);
             prefFoot = rs.getString(7);
-            //DoB = rs.getString(8);
+            DoB = rs.getString(8);
             clubApps = rs.getInt(9);
             seasonApps = rs.getInt(10);
             nationality = rs.getString(11);
@@ -61,6 +61,7 @@ public class Player extends Staff{
         System.out.println("Error");}
     }
     
+    //Getters
     private String getFirstName(String query){
     return playerFirstName;
     }
