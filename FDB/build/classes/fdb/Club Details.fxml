@@ -89,5 +89,25 @@
             <Font name="Monospaced Regular" size="68.0" />
          </font>
       </Label>
+      <Label layoutX="966.0" layoutY="112.0" text="Form">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="815.0" layoutY="210.0" text="Top Goal Scorers (All Time)">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="841.0" layoutY="401.0" text="Top Assisters (All Time)">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="811.0" layoutY="592.0" text="Most Appearances (All Time)">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

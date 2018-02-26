@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -90,268 +91,32 @@
             <Font name="Monospaced Regular" size="68.0" />
          </font>
       </Label>
-      <Label layoutX="293.0" layoutY="206.0" text="Season Fixtures">
+      <Label layoutX="293.0" layoutY="224.0" text="Season Fixtures">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <VBox layoutX="214.0" layoutY="251.0" prefHeight="530.0" prefWidth="120.0" style="-fx-background-color: #D8D8D8;">
-         <children>
-            <Label prefHeight="53.0" prefWidth="120.0" text="team1" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="63.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="116.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="169.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="222.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="275.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="328.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="381.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="434.0" prefHeight="53.0" prefWidth="120.0" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="336.0" layoutY="251.0" prefHeight="530.0" prefWidth="120.0" style="-fx-background-color: #D8D8D8;">
-         <children>
-            <Label prefHeight="53.0" prefWidth="158.5" text="Date" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="53.0" prefWidth="158.5" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="63.0" prefHeight="53.0" prefWidth="158.5" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="116.0" prefHeight="53.0" prefWidth="158.5" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="169.0" prefHeight="53.0" prefWidth="158.5" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="222.0" prefHeight="53.0" prefWidth="158.5" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="275.0" prefHeight="53.0" prefWidth="158.5" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="328.0" prefHeight="53.0" prefWidth="158.5" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="381.0" prefHeight="53.0" prefWidth="158.5" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="434.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="458.0" layoutY="251.0" prefHeight="530.0" prefWidth="120.0" style="-fx-background-color: #D8D8D8;">
-         <children>
-            <Label prefHeight="53.0" prefWidth="158.5" text="team2" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="63.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="116.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="169.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="222.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="275.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="328.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="381.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="434.0" prefHeight="53.0" prefWidth="158.5" text="Label" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-         </children>
-      </VBox>
-      <Label layoutX="658.0" layoutY="159.0" text="Results">
+      <Label layoutX="943.0" layoutY="134.0" text="Results">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <ComboBox layoutX="630.0" layoutY="206.0" prefHeight="36.0" prefWidth="150.0" promptText="Select a Team" />
+      <ComboBox layoutX="793.0" layoutY="192.0" prefHeight="36.0" prefWidth="150.0" promptText="Select a Season" />
+      <ComboBox layoutX="1036.0" layoutY="192.0" prefHeight="36.0" prefWidth="150.0" promptText="Sort By" />
+      <TableView layoutX="217.0" layoutY="271.0" prefHeight="521.0" prefWidth="393.0">
+        <columns>
+          <TableColumn prefWidth="131.0" text="Team1" />
+          <TableColumn prefWidth="131.0" text="Date" />
+            <TableColumn prefWidth="131.0" text="Team2" />
+        </columns>
+      </TableView>
+      <TableView layoutX="793.0" layoutY="269.0" prefHeight="521.0" prefWidth="393.0">
+         <columns>
+            <TableColumn prefWidth="98.25" text="Team1" />
+            <TableColumn prefWidth="100.0" text="Score" />
+            <TableColumn prefWidth="98.0" text="Team2" />
+            <TableColumn prefWidth="98.25" text="Date" />
+         </columns>
+      </TableView>
    </children>
 </AnchorPane>

@@ -32,10 +32,10 @@ public class FDB extends Application {
 //        scene.getStylesheets().add(tottenhamThemeUrl);
 //        scene.getStylesheets().add(manCityThemeUrl);
         
-        stage.setMaxHeight(830);
-        stage.setMaxWidth(1200);
-        stage.setMinHeight(830);
-        stage.setMinWidth(1200);
+        stage.setMaxHeight(930);
+        stage.setMaxWidth(1400);
+        stage.setMinHeight(930);
+        stage.setMinWidth(1400);
         stage.setScene(scene);
         stage.show();
     }

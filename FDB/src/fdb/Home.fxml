@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -10,11 +11,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import java.net.URL?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" stylesheets="@css/Arsenal.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
     <stylesheets>
-         <URL value="@css/Arsenal.css"/>
+         <URL value="@css/Arsenal.css" />
     </stylesheets>
    <children>
       <Label layoutX="222.0" layoutY="124.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
@@ -33,7 +33,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="btnMoreDetails" layoutX="809.0" layoutY="463.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: grey;" text="More Details" textFill="WHITE">
+      <Button fx:id="btnMoreDetails" layoutX="808.0" layoutY="417.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: grey;" text="More Details" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
@@ -49,7 +49,7 @@
          </font>
       </Label>
       <ComboBox layoutX="650.0" layoutY="595.0" prefHeight="71.0" prefWidth="188.0" promptText="Select a Season" style="-fx-background-color: grey; -fx-border-color: black;" />
-      <Label layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" style="-fx-background-color: grey; -fx-text-alignment: center;" text="-" textAlignment="CENTER" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" style="-fx-background-color: grey;" text="werwer" textFill="WHITE" />
       <Label layoutX="727.0" layoutY="209.0" text="Stadium:">
          <font>
             <Font size="21.0" />
@@ -82,24 +82,24 @@
                   <Font name="Lato Light" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="btnTeamDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Team Details" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="btnTeamDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Team Details" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Lato Light" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Lato Light" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: grey; -fx-border-color: #e6e6e6;" text="Club Details" textAlignment="CENTER">
+            <Button fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Club Details" textAlignment="CENTER">
                <font>
                   <Font name="Lato Light" size="30.0" />
                </font>
             </Button>
          </children>
       </HBox>
-      <Button fx:id="btnHome" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btnHome" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Lato Light" size="30.0" />
          </font>
@@ -107,7 +107,7 @@
       <ComboBox layoutX="1061.0" layoutY="27.0" prefHeight="53.0" prefWidth="94.0" style="-fx-border-color: black;" />
       <VBox layoutY="124.0" prefHeight="677.0" prefWidth="204.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="996.0" AnchorPane.topAnchor="124.0">
          <children>
-            <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="204.0" style="-fx-background-color: #EF0107;">
+            <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="204.0">
                <graphic>
                   <ImageView fitHeight="132.0" fitWidth="112.0">
                      <image>
@@ -116,7 +116,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;" styleClass="btnChelsea" stylesheets="@css/Arsenal.css">
+            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="205.0" styleClass="btnChelsea" stylesheets="@css/Arsenal.css">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="112.0">
                      <image>
@@ -125,7 +125,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnTottenham" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
+            <Button fx:id="btnTottenham" mnemonicParsing="false" prefHeight="169.5" prefWidth="205.0">
                <graphic>
                   <ImageView fitHeight="155.0" fitWidth="155.0">
                      <image>
@@ -133,7 +133,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="205.0" style="-fx-background-color: grey;">
+            <Button fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="169.5" prefWidth="205.0">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="112.0">
                      <image>

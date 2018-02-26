@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -90,295 +91,32 @@
             <Font name="Monospaced Regular" size="68.0" />
          </font>
       </Label>
-      <Label layoutX="227.0" layoutY="213.0" text="Starting XI">
+      <Label layoutX="227.0" layoutY="213.0" text="All Players">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="500.0" layoutY="551.0" text="Formation">
+      <Label layoutX="592.0" layoutY="168.0" text="Formation">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="500.0" layoutY="213.0" text="Subs">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <VBox layoutX="226.0" layoutY="257.0" prefHeight="524.0" prefWidth="262.0" style="-fx-background-color: #D8D8D8;">
-         <children>
-            <Label prefHeight="47.6" prefWidth="274.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Label>
-            <Label prefHeight="47.6" prefWidth="274.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Label>
-            <Label prefHeight="47.6" prefWidth="274.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Label>
-            <Label prefHeight="47.6" prefWidth="274.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Label>
-            <Label prefHeight="47.6" prefWidth="274.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Label>
-            <Label prefHeight="47.6" prefWidth="274.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Label>
-            <Label prefHeight="47.6" prefWidth="274.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Label>
-            <Label layoutX="10.0" layoutY="298.0" prefHeight="47.6" prefWidth="274.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Label>
-            <Label layoutX="10.0" layoutY="346.0" prefHeight="47.6" prefWidth="274.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Label>
-            <Label layoutX="10.0" layoutY="394.0" prefHeight="47.6" prefWidth="274.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Label>
-            <Label layoutX="10.0" layoutY="442.0" prefHeight="47.6" prefWidth="274.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Label>
-         </children>
-      </VBox>
-      <VBox layoutX="500.0" layoutY="257.0" prefHeight="282.0" prefWidth="262.0" style="-fx-background-color: #D8D8D8;">
-         <children>
-            <Label prefHeight="47.0" prefWidth="280.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding></Label>
-            <Label prefHeight="47.0" prefWidth="280.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding></Label>
-            <Label prefHeight="47.0" prefWidth="280.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding></Label>
-            <Label prefHeight="47.0" prefWidth="280.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding></Label>
-            <Label prefHeight="47.0" prefWidth="280.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding></Label>
-            <Label prefHeight="47.0" prefWidth="280.0" text="Label">
-               <padding>
-                  <Insets left="10.0" />
-               </padding></Label>
-         </children>
-      </VBox>
-      <Label layoutX="956.0" layoutY="102.0" text="Form">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <Label layoutX="805.0" layoutY="200.0" text="Top Goal Scorers (All Time)">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <Label layoutX="831.0" layoutY="391.0" text="Top Assisters (All Time)">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <Label layoutX="801.0" layoutY="582.0" text="Most Appearances (All Time)">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <HBox layoutX="800.0" layoutY="147.0" prefHeight="53.0" prefWidth="380.0" style="-fx-background-color: #D8D8D8;">
-         <children>
-            <Label prefHeight="55.0" prefWidth="38.0" text="Label" />
-            <Label prefHeight="55.0" prefWidth="38.0" text="Label" />
-            <Label layoutX="48.0" layoutY="10.0" prefHeight="55.0" prefWidth="38.0" text="Label" />
-            <Label layoutX="86.0" layoutY="10.0" prefHeight="55.0" prefWidth="38.0" text="Label" />
-            <Label layoutX="124.0" layoutY="10.0" prefHeight="55.0" prefWidth="38.0" text="Label" />
-            <Label layoutX="162.0" layoutY="10.0" prefHeight="55.0" prefWidth="38.0" text="Label" />
-            <Label layoutX="200.0" layoutY="10.0" prefHeight="55.0" prefWidth="38.0" text="Label" />
-            <Label layoutX="238.0" layoutY="10.0" prefHeight="55.0" prefWidth="38.0" text="Label" />
-            <Label layoutX="276.0" layoutY="10.0" prefHeight="55.0" prefWidth="38.0" text="Label" />
-            <Label layoutX="314.0" layoutY="10.0" prefHeight="55.0" prefWidth="38.0" text="Label" />
-         </children>
-      </HBox>
-      <VBox layoutX="801.0" layoutY="245.0" prefHeight="146.0" prefWidth="380.0" style="-fx-background-color: #D8D8D8;">
-         <children>
-            <Label prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="40.0" prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="70.0" prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="100.0" prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="800.0" layoutY="436.0" prefHeight="146.0" prefWidth="380.0" style="-fx-background-color: #D8D8D8;">
-         <children>
-            <Label prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="800.0" layoutY="627.0" prefHeight="146.0" prefWidth="380.0" style="-fx-background-color: #D8D8D8;">
-         <children>
-            <Label prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="40.0" prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="70.0" prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label layoutX="10.0" layoutY="100.0" prefHeight="29.2" prefWidth="399.0" text="Label">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-         </children>
-      </VBox>
+      <TableView layoutX="218.0" layoutY="258.0" prefHeight="521.0" prefWidth="970.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="First Name" />
+          <TableColumn prefWidth="75.0" text="Last Name" />
+            <TableColumn prefWidth="44.0" text="Age" />
+            <TableColumn prefWidth="57.0" text="Position" />
+            <TableColumn prefWidth="48.000030517578125" text="Height" />
+            <TableColumn prefWidth="89.0" text="Injury Status" />
+            <TableColumn prefWidth="115.0" text="Goals This Season" />
+            <TableColumn prefWidth="133.0" text="Appearances (Season)" />
+            <TableColumn minWidth="4.0" prefWidth="117.0" text="Appearances (All Time)" />
+            <TableColumn minWidth="0.0" prefWidth="75.0" text="Column X" />
+            <TableColumn minWidth="0.0" prefWidth="0.0" text="Column X" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
