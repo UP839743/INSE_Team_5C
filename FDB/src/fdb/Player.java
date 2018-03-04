@@ -13,8 +13,7 @@ import java.util.List;
  *
  * @author Samuel
  */
-public class Player {
-    
+public class Player { 
     int playerID;
     int clubID;
     String firstName;
