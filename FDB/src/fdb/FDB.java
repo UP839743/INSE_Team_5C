@@ -7,6 +7,8 @@ package fdb;
 
 import java.sql.*;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -33,29 +35,26 @@ public class FDB extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
+        //See if a team is pre set, if not set up
         readIniFile();
-        launch(args);
-        Player plr = new Player();
-        plr.loadPlayer("PLAYERID = 1");
+        //Connect to Database
+        Connection con = initDatabase();
+        //launch(args);
+        //Load in players
+        loadPlayers(con, "select * from Player where ClubID = 1");
     }     
-        public static void initDatabase(){
+        public static Connection initDatabase(){
         System.out.println("Connection attempted");
+        Connection con = null;
         try{  
-        Class.forName("com.mysql.jdbc.Driver");  
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost/homes","root","password");  
-        //here sonoo is database name, root is username and password  
-        Statement stmt=con.createStatement();  
-        con.close();  }
-        /**
-        ResultSet rs=stmt.executeQuery("select * from branch");  
-        while(rs.next())  
-            System.out.println(rs.getString(1));  
-            */
-           
+            Class.forName("com.mysql.jdbc.Driver");  
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/FDB","root","root");
+            }       
         catch(Exception e){
             System.out.println(e);
             System.out.println("Connection Failed");
         }
+        return con;
     }
     
     public static void readIniFile() throws Exception{
@@ -99,4 +98,43 @@ public class FDB extends Application {
             System.out.println("File creation Failed");
         }
     }
+        
+    public static void loadPlayers(Connection con, String query) {
+    System.out.println("Loading Players...");
+    List players = new ArrayList();
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    try {
+        ps = con.prepareStatement(query);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            System.out.println(rs.getString(3) + " " + rs.getString(4));
+            int playerID = rs.getInt(1);
+            int clubID = rs.getInt(2);
+            String playerFirstName = rs.getString(3);
+            String playerLastName = rs.getString(4);
+            int squadNumber = rs.getInt(5);
+            String position = rs.getString(6);
+            String height = rs.getString(7);
+            String prefFoot = rs.getString(8);
+            String dob = rs.getString(9);
+            int clubApps = rs.getInt(10);
+            int seasonApps = rs.getInt(11);
+            String nationality = rs.getString(12);
+            int clubGoals = rs.getInt(13);
+            int seasonGoals = rs.getInt(14);
+            int cleanSheets = rs.getInt(15);
+            Player plr = new Player(playerID, clubID, playerFirstName, 
+                        playerLastName, squadNumber, position, height, 
+                        prefFoot, dob, clubApps, seasonApps, nationality,
+                        clubGoals, seasonGoals, cleanSheets);
+            players.add(plr);
+            System.out.println("Player Added...");
+        }
+    } catch (Exception e) {
+        System.out.println(e);
+        System.out.println("Error");
+    } finally {//rs.Close();
+            }
+        }
 }
