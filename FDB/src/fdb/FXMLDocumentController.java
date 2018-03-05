@@ -22,6 +22,8 @@ import javafx.stage.Stage;
  *
  * @author accou
  */
+
+
 public class FXMLDocumentController implements Initializable {
     
     @FXML
@@ -43,23 +45,22 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button btnMoreDetails;
     
-    @FXML
     private final String chelseaThemeUrl = getClass().getResource("css/Chelsea.css").toExternalForm();
-    @FXML
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
-    @FXML
-    private String stylesheet;    
-
-    public FXMLDocumentController() {
-        this.stylesheet = "";
-    }
+    private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
+    private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
     
-     @FXML
+    
+    private static String stylesheet = "";  
+   
+    
+    
+    @FXML
     private void handleButtonAction(ActionEvent event) throws IOException{
      Stage stage = null; 
      Parent root = null;
      
-     
+     System.out.println("Stylesheet before= "+stylesheet);     
      if(event.getSource()== btnChelsea || event.getSource()== btnArsenal || event.getSource()== btnTottenham || event.getSource()== btnManCity || event.getSource() == btnHome){
         
          if(event.getSource() == btnChelsea){
@@ -68,10 +69,15 @@ public class FXMLDocumentController implements Initializable {
          else if (event.getSource()== btnArsenal){
            stylesheet = arsenalThemeUrl;
          }
-         
+         else if (event.getSource() == btnTottenham){
+             stylesheet = tottenhamThemeUrl;
+         }
+         else if (event.getSource() == btnManCity){
+             stylesheet = mancityThemeUrl;
+         }
+                 
         Button btn = (Button) event.getSource(); 
         stage=(Stage) btn.getScene().getWindow();
-        //load up OTHER FXML document
         root = FXMLLoader.load(getClass().getResource("Home.fxml"));
         
      }
@@ -97,9 +103,10 @@ public class FXMLDocumentController implements Initializable {
       Scene scene = new Scene(root);
       stage.setScene(scene);
       scene.getStylesheets().add(stylesheet);
-         System.out.println("Stylesheet= " + stylesheet);
+      System.out.println("Stylesheet after= " + stylesheet);
       stage.show();
-} 
+
+    } 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
