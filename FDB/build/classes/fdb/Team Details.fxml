@@ -61,21 +61,18 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <TableView layoutX="218.0" layoutY="258.0" prefHeight="521.0" prefWidth="970.0">
+      <TableView layoutX="215.0" layoutY="258.0" prefHeight="704.0" prefWidth="1180.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="First Name" />
-          <TableColumn prefWidth="75.0" text="Last Name" />
-            <TableColumn prefWidth="44.0" text="Age" />
-            <TableColumn prefWidth="57.0" text="Position" />
-            <TableColumn prefWidth="48.000030517578125" text="Height" />
-            <TableColumn prefWidth="89.0" text="Injury Status" />
-            <TableColumn prefWidth="115.0" text="Goals This Season" />
-            <TableColumn prefWidth="133.0" text="Appearances (Season)" />
-            <TableColumn minWidth="4.0" prefWidth="117.0" text="Appearances (All Time)" />
-            <TableColumn minWidth="0.0" prefWidth="75.0" text="Column X" />
-            <TableColumn minWidth="0.0" prefWidth="0.0" text="Column X" />
-            <TableColumn prefWidth="75.0" text="Column X" />
-            <TableColumn prefWidth="75.0" text="Column X" />
+          <TableColumn prefWidth="104.00003051757812" text="First Name" />
+          <TableColumn prefWidth="132.0" text="Last Name" />
+            <TableColumn prefWidth="41.0" text="Age" />
+            <TableColumn prefWidth="60.000030517578125" text="Position" />
+            <TableColumn prefWidth="54.0" text="Height" />
+            <TableColumn prefWidth="179.0" text="Injury Status" />
+            <TableColumn prefWidth="129.0" text="Goals (This Season)" />
+            <TableColumn minWidth="4.0" prefWidth="130.0" text="Assists (This Season)" />
+            <TableColumn minWidth="0.0" prefWidth="161.0" text="Appearances (This Season)" />
+            <TableColumn prefWidth="191.0" text="Nationality" />
         </columns>
       </TableView>
       <VBox layoutX="1.0" layoutY="124.0" prefHeight="846.0" prefWidth="204.0">
@@ -89,7 +86,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0" >
+            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="112.0">
                      <image>

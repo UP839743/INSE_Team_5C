@@ -63,14 +63,14 @@
       </Label>
       <ComboBox layoutX="793.0" layoutY="192.0" prefHeight="36.0" prefWidth="150.0" promptText="Select a Season" />
       <ComboBox layoutX="1036.0" layoutY="192.0" prefHeight="36.0" prefWidth="150.0" promptText="Sort By" />
-      <TableView layoutX="217.0" layoutY="271.0" prefHeight="521.0" prefWidth="393.0">
+      <TableView layoutX="217.0" layoutY="271.0" prefHeight="635.0" prefWidth="393.0">
         <columns>
           <TableColumn prefWidth="131.0" text="Team1" />
           <TableColumn prefWidth="131.0" text="Date" />
             <TableColumn prefWidth="131.0" text="Team2" />
         </columns>
       </TableView>
-      <TableView layoutX="793.0" layoutY="269.0" prefHeight="521.0" prefWidth="393.0">
+      <TableView layoutX="793.0" layoutY="269.0" prefHeight="635.0" prefWidth="393.0">
          <columns>
             <TableColumn prefWidth="98.25" text="Team1" />
             <TableColumn prefWidth="100.0" text="Score" />
@@ -89,7 +89,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0" >
+            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="112.0">
                      <image>
