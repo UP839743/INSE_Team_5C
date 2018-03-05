@@ -89,7 +89,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0" styleClass="btnChelsea" stylesheets="@css/Arsenal.css">
+            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0" >
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="112.0">
                      <image>

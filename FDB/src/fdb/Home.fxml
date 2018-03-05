@@ -12,10 +12,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1400.0" style="-fx-background-color: white;" stylesheets="@css/Arsenal.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
-    <stylesheets>
-         <URL value="@css/Arsenal.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1400.0" style="-fx-background-color: white;"  xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
+   
    <children>
       <Label layoutX="222.0" layoutY="124.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
          <font>
@@ -119,7 +117,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0" styleClass="btnChelsea" stylesheets="@css/Arsenal.css">
+            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0" styleClass="btnChelsea">
                <graphic>
                   <ImageView fitHeight="114.0" fitWidth="112.0">
                      <image>

@@ -43,38 +43,63 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button btnMoreDetails;
     
+    @FXML
+    private final String chelseaThemeUrl = getClass().getResource("css/Chelsea.css").toExternalForm();
+    @FXML
+    private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
+    @FXML
+    private String stylesheet;    
+
+    public FXMLDocumentController() {
+        this.stylesheet = "";
+    }
+    
      @FXML
     private void handleButtonAction(ActionEvent event) throws IOException{
      Stage stage = null; 
      Parent root = null;
+     
+     
      if(event.getSource()== btnChelsea || event.getSource()== btnArsenal || event.getSource()== btnTottenham || event.getSource()== btnManCity || event.getSource() == btnHome){
         
+         if(event.getSource() == btnChelsea){
+           stylesheet = chelseaThemeUrl;  
+         }
+         else if (event.getSource()== btnArsenal){
+           stylesheet = arsenalThemeUrl;
+         }
+         
         Button btn = (Button) event.getSource(); 
         stage=(Stage) btn.getScene().getWindow();
         //load up OTHER FXML document
         root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+        
      }
+          
      else if (event.getSource() == btnTeamDetails){
         stage = (Stage) btnTeamDetails.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("Team Details.fxml"));
+        
      }
      
      else if (event.getSource() == btnFixtures){
          stage = (Stage) btnFixtures.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("Fixtures and Results.fxml"));
+       
      }
      
      else if (event.getSource() == btnClubDetails || event.getSource() == btnMoreDetails){
-         stage = (Stage) btnClubDetails.getScene().getWindow();
+        stage = (Stage) btnClubDetails.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
+        
      }
      //create a new scene with root and set the stage
       Scene scene = new Scene(root);
       stage.setScene(scene);
+      scene.getStylesheets().add(stylesheet);
+         System.out.println("Stylesheet= " + stylesheet);
       stage.show();
-    
-     
- } 
+} 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
