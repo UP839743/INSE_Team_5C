@@ -39,9 +39,9 @@ public class FDB extends Application {
         readIniFile();
         //Connect to Database
         Connection con = initDatabase();
-        //launch(args);
+        launch(args);
         //Load in players
-        loadPlayers(con, "select * from Player where ClubID = 1");
+        loadPlayers(con, "select * from Player");
     }     
         public static Connection initDatabase(){
         System.out.println("Connection attempted");
@@ -99,7 +99,7 @@ public class FDB extends Application {
         }
     }
         
-    public static void loadPlayers(Connection con, String query) {
+    public static void loadPlayers(Connection con, String query) throws SQLException {
     System.out.println("Loading Players...");
     List players = new ArrayList();
     PreparedStatement ps = null;
@@ -129,12 +129,14 @@ public class FDB extends Application {
                         prefFoot, dob, clubApps, seasonApps, nationality,
                         clubGoals, seasonGoals, cleanSheets);
             players.add(plr);
-            System.out.println("Player Added...");
+            System.out.println("Player Loaded In...");
         }
     } catch (Exception e) {
         System.out.println(e);
         System.out.println("Error");
-    } finally {//rs.Close();
+    } finally {
+        rs.close();
+        System.out.println("All players Loaded Successfully");
             }
         }
 }
