@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author accou
+ * @author INSE Team 5C
  */
 public class FDB extends Application {
     
@@ -41,7 +41,11 @@ public class FDB extends Application {
         Connection con = initDatabase();
         launch(args);
         //Load in players
-        loadPlayers(con, "select * from Player");
+        List allPlayers = loadPlayers(con, "select * from Player"); 
+        List allManagers = loadManagers(con, "select * from Manager");
+        List allFixtures = loadFixtures(con, "select * from fixture");
+        List allClubs =loadClubs(con, "select * from club");
+        System.out.println("Done...");
     }     
         public static Connection initDatabase(){
         System.out.println("Connection attempted");
@@ -99,7 +103,7 @@ public class FDB extends Application {
         }
     }
         
-    public static void loadPlayers(Connection con, String query) throws SQLException {
+    public static  List<Player> loadPlayers(Connection con, String query) throws SQLException {
     System.out.println("Loading Players...");
     List players = new ArrayList();
     PreparedStatement ps = null;
@@ -137,6 +141,100 @@ public class FDB extends Application {
     } finally {
         rs.close();
         System.out.println("All players Loaded Successfully");
+        return players;
             }
+    }
+    
+    public static  List<Manager> loadManagers(Connection con, String query) throws SQLException {
+    System.out.println("Loading Managers...");
+    List managers = new ArrayList();
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    try {
+        ps = con.prepareStatement(query);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            System.out.println(rs.getString(3) + " " + rs.getString(4));
+            int managerID = rs.getInt(1);
+            int clubID = rs.getInt(2);
+            String managerFirstName = rs.getString(3);
+            String managerLastName = rs.getString(4);
+            String dob = rs.getString(5);
+            String joinedClub = rs.getString(6);
+            String nationality = rs.getString(7);
+            Manager mngr = new Manager(managerID, clubID, managerFirstName, 
+            managerLastName, dob, joinedClub, nationality);
+            managers.add(mngr);
+            System.out.println("Manager Loaded In...");
         }
+    } catch (Exception e) {
+        System.out.println(e);
+        System.out.println("Error");
+    } finally {
+        rs.close();
+        System.out.println("All Managers Loaded Successfully");
+        return managers;
+            }
+    }
+    
+    public static  List<Fixture> loadFixtures(Connection con, String query) throws SQLException {
+    System.out.println("Loading Fixtures...");
+    List fixtures = new ArrayList();
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    try {
+        ps = con.prepareStatement(query);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            System.out.println(rs.getString(3) + " Vs. " + rs.getString(4));
+            int matchID = rs.getInt(1);
+            String matchDate = rs.getString(2);
+            String homeTeam = rs.getString(3);
+            String awayTeam = rs.getString(4);
+            int homeScore = rs.getInt(5);
+            int awayScore = rs.getInt(6);
+            Fixture fxtr = new Fixture(matchID, matchDate, homeTeam, 
+            awayTeam, homeScore, awayScore);
+            fixtures.add(fxtr);
+            System.out.println("Fixture Loaded In...");
+        }
+    } catch (Exception e) {
+        System.out.println(e);
+        System.out.println("Error");
+    } finally {
+        rs.close();
+        System.out.println("All Fixtures Loaded Successfully");
+        return fixtures;
+            }
+    }
+
+    public static  List<Club> loadClubs(Connection con, String query) throws SQLException {
+    System.out.println("Loading Clubs...");
+    List clubs = new ArrayList();
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    try {
+        ps = con.prepareStatement(query);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            System.out.println(rs.getString(2));
+            int clubID = rs.getInt(1);
+            String clubName = rs.getString(2);
+            String manager = rs.getString(3);
+            String stadium = rs.getString(4);
+            int clubPosititon = rs.getInt(5);
+            Club clb = new Club(clubID, clubName, manager, 
+            stadium, clubPosititon);
+            clubs.add(clb);
+            System.out.println("Club Loaded In...");
+        }
+    } catch (Exception e) {
+        System.out.println(e);
+        System.out.println("Error");
+    } finally {
+        rs.close();
+        System.out.println("All Clubs Loaded Successfully");
+        return clubs;
+            }
+    }
 }

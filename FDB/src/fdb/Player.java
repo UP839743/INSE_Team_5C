@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author Samuel
+ * @author INSE Team 5C
  */
 public class Player { 
     int playerID;

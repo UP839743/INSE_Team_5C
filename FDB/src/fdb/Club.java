@@ -7,8 +7,43 @@ package fdb;
 
 /**
  *
- * @author accou
+ * @author INSE Team 5C
  */
 public class Club {
+    int clubID;
+    String clubName;
+    String manager;
+    String stadium;
+    int clubPosititon;
     
+    public Club(int club_ID, String club_Name, String clubManager, 
+            String clubStadium, int club_Posititon)
+    {
+    clubID = club_ID;
+    clubName = club_Name;
+    manager = clubManager;
+    stadium = clubStadium;
+    clubPosititon = club_Posititon;
+    }
+
+    //Getters
+    public int getClubID() {
+        return clubID;
+    }
+    
+    public String getClubName() {
+        return clubName;
+    }
+    
+    public String getManager() {
+        return manager;
+    }
+    
+    public String getClubStadium() {
+        return stadium;
+    }
+
+    public int getClubPosititon() {
+        return clubPosititon;
+    }
 }
