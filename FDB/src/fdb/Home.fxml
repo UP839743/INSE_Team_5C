@@ -11,24 +11,24 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
    
    <children>
-      <Label layoutX="222.0" layoutY="124.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
+      <Label fx:id="lblTeamName" layoutX="222.0" layoutY="124.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
          <font>
             <Font name="Monospaced Regular" size="68.0" />
          </font>
       </Label>
-      <Label layoutX="222.0" layoutY="218.0" text="News and Gossip">
+      <Label fx:id="lblNews" layoutX="222.0" layoutY="218.0" text="News and Gossip">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <VBox layoutX="222.0" layoutY="263.0" prefHeight="495.0" prefWidth="397.0">
+      <VBox fx:id="newsBox" layoutX="222.0" layoutY="263.0" prefHeight="495.0" prefWidth="397.0">
          <children>
-            <Label text="Story 1" />
+            <Label fx:id="lblStory" text="Story 1" />
          </children></VBox>
-      <Label layoutX="650.0" layoutY="149.0" text="Club Details">
+      <Label fx:id="lblClubDetails" layoutX="650.0" layoutY="149.0" text="Club Details">
          <font>
             <Font size="30.0" />
          </font>
@@ -38,46 +38,46 @@
             <Font size="25.0" />
          </font>
       </Button>
-      <Label layoutX="650.0" layoutY="538.0" text="Season:">
+      <Label fx:id="lblSeason" layoutX="650.0" layoutY="538.0" text="Season:">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="975.0" layoutY="538.0" text="Position:">
+      <Label fx:id="lblPosition" layoutX="975.0" layoutY="538.0" text="Position:">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <ComboBox layoutX="650.0" layoutY="595.0" prefHeight="71.0" prefWidth="188.0" promptText="Select a Season" />
-      <Label alignment="CENTER" layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" text="werwer" textFill="WHITE" />
-      <Label layoutX="727.0" layoutY="209.0" text="Stadium:">
+      <ComboBox fx:id="seasonBox" layoutX="650.0" layoutY="595.0" prefHeight="71.0" prefWidth="188.0" promptText="Select a Season" />
+      <Label fx:id="lblCurrentPosition" alignment="CENTER" layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" text="werwer" textFill="WHITE" />
+      <Label fx:id="lblStadium" layoutX="727.0" layoutY="209.0" text="Stadium:">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label layoutX="726.0" layoutY="245.0" text="Founder:">
+      <Label fx:id="lblFounder" layoutX="726.0" layoutY="245.0" text="Founder:">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label layoutX="720.0" layoutY="281.0" text="Manager:">
+      <Label fx:id="lblManager" layoutX="720.0" layoutY="281.0" text="Manager:">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label layoutX="714.0" layoutY="317.0" text="Chairman:">
+      <Label fx:id="lblChairman" layoutX="714.0" layoutY="317.0" text="Chairman:">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label layoutX="736.0" layoutY="353.0" text="League:">
+      <Label fx:id="lblLeague" layoutX="736.0" layoutY="353.0" text="League:">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <HBox prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
+      <HBox fx:id="menuBox" prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
          <children>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="btnHome" mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Lato Light" size="30.0" />
                </font>
@@ -99,12 +99,8 @@
             </Button>
          </children>
       </HBox>
-      <Button fx:id="btnHome" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER">
-         <font>
-            <Font name="Lato Light" size="30.0" />
-         </font>
-      </Button>
-      <VBox layoutY="124.0" prefHeight="846.0" prefWidth="204.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1196.0" AnchorPane.topAnchor="124.0">
+      
+      <VBox fx:id="teamBox" layoutY="124.0" prefHeight="846.0" prefWidth="204.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1196.0" AnchorPane.topAnchor="124.0">
          <children>
             <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="204.0">
                <graphic>
@@ -143,6 +139,6 @@
             </Button>
          </children>
       </VBox>
-      <TextField layoutX="883.0" layoutY="27.0" prefHeight="53.0" prefWidth="425.0" promptText="Search" />
+      <TextField fx:id="searchField" layoutX="883.0" layoutY="27.0" prefHeight="53.0" prefWidth="425.0" promptText="Search" />
    </children>
 </AnchorPane>
