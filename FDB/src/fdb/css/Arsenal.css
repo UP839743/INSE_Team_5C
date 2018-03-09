@@ -1,3 +1,4 @@
-.button{
-    -fx-background-color: red;
+#btnArsenal {
+    -fx-background-color: #EF0107;
+    -fx-text-fill: white;
 }

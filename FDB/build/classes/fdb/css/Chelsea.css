@@ -1,3 +1,4 @@
-.button{
-    -fx-background-color: blue;
+#btnHome, #btnChelsea{
+    -fx-background-color: #034694;
+    -fx-text-fill: white;
 }
