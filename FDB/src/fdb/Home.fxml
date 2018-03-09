@@ -77,12 +77,8 @@
       </Label>
       <HBox fx:id="menuBox" prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
          <children>
-<<<<<<< HEAD
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE">
-=======
             <Button fx:id="btnHome" mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE">
->>>>>>> 870bc939dbf41bb97fa899c6d5f7d36e8530232c
-               <font>
+              <font>
                   <Font name="Lato Light" size="30.0" />
                </font>
             </Button>

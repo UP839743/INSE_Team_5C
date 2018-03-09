@@ -49,10 +49,11 @@ public class FXMLDocumentController implements Initializable {
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
     private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
     private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
-    
+   
+    private final String arsenalTeamDetailsURL = getClass().getResource("css/ArsenalTeamDetails.css").toExternalForm();
     
     private static String stylesheet = "";  
-   
+    private static int team = 0;
     
     
     @FXML
@@ -68,6 +69,7 @@ public class FXMLDocumentController implements Initializable {
          }
          else if (event.getSource()== btnArsenal){
            stylesheet = arsenalThemeUrl;
+           team = 1;
          }
          else if (event.getSource() == btnTottenham){
              stylesheet = tottenhamThemeUrl;
@@ -85,6 +87,10 @@ public class FXMLDocumentController implements Initializable {
      else if (event.getSource() == btnTeamDetails){
         stage = (Stage) btnTeamDetails.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("Team Details.fxml"));
+        
+        if (team == 1){
+            stylesheet = arsenalTeamDetailsURL;
+        }
         
      }
      
