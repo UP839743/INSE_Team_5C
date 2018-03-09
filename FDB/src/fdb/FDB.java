@@ -39,14 +39,18 @@ public class FDB extends Application {
         readIniFile();
         //Connect to Database
         Connection con = initDatabase();
+        //Load in objects
+        if (con != null){
+            List allPlayers = loadPlayers(con, "select * from Player"); 
+            List allManagers = loadManagers(con, "select * from Manager");
+            List allFixtures = loadFixtures(con, "select * from fixture");
+            List allClubs =loadClubs(con, "select * from club");
+            System.out.println("Done...");
+            }
+        else {System.out.println("Check connection to database");}
+        //Load GUI
         launch(args);
-        //Load in players
-        List allPlayers = loadPlayers(con, "select * from Player"); 
-        List allManagers = loadManagers(con, "select * from Manager");
-        List allFixtures = loadFixtures(con, "select * from fixture");
-        List allClubs =loadClubs(con, "select * from club");
-        System.out.println("Done...");
-    }     
+    }
         public static Connection initDatabase(){
         System.out.println("Connection attempted");
         Connection con = null;
@@ -235,6 +239,91 @@ public class FDB extends Application {
         rs.close();
         System.out.println("All Clubs Loaded Successfully");
         return clubs;
+            }
+    }
+    
+    public static  List<Club> loadNews(Connection con, String query) throws SQLException {
+    System.out.println("Loading News...");
+    List newsArticles = new ArrayList();
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    try {
+        ps = con.prepareStatement(query);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            System.out.println(rs.getString(3));
+            int newsID = rs.getInt(1);
+            int clubID = rs.getInt(2);
+            String title = rs.getString(3);
+            String content = rs.getString(4);
+            News nws = new News(newsID, clubID, title, content);
+            newsArticles.add(nws);
+            System.out.println("News Loaded In...");
+        }
+    } catch (Exception e) {
+        System.out.println(e);
+        System.out.println("Error");
+    } finally {
+        rs.close();
+        System.out.println("All News Loaded Successfully");
+        return newsArticles;
+            }
+    }
+    
+    public static  List<Club> loadTrophies(Connection con, String query) throws SQLException {
+    System.out.println("Loading Trophies...");
+    List trophies = new ArrayList();
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    try {
+        ps = con.prepareStatement(query);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            System.out.println(rs.getString(1));
+            String competition = rs.getString(1);
+            int year = rs.getInt(2);
+            int ClubId = rs.getInt(3);
+            Trophy tro = new Trophy(competition, year, ClubId);
+            trophies.add(tro);
+            System.out.println("Trophies Loaded In...");
+        }
+    } catch (Exception e) {
+        System.out.println(e);
+        System.out.println("Error");
+    } finally {
+        rs.close();
+        System.out.println("All Trophies Loaded Successfully");
+        return trophies;
+            }
+    }
+    
+    public static  List<Club> loadStadium(Connection con, String query) throws SQLException {
+    System.out.println("Loading Stadium...");
+    List stadiums = new ArrayList();
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    try {
+        ps = con.prepareStatement(query);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            System.out.println(rs.getString(1));
+            String name = rs.getString(1);
+            int clubID = rs.getInt(2);
+            String address = rs.getString(3);
+            String postcode = rs.getString(4);
+            int capacity = rs.getInt(4);
+            String dateBuilt = rs.getString(5);
+            Stadium stad = new Stadium(name, clubID, address, postcode, capacity, dateBuilt);
+            stadiums.add(stad);
+            System.out.println("Stadium Loaded In...");
+        }
+    } catch (Exception e) {
+        System.out.println(e);
+        System.out.println("Error");
+    } finally {
+        rs.close();
+        System.out.println("All Stadiums Loaded Successfully");
+        return stadiums;
             }
     }
 }
