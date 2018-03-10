@@ -20,33 +20,47 @@ Advanced Mode - Downloading the database and running it on your local machine (O
 For Developer Mode - Want to edit the code yourself? Great! 
 ```
 * [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) - used to store the database and run the local server
-* [MySQL Java Connector](https://dev.mysql.com/downloads/connector/j/) - The connector for java and the MySQL Database NEtbeans (Recommended IDE will nee)
+* [MySQL Java Connector](https://dev.mysql.com/downloads/connector/j/) - The connector for java and the MySQL Database Netbeans (Recommended IDE for Development)
 ```
 
-### Installing
+### Basic Install
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Download the Jar File located at:
 
 ```
-Give the example
+INSE_Team_5C/FDB/dist/FDB.jar
 ```
+Run the FDB.jar and you should be welcomed with the welcome screen, pick a team and go!  
+End with an example of getting some data out of the system or using it for a little demo
 
-And repeat
+### Advanced Install
 
+Download the Jar File located at:
 ```
-until finished
+INSE_Team_5C/FDB/dist/FDB.jar
 ```
-
+Download the SQL Scripts located at:
+```
+INSE_Team_5C/Database Scripts/population.sql
+INSE_Team_5C/Database Scripts/table_creation.sql
+```
+Install MySql Workbench (See Prerequisites for download).  
+Once set up create a new Server with username and root being "root" and ensure the localhost port is :3306  (SCREENSHOT THIS)
+Load the SQl Scripts into MySQlWorkbench, be sure to load the scripts in the order or you'll encounter an error  
+```
+INSE_Team_5C/Database Scripts/table_creation.sql
+INSE_Team_5C/Database Scripts/population.sql
+```
+Run the FDB.jar and you should be welcomed with the welcome screen, pick a team and go!  
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+//TODO
 
 ### Break down into end to end tests
 
+//TODO
 Explain what these tests test and why
 
 ```
@@ -61,36 +75,8 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
