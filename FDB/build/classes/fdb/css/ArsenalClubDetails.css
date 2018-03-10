@@ -1,0 +1,7 @@
+#btnHome, #btnTeamDetails, #btnFixturesAndResults {
+    -fx-background-color: #d0d0d0;
+}
+
+#btnClubDetails {
+    -fx-background-color: #EF0107;
+}

@@ -20,13 +20,26 @@ import javafx.stage.Stage;
  * @author INSE Team 5C
  */
 public class FDB extends Application {
+   
+//    private String arsenalThemeUrl = getClass().getResource("@css/Arsenal.css").toExternalForm();
+//    private String chelseaThemeUrl = getClass().getResource("@css/Chelsea.css").toExternalForm();
+//    private String tottenhamThemeUrl = getClass().getResource("@css/Tottenham.css").toExternalForm();
+//    private String manCityThemeUrl = getClass().getResource("@css/ManCity.css").toExternalForm();
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
         
         Scene scene = new Scene(root);
+//        scene.getStylesheets().add(arsenalThemeUrl);
+//        scene.getStylesheets().add(chelseaThemeUrl);
+//        scene.getStylesheets().add(tottenhamThemeUrl);
+//        scene.getStylesheets().add(manCityThemeUrl);
         
+        stage.setMaxHeight(1000);
+        stage.setMaxWidth(1400);
+        stage.setMinHeight(1000);
+        stage.setMinWidth(1400);
         stage.setScene(scene);
         stage.show();
     }
