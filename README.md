@@ -1,23 +1,21 @@
 # FDB (Football DataBase) By INSE Team 5c
 
-Hi there, this project aims to get football fans all the statistics they could ever need on a easy to use desktop application (Windows only at this point, MAC support will come at some point) 
+Hi there, this project aims to get football fans all the statistics they could ever need on a easy to use desktop application (Windows only at this point, MAC support will come at some point) Note: MySQl is the only supported datasbase language currently.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-
-What things you need to install the software and how to install them
 Basic Mode - Application requests data from remote database on the internet (Currently Unavalible, due to not being able to host it anywhere)
 ```
-MySQL Java Connector (.ZIP reccomended) - https://dev.mysql.com/downloads/connector/j/
+* [MySQL Java Connector (https://dev.mysql.com/downloads/connector/j/) - The connector for java and the MySQL Database
 ```
 
 Advanced Mode - Downloading the database and running it on your local machine (Only mode avalible right now)
 ```
-MySQL Java Connector (.ZIP reccomended) - https://dev.mysql.com/downloads/connector/j/
-MySQL Workbench (used to store the database and run the local server) - https://dev.mysql.com/downloads/workbench/
+* [MySQL Java Connector (https://dev.mysql.com/downloads/connector/j/) - The connector for java and the MySQL Database
+* [MySQL Workbench (https://dev.mysql.com/downloads/workbench/) - used to store the database and run the local server
 ```
 
 ### Installing
