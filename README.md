@@ -11,8 +11,12 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Advanced Mode - 
-- https://dev.mysql.com/downloads/workbench/
+Basic Mode - Application requests data from remote database on the internet (Currently Unavalible, due to not being able to host it anywhere)
+MySQL Java Connector (.ZIP reccomended) - https://dev.mysql.com/downloads/connector/j/
+
+Advanced Mode - Downloading the database and running it on your local machine (Only mode avalible right now)
+MySQL Java Connector (.ZIP reccomended) - https://dev.mysql.com/downloads/connector/j/
+MySQL Workbench (used to store the database and run the local server) - https://dev.mysql.com/downloads/workbench/
 ```
 
 ### Installing
