@@ -39,6 +39,10 @@ public class Stadium {
     return address;
     }
     
+    public String getPostcode() {
+    return postcode;
+    }
+    
     public int getCapacity() {
         return capacity;
     }
