@@ -35,8 +35,7 @@
             </Button>
           <Button fx:id="btnChelsea" onAction="#handleButtonAction">
                <graphic>
-             
-                                            <ImageView id="chelseaButton" fitHeight="194.0" fitWidth="198.0">
+                <ImageView id="chelseaButton" fitHeight="194.0" fitWidth="198.0">
                   <image>
                       <Image url="@Images/ChelseaLogo.png" />
                   </image>
