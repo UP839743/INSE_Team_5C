@@ -9,13 +9,18 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 Basic Mode - Application requests data from remote database on the internet (Currently Unavalible, due to not being able to host it anywhere)
 ```
-* [MySQL Java Connector (https://dev.mysql.com/downloads/connector/j/) - The connector for java and the MySQL Database
+No Extra requirements right now...
 ```
 
 Advanced Mode - Downloading the database and running it on your local machine (Only mode avalible right now)
 ```
-* [MySQL Java Connector (https://dev.mysql.com/downloads/connector/j/) - The connector for java and the MySQL Database
-* [MySQL Workbench (https://dev.mysql.com/downloads/workbench/) - used to store the database and run the local server
+* [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) - used to store the database and run the local server
+```
+
+For Developer Mode - Want to edit the code yourself? Great! 
+```
+* [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) - used to store the database and run the local server
+* [MySQL Java Connector](https://dev.mysql.com/downloads/connector/j/) - The connector for java and the MySQL Database NEtbeans (Recommended IDE will nee)
 ```
 
 ### Installing
