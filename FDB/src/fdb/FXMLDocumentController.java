@@ -26,12 +26,8 @@ import javafx.stage.Stage;
 
 
 public class FXMLDocumentController implements Initializable {
-    
-    @FXML
-<<<<<<< HEAD
-    private Label label;
-    
-=======
+  
+
     private Button btnChelsea;
     @FXML
     private Button btnArsenal;
@@ -118,7 +114,7 @@ public class FXMLDocumentController implements Initializable {
       stage.show();
 
     } 
->>>>>>> UI
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
