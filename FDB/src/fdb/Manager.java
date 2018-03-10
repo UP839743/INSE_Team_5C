@@ -18,10 +18,10 @@ public class Manager {
     String joinedClub;
     String nationality;
     
-    public Manager(int managerID, int managerClubID, String managerFirstName, 
+    public Manager(int manager_ID, int managerClubID, String managerFirstName, 
             String managerLastName, String managerDoB, String managerJoinedClub, String managerNationality) 
     {
-        managerID = managerID;
+        managerID = manager_ID;
         clubID = managerClubID;
         firstName = managerFirstName;
         lastName = managerLastName;
