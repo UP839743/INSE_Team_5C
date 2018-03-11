@@ -5,6 +5,7 @@
  */
 package fdb;
 
+import static fdb.FXMLDocumentController.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,58 +24,85 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
+ * FXML Controller class
  *
- * @author INSE Team 5C
+ * @author up816736
  */
-public class FXMLDocumentController implements Initializable {
+public class HomeController implements Initializable {
 
     @FXML
     private Label lblTeamName;
     @FXML
-    private Button btnChelsea;
+    private Label lblNews;
     @FXML
-    private Button btnArsenal;
+    private VBox newsBox;
     @FXML
-    private Button btnTottenham;
+    private Label lblStory;
     @FXML
-    private Button btnManCity;
+    private Label lblClubDetails;
     @FXML
-    private Button btnTeamDetails;
+    private Button btnMoreDetails;
+    @FXML
+    private Label lblSeason;
+    @FXML
+    private Label lblPosition;
+    @FXML
+    private ComboBox<?> seasonBox;
+    @FXML
+    private Label lblCurrentPosition;
+    @FXML
+    private Label lblStadium;
+    @FXML
+    private Label lblFounder;
+    @FXML
+    private Label lblManager;
+    @FXML
+    private Label lblChairman;
+    @FXML
+    private Label lblLeague;
+    @FXML
+    private HBox menuBox;
     @FXML
     private Button btnHome;
+    @FXML
+    private Button btnTeamDetails;
     @FXML
     private Button btnFixtures;
     @FXML
     private Button btnClubDetails;
     @FXML
-    private Button btnMoreDetails;
+    private VBox teamBox;
+    @FXML
+    private Button btnArsenal;
+    @FXML
+    private Button btnChelsea;
+    @FXML
+    private Button btnTottenham;
+    @FXML
+    private Button btnManCity;
+    @FXML
+    private TextField searchField;
 
     private final String chelseaThemeUrl = getClass().getResource("css/Chelsea.css").toExternalForm();
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
     private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
     private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
-    private final String arsenalTeamDetailsURL = getClass().getResource("css/ArsenalTeamDetails.css").toExternalForm();
-    private final String chelseaTeamDetailsURL = getClass().getResource("css/ChelseaTeamDetails.css").toExternalForm();
-    private final String tottenhamTeamDetailsURL = getClass().getResource("css/TottenhamTeamDetails.css").toExternalForm();
-    private final String mancityTeamDetailsURL = getClass().getResource("css/ManCityTeamDetails.css").toExternalForm();
-    private final String arsenalFixturesURL = getClass().getResource("css/ArsenalFixturesAndResults.css").toExternalForm();
-    private final String chelseaFixturesURL = getClass().getResource("css/ChelseaFixturesAndResults.css").toExternalForm();
-    private final String tottenhamFixturesURL = getClass().getResource("css/TottenhamFixturesAndResults.css").toExternalForm();
-    private final String mancityFixturesURL = getClass().getResource("css/ManCityFixturesAndResults.css").toExternalForm();
-        
-    public static Stage stage;
-    public static Parent root;
-    public static String stylesheet = "";
-    public static int team = 0;
-    public static String teamName = "";
-
+    
+    
     /**
-     *
-     * @param event
-     * @throws IOException
+     * Initializes the controller class.
      */
-    @FXML
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        lblTeamName.setText(teamName);
+        
+    }    
+
+        @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
+        Stage stage = null;
+        Parent root = null;
+
         if (event.getSource() == btnChelsea || event.getSource() == btnArsenal || event.getSource() == btnTottenham || event.getSource() == btnManCity || event.getSource() == btnHome) {
             loadClub(event);
             Button btn = (Button) event.getSource();
@@ -97,13 +125,7 @@ public class FXMLDocumentController implements Initializable {
         stage.show();
         
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-          
-    }
-    
-    public void loadClub(ActionEvent event){
+public void loadClub(ActionEvent event){
         
         if (event.getSource() == btnArsenal) {
                 stylesheet = arsenalThemeUrl;
@@ -125,10 +147,5 @@ public class FXMLDocumentController implements Initializable {
         
            
     }
-    
-
-    
- 
-
     
 }

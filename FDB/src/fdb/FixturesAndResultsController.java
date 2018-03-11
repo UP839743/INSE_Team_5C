@@ -5,6 +5,7 @@
  */
 package fdb;
 
+import static fdb.FXMLDocumentController.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,120 +16,121 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
+ * FXML Controller class
  *
- * @author INSE Team 5C
+ * @author up816736
  */
-public class FXMLDocumentController implements Initializable {
+public class FixturesAndResultsController implements Initializable {
 
     @FXML
-    private Label lblTeamName;
-    @FXML
-    private Button btnChelsea;
-    @FXML
-    private Button btnArsenal;
-    @FXML
-    private Button btnTottenham;
-    @FXML
-    private Button btnManCity;
-    @FXML
     private Button btnTeamDetails;
-    @FXML
-    private Button btnHome;
     @FXML
     private Button btnFixtures;
     @FXML
     private Button btnClubDetails;
     @FXML
-    private Button btnMoreDetails;
+    private Button btnHome;
+    @FXML
+    private Button btnArsenal;
+    @FXML
+    private Button btnChelsea;
+    @FXML
+    private Button btnTottenham;
+    @FXML
+    private Button btnManCity;
+    @FXML
+    private Label lblTeamName;
 
-    private final String chelseaThemeUrl = getClass().getResource("css/Chelsea.css").toExternalForm();
-    private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
-    private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
-    private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
-    private final String arsenalTeamDetailsURL = getClass().getResource("css/ArsenalTeamDetails.css").toExternalForm();
-    private final String chelseaTeamDetailsURL = getClass().getResource("css/ChelseaTeamDetails.css").toExternalForm();
-    private final String tottenhamTeamDetailsURL = getClass().getResource("css/TottenhamTeamDetails.css").toExternalForm();
-    private final String mancityTeamDetailsURL = getClass().getResource("css/ManCityTeamDetails.css").toExternalForm();
     private final String arsenalFixturesURL = getClass().getResource("css/ArsenalFixturesAndResults.css").toExternalForm();
     private final String chelseaFixturesURL = getClass().getResource("css/ChelseaFixturesAndResults.css").toExternalForm();
     private final String tottenhamFixturesURL = getClass().getResource("css/TottenhamFixturesAndResults.css").toExternalForm();
     private final String mancityFixturesURL = getClass().getResource("css/ManCityFixturesAndResults.css").toExternalForm();
-        
-    public static Stage stage;
-    public static Parent root;
-    public static String stylesheet = "";
-    public static int team = 0;
-    public static String teamName = "";
-
+    
+    
+    
     /**
-     *
-     * @param event
-     * @throws IOException
+     * Initializes the controller class.
      */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        lblTeamName.setText(teamName);
+        loadFixtureStyle();
+        root.getStylesheets().add(stylesheet);
+    }    
+
     @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
+        
+
         if (event.getSource() == btnChelsea || event.getSource() == btnArsenal || event.getSource() == btnTottenham || event.getSource() == btnManCity || event.getSource() == btnHome) {
-            loadClub(event);
+           selectClub(event);
             Button btn = (Button) event.getSource();
             stage = (Stage) btn.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Home.fxml"));     
         } else if (event.getSource() == btnTeamDetails) {
             stage = (Stage) btnTeamDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Team Details.fxml"));
+            
         } else if (event.getSource() == btnFixtures) {
             stage = (Stage) btnFixtures.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Fixtures and Results.fxml"));
-        } else if (event.getSource() == btnClubDetails || event.getSource() == btnMoreDetails) {
+            
+        } else if (event.getSource() == btnClubDetails) {
             stage = (Stage) btnClubDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
+            
         }
         //create a new scene with root and set the stage
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        scene.getStylesheets().add(stylesheet);
         stage.show();
         
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-          
-    }
     
-    public void loadClub(ActionEvent event){
+        public void loadFixtureStyle(){
+        switch (team) {
+                case 1:
+                    stylesheet = arsenalFixturesURL;
+
+                    break;
+                case 2:
+                    stylesheet = chelseaFixturesURL;
+
+                    break;
+                case 3:
+                    stylesheet = tottenhamFixturesURL;
+
+                    break;
+                case 4:
+                    stylesheet = mancityFixturesURL;
+
+                    break;
+                default:
+                    break;
+            }
+    }
+        
+        public void selectClub(ActionEvent event){
         
         if (event.getSource() == btnArsenal) {
-                stylesheet = arsenalThemeUrl;
                 teamName = "Arsenal";
                 team = 1;
             } else if (event.getSource() == btnChelsea) {
-                stylesheet = chelseaThemeUrl;
                 teamName = "Chelsea";
                 team = 2;
             } else if (event.getSource() == btnTottenham) {
-                stylesheet = tottenhamThemeUrl;
                 teamName = "Tottenham";
                 team = 3;
             } else if (event.getSource() == btnManCity) {
-                stylesheet = mancityThemeUrl;
                 teamName = "Man City";
                 team = 4;
             }
         
            
     }
-    
-
-    
- 
-
     
 }

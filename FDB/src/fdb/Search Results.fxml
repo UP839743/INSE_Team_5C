@@ -58,7 +58,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnTottenham" mnemonicParsing="false" prefHeight="211.5" prefWidth="205.0">
+            <Button fx:id="btnTottenham" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
                <graphic>
                   <ImageView fitHeight="155.0" fitWidth="155.0">
                      <image>

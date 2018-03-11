@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import java.lang.String?>
-<?import javafx.collections.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FixturesAndResultsController">
     <children>
         <HBox prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
             <children>
@@ -40,7 +46,7 @@
                 <Font name="Lato Light" size="30.0" />
             </font>
         </Button>
-        <Label layoutX="232.0" layoutY="134.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
+        <Label fx:id="lblTeamName" layoutX="232.0" layoutY="134.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
             <font>
                 <Font name="Monospaced Regular" size="68.0" />
             </font>
@@ -55,7 +61,7 @@
                 <Font size="30.0" />
             </font>
         </Label>
-        <ComboBox layoutX="793.0" layoutY="192.0" prefHeight="36.0" prefWidth="150.0" promptText="Select a Season" >
+        <ComboBox layoutX="793.0" layoutY="192.0" prefHeight="36.0" prefWidth="150.0" promptText="Select a Season">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:id="17_18" fx:value="17/18" />
@@ -100,7 +106,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="btnTottenham" mnemonicParsing="false" prefHeight="211.5" prefWidth="205.0">
+                <Button fx:id="btnTottenham" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
                     <graphic>
                         <ImageView fitHeight="155.0" fitWidth="155.0">
                             <image>
