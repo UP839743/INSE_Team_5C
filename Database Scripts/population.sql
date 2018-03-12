@@ -1,10 +1,10 @@
 USE FDB;
 
-INSERT INTO Club (CLUBID, CLUBNAME, MANAGER, STADIUM, CLUBPOSITION) VALUES
-  (1, "Arsenal", "Aresene Wenger", "Emirates", 6),
-  (2, "Chelsea", "Antonio Conte", "Stamford Bridge", 4),
-  (3, "Manchester City", "Pep Guardiola", "The Etihad Arena", 1),
-  (4, "Tottenham Hotspur", "Maurizio Pochettino", "White Heart Lane", 5)
+INSERT INTO Club (CLUBID, CLUBNAME, MANAGER, STADIUM, CLUBPOSITION, PREVPOSITION) VALUES
+  (1, "Arsenal", "Aresene Wenger", "Emirates", 6, 5),
+  (2, "Chelsea", "Antonio Conte", "Stamford Bridge", 4, 1),
+  (3, "Manchester City", "Pep Guardiola", "The Etihad Arena", 1, 3),
+  (4, "Tottenham Hotspur", "Maurizio Pochettino", "White Heart Lane", 5, 2)
 ;
 
 INSERT INTO Player (CLUBID, FNAME, LNAME, SQUADNO, PLAYERPOSITION, HEIGHT, PREFFOOT, DOB, CLUBAPPS, SEASONAPPS, NATIONALITY, CLUBGOALS, SEASONGOALS, CLEANSHEETS) VALUES
@@ -132,7 +132,43 @@ INSERT INTO Trophy (COMPETITION, YEAR, CLUBID) VALUES
 ;
 
 INSERT INTO Fixture (MATCHDATE, HOMETEAM, AWAYTEAM, HOMETEAMSCORE, AWAYTEAMSCORE) VALUES
-  ('2014-8-18',   "Burnley",      "Chelsea",          1,  3)
+  ('2017-8-12', "Chelsea", "Burnley", 2, 3),
+  ('2017-08-20', "Tottenham Hotspur", "Chelsea",  1, 2),
+  ('2017-07-27', "Chelsea",  "Everton",  2, 0 ),
+  ('2017-09-09', "Leicester City",  "Chelsea",  1,  2),
+  ('2017-09-17', "Chelsea",  "Aresenal",  0, 0 ),
+  ('2017-09-23', "Stoke City",  "Chelsea",  0, 4 ),
+  ('2017-09-30', "Chelsea",  "Manchester City",  0, 1 ),
+  ('2017-10-14', "Crystal Palace",  "Chelsea",  2, 1 ),
+  ('2017-10-21', "Chelsea",  "Watford",  4, 2 ),
+  ('2017-10-28', "Bournemouth",  "Chelsea", 0, 1 ),
+  ('2017-08-12', "Brighton",  "Manchester City",  0, 2 ),
+  ('2017-08-21', "Manchester City",  "Everton",  1, 1 ),
+  ('2017-08-26', "Bournemouth",  "Manchester City",  1, 2 ),
+  ('2017-09-09', "Manchester City",  "Liverpool",  5, 0 ),
+  ('2017-09-16', "Watford",  "Manchester City",  0, 6 ),
+  ('2017-09-23', "Manchester City",  "Crystal Palace",  5, 0 ),
+  ('2017-09-30', "Manchester City",  "Stoke City",  7, 2 ),
+  ('2017-10-14', "Manchester City",  "Burnley",  3, 0 ),
+  ('2017-10-21', "West Brom",  "Manchester City",  2, 3 ),
+  ('2017-08-11', "Arsenal",  "Leicester City",  4, 3 ),
+  ('2017-08-19', "Stoke City",  "Arsenal",  1, 0 ),
+  ('2017-08-27', "Liverpool",  "Arsenal",  4, 0 ),
+  ('2017-09-09', "Arsenal",  "Bournemouth",  3, 0 ),
+  ('2017-09-17', "Arsenal",  "West Brom",  2, 0 ),
+  ('2017-09-25', "Arsenal",  "Brighton",  2, 0 ),
+  ('2017-10-1', "Watford",  "Arsenal",  2, 1 ),
+  ('2017-10-22', "Everton",  "Arsenal",  2, 5 ),
+  ('2017-10-28', "Arsenal",  "Swansea City",  2, 1 ),
+  ('2017-08-13', "Newcastle",  "Tottenham Hotspur",  0, 2 ),
+  ('2017-08-27', "Tottenham Hotspur",  "Burnley",  1, 2 ),
+  ('2017-09-09', "Everton",  "Tottenham Hotspur",  1, 1  ),
+  ('2017-09-16', "Tottenham Hotspur",  "Swansea City",  0, 3 ),
+  ('2017-09-23', "West Ham United",  "Tottenham Hotspur",  0, 0 ),
+  ('2017-09-30', "Huddersfield",  "Tottenham Hotspur",  2, 3 ),
+  ('2017-10-14', "Tottenham Hotspur",  "Bournemouth",  0, 4 ),
+  ('2017-10-22', "Tottenham Hotspur",  "Liverpool",  1, 0 ),
+  ('2017-10-28', "Manchester United",  "Tottenham Hotspur",  1, 0 )
 ;
 
 INSERT INTO News (CLUBID, TITLE, CONTENT) VALUES
