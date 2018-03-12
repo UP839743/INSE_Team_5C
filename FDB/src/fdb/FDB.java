@@ -120,7 +120,7 @@ public class FDB extends Application {
         }
     }
 
-    public static List<Player> loadPlayers(Connection con) throws SQLException {
+    public static ArrayList<Player> loadPlayers(Connection con) throws SQLException {
         System.out.println("Loading Players...");
         ArrayList<Player> players = new ArrayList();
         PreparedStatement ps = null;
@@ -162,7 +162,7 @@ public class FDB extends Application {
         }
     }
 
-    public static List<Manager> loadManagers(Connection con) throws SQLException {
+    public static ArrayList<Manager> loadManagers(Connection con) throws SQLException {
         System.out.println("Loading Managers...");
         ArrayList<Manager> managers = new ArrayList();
         PreparedStatement ps = null;
@@ -194,7 +194,7 @@ public class FDB extends Application {
         }
     }
 
-    public static List<Fixture> loadFixtures(Connection con) throws SQLException {
+    public static ArrayList<Fixture> loadFixtures(Connection con) throws SQLException {
         System.out.println("Loading Fixtures...");
         ArrayList<Fixture> fixtures = new ArrayList();
         PreparedStatement ps = null;
@@ -225,7 +225,7 @@ public class FDB extends Application {
         }
     }
 
-    public static List<Club> loadClubs(Connection con) throws SQLException {
+    public static ArrayList<Club> loadClubs(Connection con) throws SQLException {
         System.out.println("Loading Clubs...");
         ArrayList<Club> clubs = new ArrayList();
         PreparedStatement ps = null;
@@ -255,7 +255,7 @@ public class FDB extends Application {
         }
     }
 
-    public static List<Club> loadNews(Connection con) throws SQLException {
+    public static ArrayList<News> loadNews(Connection con) throws SQLException {
         System.out.println("Loading News...");
         ArrayList<News> newsArticles = new ArrayList();
         PreparedStatement ps = null;
@@ -283,7 +283,7 @@ public class FDB extends Application {
         }
     }
 
-    public static List<Club> loadTrophies(Connection con) throws SQLException {
+    public static ArrayList<Trophy> loadTrophies(Connection con) throws SQLException {
         System.out.println("Loading Trophies...");
         ArrayList<Trophy> trophies = new ArrayList();
         PreparedStatement ps = null;
