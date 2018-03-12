@@ -49,9 +49,7 @@ public class FixturesAndResultsController implements Initializable {
     private final String chelseaFixturesURL = getClass().getResource("css/ChelseaFixturesAndResults.css").toExternalForm();
     private final String tottenhamFixturesURL = getClass().getResource("css/TottenhamFixturesAndResults.css").toExternalForm();
     private final String mancityFixturesURL = getClass().getResource("css/ManCityFixturesAndResults.css").toExternalForm();
-    
-    
-    
+
     /**
      * Initializes the controller class.
      */
@@ -59,78 +57,77 @@ public class FixturesAndResultsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         lblTeamName.setText(teamName);
         loadFixtureStyle();
-        root.getStylesheets().add(stylesheet);
-    }    
+        scene.getStylesheets().add(stylesheet);
+    }
 
     @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
-        
 
         if (event.getSource() == btnChelsea || event.getSource() == btnArsenal || event.getSource() == btnTottenham || event.getSource() == btnManCity || event.getSource() == btnHome) {
-           selectClub(event);
+            selectClub(event);
             Button btn = (Button) event.getSource();
             stage = (Stage) btn.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("Home.fxml"));     
+            root = FXMLLoader.load(getClass().getResource("Home.fxml"));
         } else if (event.getSource() == btnTeamDetails) {
             stage = (Stage) btnTeamDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Team Details.fxml"));
-            
+
         } else if (event.getSource() == btnFixtures) {
             stage = (Stage) btnFixtures.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Fixtures and Results.fxml"));
-            
+
         } else if (event.getSource() == btnClubDetails) {
             stage = (Stage) btnClubDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
-            
+
         }
         //create a new scene with root and set the stage
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        scene.getStylesheets().add(stylesheet);
         stage.show();
-        
+
     }
-    
-        public void loadFixtureStyle(){
+
+    public void loadFixtureStyle() {
         switch (team) {
-                case 1:
-                    stylesheet = arsenalFixturesURL;
+            case 1:
+                stylesheet = arsenalFixturesURL;
 
-                    break;
-                case 2:
-                    stylesheet = chelseaFixturesURL;
+                break;
+            case 2:
+                stylesheet = chelseaFixturesURL;
 
-                    break;
-                case 3:
-                    stylesheet = tottenhamFixturesURL;
+                break;
+            case 3:
+                stylesheet = tottenhamFixturesURL;
 
-                    break;
-                case 4:
-                    stylesheet = mancityFixturesURL;
+                break;
+            case 4:
+                stylesheet = mancityFixturesURL;
 
-                    break;
-                default:
-                    break;
-            }
+                break;
+            default:
+                break;
+        }
     }
-        
-        public void selectClub(ActionEvent event){
-        
+
+    public void selectClub(ActionEvent event) {
+
         if (event.getSource() == btnArsenal) {
-                teamName = "Arsenal";
-                team = 1;
-            } else if (event.getSource() == btnChelsea) {
-                teamName = "Chelsea";
-                team = 2;
-            } else if (event.getSource() == btnTottenham) {
-                teamName = "Tottenham";
-                team = 3;
-            } else if (event.getSource() == btnManCity) {
-                teamName = "Man City";
-                team = 4;
-            }
-        
-           
+            teamName = "Arsenal";
+            team = 1;
+        } else if (event.getSource() == btnChelsea) {
+            teamName = "Chelsea";
+            team = 2;
+        } else if (event.getSource() == btnTottenham) {
+            teamName = "Tottenham";
+            team = 3;
+        } else if (event.getSource() == btnManCity) {
+            teamName = "Man City";
+            team = 4;
+        }
+
     }
-    
+
 }

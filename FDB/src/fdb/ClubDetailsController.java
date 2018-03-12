@@ -62,7 +62,7 @@ public class ClubDetailsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
        lblTeamName.setText(teamName);
        loadClubStyle();
-       root.getStylesheets().add(stylesheet);
+       scene.getStylesheets().add(stylesheet);
     }    
 
     @FXML
@@ -86,8 +86,9 @@ public class ClubDetailsController implements Initializable {
             
         }
         //create a new scene with root and set the stage
-        Scene scene = new Scene(root);
+        scene = new Scene(root);
         stage.setScene(scene);
+        scene.getStylesheets().add(stylesheet);
         stage.show();
         
     }

@@ -96,13 +96,13 @@ public class HomeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         lblTeamName.setText(teamName);
         loadHomeStyle();
+        
+        
     }    
 
         @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
-        Stage stage = null;
-        Parent root = null;
-
+        
         if (event.getSource() == btnChelsea || event.getSource() == btnArsenal || event.getSource() == btnTottenham || event.getSource() == btnManCity || event.getSource() == btnHome) {
             loadClub(event);
             Button btn = (Button) event.getSource();
@@ -119,7 +119,7 @@ public class HomeController implements Initializable {
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
         }
         //create a new scene with root and set the stage
-        Scene scene = new Scene(root);
+        scene = new Scene(root);
         stage.setScene(scene);
         scene.getStylesheets().add(stylesheet);
         stage.show();
@@ -165,6 +165,7 @@ public void loadHomeStyle(){
                 default:
                     break;
             }
+        
         }
     
 }

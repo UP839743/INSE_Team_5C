@@ -14,7 +14,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.ClubDetailsController">
    <children>
-      <HBox prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
+      <HBox prefHeight="124.0" prefWidth="815.0">
          <children>
             <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER" textFill="WHITE">
                <font>
@@ -31,7 +31,7 @@
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
-            <Button fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Club Details" textAlignment="CENTER">
+            <Button id="btnClubDetails" fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Club Details" textAlignment="CENTER">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>

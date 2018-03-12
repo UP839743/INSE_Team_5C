@@ -57,7 +57,7 @@ public class TeamDetailsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         lblTeamName.setText(teamName);
         loadTeamStyle();
-        root.getStylesheets().add(stylesheet);
+        scene.getStylesheets().add(stylesheet);
     }    
 
     @FXML

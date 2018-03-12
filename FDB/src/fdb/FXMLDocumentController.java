@@ -15,11 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -53,7 +49,8 @@ public class FXMLDocumentController implements Initializable {
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
     private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
     private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
-        
+    
+    public static Scene scene;
     public static Stage stage;
     public static Parent root;
     public static String stylesheet = "";
@@ -83,7 +80,7 @@ public class FXMLDocumentController implements Initializable {
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
         }
         //create a new scene with root and set the stage
-        Scene scene = new Scene(root);
+        scene = new Scene(root);
         stage.setScene(scene);
         scene.getStylesheets().add(stylesheet);
         stage.show();

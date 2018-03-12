@@ -17,7 +17,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FixturesAndResultsController">
     <children>
-        <HBox prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
+        <HBox prefHeight="124.0" prefWidth="815.0">
             <children>
                 <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER" textFill="WHITE">
                     <font>
@@ -29,7 +29,7 @@
                         <Font name="Lato Light" size="30" />
                     </font>
                 </Button>
-                <Button fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
+                <Button id="btnFixturesAndResults" fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
                     <font>
                         <Font name="Lato Light" size="30" />
                     </font>
@@ -88,7 +88,7 @@
         </TableView>
         <VBox layoutX="1.0" layoutY="124.0" prefHeight="846.0" prefWidth="204.0">
             <children>
-                <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="204.0">
+                <Button id="btnArsenal" fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="204.0">
                     <graphic>
                         <ImageView fitHeight="132.0" fitWidth="112.0">
                             <image>
@@ -106,7 +106,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="btnTottenham" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
+                <Button id="btnTottenham" fx:id="btnTottenham" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
                     <graphic>
                         <ImageView fitHeight="155.0" fitWidth="155.0">
                             <image>
@@ -115,7 +115,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
+                <Button id="btnManCity" fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
                     <graphic>
                         <ImageView fitHeight="114.0" fitWidth="112.0">
                             <image>
