@@ -14,13 +14,15 @@ public class News {
     int ClubId;
     String Title;
     String Content;
+    String Author;
     
-    public News(int nNewsId, int nClubId, String nTitle, String nContent) 
+    public News(int nNewsId, int nClubId, String nTitle, String nContent, String nAuthor) 
     {
         NewsId = nNewsId;
         ClubId = nClubId;
         Title = nTitle;
         Content = nContent;
+        Author = nAuthor;
     }
     
     public int getNewsId() {
@@ -36,6 +38,10 @@ public class News {
     }
     public String getContent(){
         return Content;
+    }
+    
+    public String getAuthor(){
+        return Author;
     }
     
 }

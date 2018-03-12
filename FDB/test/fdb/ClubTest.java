@@ -16,8 +16,7 @@ import static org.junit.Assert.*;
  */
 public class ClubTest {
     
-    Club clubtst = clubtst = new Club(3333, "Totenham", "Chuck", 
-            "arena", 2322);
+    Club clubtst = clubtst = new Club(3333, "Tottenham", "arena", 2322);
     
     public ClubTest() {
     }
@@ -47,19 +46,8 @@ public class ClubTest {
     @Test
     public void testGetClubName() {
         System.out.println("getClubName");
-        String expResult = "Totenham";
+        String expResult = "Tottenham";
         String result = clubtst.getClubName();
-        assertEquals(expResult, result);
-    }
-
-    /**
-     * Test of getManager method, of class Club.
-     */
-    @Test
-    public void testGetManager() {
-        System.out.println("getManager");
-        String expResult = "Chuck";
-        String result = clubtst.getManager();
         assertEquals(expResult, result);
     }
 

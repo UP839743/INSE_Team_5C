@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 //News(int nNewsId, int nClubId, String nTitle, String nContent)
 public class NewsTest {
     
-    News testNws = testNws = new News(5678, 4354, "TestTitle", "TestContent");
+    News testNws = testNws = new News(5678, 4354, "TestTitle", "TestContent", "TestAuthor");
     
     public NewsTest() {
     }
@@ -74,4 +74,15 @@ public class NewsTest {
         assertEquals(expResult, result);
     }
     
+    /**
+     * Test of getAuthor method, of class News.
+     */
+    @Test
+    public void testGetAuthor() {
+        System.out.println("getAuthor");
+        String expResult = "TestAuthor";
+        String result = testNws.getAuthor();
+        assertEquals(expResult, result);
+    }
 }
+

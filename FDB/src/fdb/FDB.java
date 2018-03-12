@@ -51,6 +51,7 @@ public class FDB extends Application {
     static ArrayList<News> allNews = new ArrayList();
     static ArrayList<Trophy> allTrophies = new ArrayList();
     static ArrayList<Stadium> allStadiums = new ArrayList();
+    static ArrayList<PosHist> AllposHists = new ArrayList();
 
     /**
      * @param args the command line arguments
@@ -69,6 +70,7 @@ public class FDB extends Application {
             loadNews(con);
             loadTrophies(con);
             loadStadiums(con);
+            loadPosHistory(con);
             System.out.println("Done...");
             }
         else {System.out.println("Check connection to database");}
@@ -242,10 +244,9 @@ public class FDB extends Application {
             System.out.println(rs.getString(2));
             int clubID = rs.getInt(1);
             String clubName = rs.getString(2);
-            String manager = rs.getString(3);
-            String stadium = rs.getString(4);
-            int clubPosititon = rs.getInt(5);
-            Club clb = new Club(clubID, clubName, manager, 
+            String stadium = rs.getString(3);
+            int clubPosititon = rs.getInt(4);
+            Club clb = new Club(clubID, clubName, 
             stadium, clubPosititon);
             allClubs.add(clb);
             System.out.println("Club Loaded In...");
@@ -272,7 +273,8 @@ public class FDB extends Application {
             int clubID = rs.getInt(2);
             String title = rs.getString(3);
             String content = rs.getString(4);
-            News nws = new News(newsID, clubID, title, content);
+            String author = rs.getString(5);
+            News nws = new News(newsID, clubID, title, content, author);
             allNews.add(nws);
             System.out.println("News Loaded In...");
         }
@@ -335,6 +337,32 @@ public class FDB extends Application {
     } finally {
         rs.close();
         System.out.println("All Stadiums Loaded Successfully");
+            }
+    }
+    
+    public static void loadPosHistory(Connection con) throws SQLException {
+    System.out.println("Loading Position...");
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    try {
+        ps = con.prepareStatement("select * from Position_History");
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            System.out.println(rs.getString(2) + " " + rs.getInt(4));
+            int clubID = rs.getInt(1);
+            String competition = rs.getString(2);
+            int year = rs.getInt(3);
+            int position = rs.getInt(4);
+            PosHist posHists = new PosHist(clubID, competition, year, position);
+            AllposHists.add(posHists);
+            System.out.println("position History Loaded In...");
+        }
+    } catch (Exception e) {
+        System.out.println(e);
+        System.out.println("Error");
+    } finally {
+        rs.close();
+        System.out.println("All position History Loaded Successfully");
             }
     }
 }
