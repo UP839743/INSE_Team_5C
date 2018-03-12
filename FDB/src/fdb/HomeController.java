@@ -95,7 +95,7 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lblTeamName.setText(teamName);
-        
+        loadHomeStyle();
     }    
 
         @FXML
@@ -147,5 +147,24 @@ public void loadClub(ActionEvent event){
         
            
     }
+
+public void loadHomeStyle(){
+        switch (team) {
+                case 1:
+                    stylesheet = arsenalThemeUrl;
+                    break;
+                case 2:
+                    stylesheet = chelseaThemeUrl;
+                    break;
+                case 3:
+                    stylesheet = tottenhamThemeUrl;
+                    break;
+                case 4:
+                    stylesheet = mancityThemeUrl;
+                    break;
+                default:
+                    break;
+            }
+        }
     
 }
