@@ -1,9 +1,9 @@
 USE FDB;
 
-INSERT INTO Club (CLUBID, CLUBNAME, MANAGER, STADIUM, CURRENTPOSITION, PREVPOSITION) VALUES
-  (1, "Arsenal", "Aresene Wenger", "Emirates", 6)
-  (2, "Chelsea", "Antonio Conte", "Stamford Bridge", 4)
-  (3, "Manchester City", "Pep Guardiola", "The Etihad Arena", 1)
+INSERT INTO Club (CLUBID, CLUBNAME, MANAGER, STADIUM, CURRENTPOSITION) VALUES
+  (1, "Arsenal", "Arsene Wenger", "Emirates", 6),
+  (2, "Chelsea", "Antonio Conte", "Stamford Bridge", 4),
+  (3, "Manchester City", "Pep Guardiola", "The Etihad Arena", 1),
   (4, "Tottenham Hotspur", "Maurizio Pochettino", "White Heart Lane", 5)
 ;
 
@@ -20,7 +20,7 @@ INSERT INTO Position_History (CLUBID, COMPETITION, YEAR, POSITION) VALUES
   (3, "Premier League", 2015, 2),
   (1, "Premier League", 2015, 3),
   (4, "Premier League", 2015, 5)
-
+;
 
 INSERT INTO Player (CLUBID, FNAME, LNAME, SQUADNO, PLAYERPOSITION, HEIGHT, PREFFOOT, DOB, CLUBAPPS, SEASONAPPS, NATIONALITY, CLUBGOALS, SEASONGOALS, CLEANSHEETS) VALUES
   (1, "Petr", "Cech", 33, "GK", "6f4", "L", '1982-10-05', 105, 26, "Czech", 0, 0, 10),
