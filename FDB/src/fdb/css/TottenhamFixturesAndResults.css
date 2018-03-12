@@ -2,7 +2,8 @@
     -fx-background-color: #d0d0d0;
 }
 
-#btnFixturesAndResults {
+#btnTottenham, #btnFixturesAndResults {
     -fx-background-color: #11214B;
+    -fx-text-fill: white;
 }
 

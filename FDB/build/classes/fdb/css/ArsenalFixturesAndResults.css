@@ -2,7 +2,8 @@
     -fx-background-color: #d0d0d0;
 }
 
-#btnFixturesAndResults {
+#btnArsenal, #btnFixturesAndResults {
     -fx-background-color: #EF0107;
+    -fx-text-fill: white;
 }
 

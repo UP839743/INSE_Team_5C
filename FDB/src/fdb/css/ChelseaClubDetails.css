@@ -2,6 +2,7 @@
     -fx-background-color: #d0d0d0;
 }
 
-#btnClubDetails {
+#btnChelsea, #btnClubDetails {
     -fx-background-color: #034694;
+    -fx-text-fill: white;
 }

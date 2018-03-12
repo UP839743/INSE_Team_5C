@@ -13,10 +13,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.HomeController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.HomeController">
    
     <children>
-        <Label fx:id="lblTeamName" layoutX="222.0" layoutY="124.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
+        <Label fx:id="lblTeamName" layoutX="222.0" layoutY="124.0" prefHeight="94.0" prefWidth="412.0" text="Arsenal" textAlignment="CENTER">
             <font>
                 <Font name="Monospaced Regular" size="68.0" />
             </font>
@@ -36,11 +36,6 @@
                 <Font size="30.0" />
             </font>
         </Label>
-        <Button fx:id="btnMoreDetails" layoutX="808.0" layoutY="417.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="180.0" text="More Details" textFill="WHITE">
-            <font>
-                <Font size="25.0" />
-            </font>
-        </Button>
         <Label fx:id="lblSeason" layoutX="650.0" layoutY="538.0" text="Season:">
             <font>
                 <Font size="30.0" />
@@ -90,7 +85,7 @@
         </Label>
         <HBox fx:id="menuBox" prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
             <children>
-                <Button fx:id="btnHome" mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" style="-fx-background-color: #EF0107; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="btnHome" mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="Lato Light" size="30.0" />
                     </font>

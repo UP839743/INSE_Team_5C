@@ -1,4 +1,5 @@
-#btnArsenal {
+#btnHome, #btnArsenal {
     -fx-background-color: #EF0107;
     -fx-text-fill: white;
 }
+
