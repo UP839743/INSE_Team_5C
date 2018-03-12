@@ -3,6 +3,6 @@
 }
 
 #btnTottenham, #btnTeamDetails {
-    -fx-background-color: #11214B;
-    -fx-text-fill: white;
+    -fx-background-color: white;
+    -fx-text-fill: black;
 }

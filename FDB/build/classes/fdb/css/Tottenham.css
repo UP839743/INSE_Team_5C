@@ -2,4 +2,9 @@
     -fx-background-color: white;
     -fx-border-color: black;
     -fx-text-fill: white;
+    
+}
+
+#btnHome:hover{
+    -fx-background-color: green;
 }
