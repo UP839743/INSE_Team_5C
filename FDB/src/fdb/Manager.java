@@ -5,8 +5,6 @@
  */
 package fdb;
 
-import java.sql.Date;
-
 /**
  *
  * @author INSE Team 5C
@@ -16,12 +14,12 @@ public class Manager {
     int clubID;
     String firstName;
     String lastName;
-    Date DoB;
+    String DoB;
     String joinedClub;
     String nationality;
     
     public Manager(int manager_ID, int managerClubID, String managerFirstName, 
-            String managerLastName, Date managerDoB, String managerJoinedClub, String managerNationality) 
+            String managerLastName, String managerDoB, String managerJoinedClub, String managerNationality) 
     {
         managerID = manager_ID;
         clubID = managerClubID;
@@ -49,7 +47,7 @@ public class Manager {
     return lastName;
     }
     
-    public Date getDoB() {
+    public String getDoB() {
         return DoB;
     }
     

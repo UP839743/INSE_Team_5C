@@ -5,21 +5,19 @@
  */
 package fdb;
 
-import java.sql.Date;
-
 /**
  *
  * @author INSE Team 5C
  */
 public class Fixture {
     int matchID;
-    Date matchDate;
+    String matchDate;
     String homeTeam;
     String awayTeam;
     int homeScore;
     int awayScore;
     
-    public Fixture(int match_ID, Date match_Date, String matchHomeTeam, 
+    public Fixture(int match_ID, String match_Date, String matchHomeTeam, 
             String matchAwayTeam, int matchHomeTeamScore, int matchAwayTeamScore)
     {
     matchID = match_ID;
@@ -35,7 +33,7 @@ public class Fixture {
         return matchID;
     }
     
-    public Date getMatchDate() {
+    public String getMatchDate() {
         return matchDate;
     }
     
