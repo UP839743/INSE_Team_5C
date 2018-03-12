@@ -1,10 +1,10 @@
 USE FDB;
 
-INSERT INTO Club (CLUBID, CLUBNAME, MANAGER, STADIUM, CURRENTPOSITION, PREVPOSITION) VALUES
-  (1, "Arsenal", "Aresene Wenger", "Emirates", 6)
-  (2, "Chelsea", "Antonio Conte", "Stamford Bridge", 4)
-  (3, "Manchester City", "Pep Guardiola", "The Etihad Arena", 1)
-  (4, "Tottenham Hotspur", "Maurizio Pochettino", "White Heart Lane", 5)
+INSERT INTO Club (CLUBID, CLUBNAME, STADIUM, CURRENTPOSITION) VALUES
+  (1, "Arsenal", "Emirates", 6),
+  (2, "Chelsea", "Stamford Bridge", 4),
+  (3, "Manchester City", "The Etihad Arena", 1),
+  (4, "Tottenham Hotspur", "White Heart Lane", 5)
 ;
 
 INSERT INTO Position_History (CLUBID, COMPETITION, YEAR, POSITION) VALUES
@@ -20,7 +20,7 @@ INSERT INTO Position_History (CLUBID, COMPETITION, YEAR, POSITION) VALUES
   (3, "Premier League", 2015, 2),
   (1, "Premier League", 2015, 3),
   (4, "Premier League", 2015, 5)
-
+;
 
 INSERT INTO Player (CLUBID, FNAME, LNAME, SQUADNO, PLAYERPOSITION, HEIGHT, PREFFOOT, DOB, CLUBAPPS, SEASONAPPS, NATIONALITY, CLUBGOALS, SEASONGOALS, CLEANSHEETS) VALUES
   (1, "Petr", "Cech", 33, "GK", "6f4", "L", '1982-10-05', 105, 26, "Czech", 0, 0, 10),
@@ -186,7 +186,7 @@ INSERT INTO Fixture (MATCHDATE, HOMETEAM, AWAYTEAM, HOMETEAMSCORE, AWAYTEAMSCORE
   ('2017-10-28', "Manchester United",  "Tottenham Hotspur",  1, 0 )
 ;
 
-INSERT INTO News (CLUBID, TITLE, CONTENT) VALUES
-  (1, "Sample Title", "Sample Content"),
-  (3, "Another Sample Title", "Some more sample content")
+INSERT INTO News (CLUBID, TITLE, CONTENT, AUTHOR) VALUES
+  (1, "Sample Title", "Sample Content", "Joe Bloggs"),
+  (3, "Another Sample Title", "Some more sample content", "Joe Bloggs")
 ;

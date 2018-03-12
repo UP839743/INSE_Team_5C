@@ -43,6 +43,14 @@ public class FDB extends Application {
         stage.setScene(scene);
         stage.show();
     }
+    
+    static ArrayList<Player> allPlayers = new ArrayList();
+    static ArrayList<Manager> allManagers = new ArrayList();
+    static ArrayList<Fixture> allFixtures = new ArrayList();
+    static ArrayList<Club> allClubs = new ArrayList();
+    static ArrayList<News> allNews = new ArrayList();
+    static ArrayList<Trophy> allTrophies = new ArrayList();
+    static ArrayList<Stadium> allStadiums = new ArrayList();
 
     /**
      * @param args the command line arguments
@@ -54,20 +62,21 @@ public class FDB extends Application {
         Connection con = initDatabase();
         //Load in objects
         if (con != null){
-            List allPlayers = loadPlayers(con); 
-            List allManagers = loadManagers(con);
-            List allFixtures = loadFixtures(con);
-            List allClubs = loadClubs(con);
-            List allNews = loadNews(con);
-            List allTrophies = loadTrophies(con);
-            List allStadiumss = loadStadiums(con);
+            loadPlayers(con); 
+            loadManagers(con);
+            loadFixtures(con);
+            loadClubs(con);
+            loadNews(con);
+            loadTrophies(con);
+            loadStadiums(con);
             System.out.println("Done...");
             }
         else {System.out.println("Check connection to database");}
         //Load GUI
         launch(args);
     }
-        public static Connection initDatabase(){
+    
+    public static Connection initDatabase(){
         System.out.println("Connection attempted");
         Connection con = null;
         try{  
@@ -123,9 +132,8 @@ public class FDB extends Application {
         }
     }
         
-    public static  List<Player> loadPlayers(Connection con) throws SQLException {
+    public static void loadPlayers(Connection con) throws SQLException {
     System.out.println("Loading Players...");
-    List players = new ArrayList();
     PreparedStatement ps = null;
     ResultSet rs = null;
     try {
@@ -152,7 +160,7 @@ public class FDB extends Application {
                         playerLastName, squadNumber, position, height, 
                         prefFoot, dob, clubApps, seasonApps, nationality,
                         clubGoals, seasonGoals, cleanSheets);
-            players.add(plr);
+            allPlayers.add(plr);
             System.out.println("Player Loaded In...");
         }
     } catch (Exception e) {
@@ -161,13 +169,11 @@ public class FDB extends Application {
     } finally {
         rs.close();
         System.out.println("All players Loaded Successfully");
-        return players;
             }
     }
     
-    public static  List<Manager> loadManagers(Connection con) throws SQLException {
+    public static void loadManagers(Connection con) throws SQLException {
     System.out.println("Loading Managers...");
-    List managers = new ArrayList();
     PreparedStatement ps = null;
     ResultSet rs = null;
     try {
@@ -184,7 +190,7 @@ public class FDB extends Application {
             String nationality = rs.getString(7);
             Manager mngr = new Manager(managerID, clubID, managerFirstName, 
             managerLastName, dob, joinedClub, nationality);
-            managers.add(mngr);
+            allManagers.add(mngr);
             System.out.println("Manager Loaded In...");
         }
     } catch (Exception e) {
@@ -193,13 +199,11 @@ public class FDB extends Application {
     } finally {
         rs.close();
         System.out.println("All Managers Loaded Successfully");
-        return managers;
             }
     }
     
-    public static  List<Fixture> loadFixtures(Connection con) throws SQLException {
+    public static void loadFixtures(Connection con) throws SQLException {
     System.out.println("Loading Fixtures...");
-    List fixtures = new ArrayList();
     PreparedStatement ps = null;
     ResultSet rs = null;
     try {
@@ -215,7 +219,7 @@ public class FDB extends Application {
             int awayScore = rs.getInt(6);
             Fixture fxtr = new Fixture(matchID, matchDate, homeTeam, 
             awayTeam, homeScore, awayScore);
-            fixtures.add(fxtr);
+            allFixtures.add(fxtr);
             System.out.println("Fixture Loaded In...");
         }
     } catch (Exception e) {
@@ -224,13 +228,11 @@ public class FDB extends Application {
     } finally {
         rs.close();
         System.out.println("All Fixtures Loaded Successfully");
-        return fixtures;
             }
     }
 
-    public static  List<Club> loadClubs(Connection con) throws SQLException {
+    public static void loadClubs(Connection con) throws SQLException {
     System.out.println("Loading Clubs...");
-    List clubs = new ArrayList();
     PreparedStatement ps = null;
     ResultSet rs = null;
     try {
@@ -245,7 +247,7 @@ public class FDB extends Application {
             int clubPosititon = rs.getInt(5);
             Club clb = new Club(clubID, clubName, manager, 
             stadium, clubPosititon);
-            clubs.add(clb);
+            allClubs.add(clb);
             System.out.println("Club Loaded In...");
         }
     } catch (Exception e) {
@@ -254,13 +256,11 @@ public class FDB extends Application {
     } finally {
         rs.close();
         System.out.println("All Clubs Loaded Successfully");
-        return clubs;
             }
     }
     
-    public static  List<Club> loadNews(Connection con) throws SQLException {
+    public static void loadNews(Connection con) throws SQLException {
     System.out.println("Loading News...");
-    List newsArticles = new ArrayList();
     PreparedStatement ps = null;
     ResultSet rs = null;
     try {
@@ -273,7 +273,7 @@ public class FDB extends Application {
             String title = rs.getString(3);
             String content = rs.getString(4);
             News nws = new News(newsID, clubID, title, content);
-            newsArticles.add(nws);
+            allNews.add(nws);
             System.out.println("News Loaded In...");
         }
     } catch (Exception e) {
@@ -282,13 +282,11 @@ public class FDB extends Application {
     } finally {
         rs.close();
         System.out.println("All News Loaded Successfully");
-        return newsArticles;
             }
     }
     
-    public static  List<Club> loadTrophies(Connection con) throws SQLException {
+    public static void loadTrophies(Connection con) throws SQLException {
     System.out.println("Loading Trophies...");
-    List trophies = new ArrayList();
     PreparedStatement ps = null;
     ResultSet rs = null;
     try {
@@ -300,7 +298,7 @@ public class FDB extends Application {
             int year = rs.getInt(2);
             int ClubId = rs.getInt(3);
             Trophy tro = new Trophy(competition, year, ClubId);
-            trophies.add(tro);
+            allTrophies.add(tro);
             System.out.println("Trophies Loaded In...");
         }
     } catch (Exception e) {
@@ -309,13 +307,11 @@ public class FDB extends Application {
     } finally {
         rs.close();
         System.out.println("All Trophies Loaded Successfully");
-        return trophies;
             }
     }
     
-    public static  List<Club> loadStadiums(Connection con) throws SQLException {
+    public static void loadStadiums(Connection con) throws SQLException {
     System.out.println("Loading Stadium...");
-    List stadiums = new ArrayList();
     PreparedStatement ps = null;
     ResultSet rs = null;
     try {
@@ -330,7 +326,7 @@ public class FDB extends Application {
             int capacity = rs.getInt(5);
             String dateBuilt = rs.getString(6);
             Stadium stad = new Stadium(name, clubID, address, postcode, capacity, dateBuilt);
-            stadiums.add(stad);
+            allStadiums.add(stad);
             System.out.println("Stadium Loaded In...");
         }
     } catch (Exception e) {
@@ -339,7 +335,6 @@ public class FDB extends Application {
     } finally {
         rs.close();
         System.out.println("All Stadiums Loaded Successfully");
-        return stadiums;
             }
     }
 }
