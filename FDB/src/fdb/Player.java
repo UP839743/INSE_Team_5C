@@ -6,8 +6,6 @@
 package fdb;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -22,7 +20,7 @@ public class Player {
     String position;
     String height;
     String prefFoot;
-    String DoB;
+    Date DoB;
     int clubApps;
     int seasonApps;
     String nationality;
@@ -32,7 +30,7 @@ public class Player {
     
     public Player(int PlayerID, int playerClubID, String playerFirstName, 
             String playerLastName, int playerSquadNumber, String playerPosition, 
-            String playerHeight, String playerPrefFoot, String playerDoB, int playerClubApps, 
+            String playerHeight, String playerPrefFoot, Date playerDoB, int playerClubApps, 
             int playerSeasonApps, String playerNationality, int playerClubGoals, 
             int playerSeasonGoals, int playerCleanSheets) 
     {
@@ -86,7 +84,7 @@ public class Player {
         return prefFoot;
     }
     
-    public String getDoB() {
+    public Date getDoB() {
         return DoB;
     }
     
