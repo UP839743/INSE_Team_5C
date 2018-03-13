@@ -6,3 +6,43 @@
     -fx-background-color: #034694;
     -fx-text-fill: white;
 }
+
+#btnHome:hover{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+#btnTeamDetails:hover{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+#btnFixturesAndResults:hover{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+#btnClubDetails:hover{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+#btnArsenal:hover{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+#btnChelsea:hover{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+#btnTottenham:hover{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+#btnManCity:hover{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
