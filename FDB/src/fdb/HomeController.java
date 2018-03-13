@@ -40,7 +40,6 @@ public class HomeController implements Initializable {
     private Label lblStory;
     @FXML
     private Label lblClubDetails;
-    @FXML
     private Button btnMoreDetails;
     @FXML
     private Label lblSeason;
@@ -87,27 +86,40 @@ public class HomeController implements Initializable {
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
     private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
     private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
-    
+
+    @FXML
+    private Label lblStadiumName;
+    @FXML
+    private Label lblFounderName;
+    @FXML
+    private Label lblManagerName;
+    @FXML
+    private Label lblChairmanName;
+    @FXML
+    private Label lblLeagueName;
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        lblTeamName.setText(teamName);
+        ;
         loadHomeStyle();
-        
-        
-    }    
+        lblTeamName.setText(teamName);
+        lblFounderName.setText(founder);
+        lblChairmanName.setText(chairman);
+          
 
-        @FXML
+    }
+
+    @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
-        
+
         if (event.getSource() == btnChelsea || event.getSource() == btnArsenal || event.getSource() == btnTottenham || event.getSource() == btnManCity || event.getSource() == btnHome) {
             loadClub(event);
             Button btn = (Button) event.getSource();
             stage = (Stage) btn.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("Home.fxml"));     
+            root = FXMLLoader.load(getClass().getResource("Home.fxml"));
         } else if (event.getSource() == btnTeamDetails) {
             stage = (Stage) btnTeamDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Team Details.fxml"));
@@ -123,49 +135,61 @@ public class HomeController implements Initializable {
         stage.setScene(scene);
         scene.getStylesheets().add(stylesheet);
         stage.show();
-        
-    }
-public void loadClub(ActionEvent event){
-        
-        if (event.getSource() == btnArsenal) {
-                stylesheet = arsenalThemeUrl;
-                teamName = "Arsenal";
-                team = 1;
-            } else if (event.getSource() == btnChelsea) {
-                stylesheet = chelseaThemeUrl;
-                teamName = "Chelsea";
-                team = 2;
-            } else if (event.getSource() == btnTottenham) {
-                stylesheet = tottenhamThemeUrl;
-                teamName = "Tottenham";
-                team = 3;
-            } else if (event.getSource() == btnManCity) {
-                stylesheet = mancityThemeUrl;
-                teamName = "Man City";
-                team = 4;
-            }
-        
-           
+
     }
 
-public void loadHomeStyle(){
-        switch (team) {
-                case 1:
-                    stylesheet = arsenalThemeUrl;
-                    break;
-                case 2:
-                    stylesheet = chelseaThemeUrl;
-                    break;
-                case 3:
-                    stylesheet = tottenhamThemeUrl;
-                    break;
-                case 4:
-                    stylesheet = mancityThemeUrl;
-                    break;
-                default:
-                    break;
-            }
-        
+    public void loadClub(ActionEvent event) {
+
+        if (event.getSource() == btnArsenal) {
+            stylesheet = arsenalThemeUrl;
+            teamName = "Arsenal";
+            
+            team = 1;
+        } else if (event.getSource() == btnChelsea) {
+            stylesheet = chelseaThemeUrl;
+            teamName = "Chelsea";
+            
+            team = 2;
+        } else if (event.getSource() == btnTottenham) {
+            stylesheet = tottenhamThemeUrl;
+            teamName = "Tottenham";
+            
+            team = 3;
+        } else if (event.getSource() == btnManCity) {
+            stylesheet = mancityThemeUrl;
+            teamName = "Man City";
+            
+            team = 4;
         }
-    
+
+    }
+
+    public void loadHomeStyle() {
+        switch (team) {
+            case 1:
+                stylesheet = arsenalThemeUrl;
+                founder = "David Danskin";
+                chairman = "Chips Keswik";
+                break;
+            case 2:
+                stylesheet = chelseaThemeUrl;
+                founder = "Gus & Joseph Mears";
+                chairman = "Bruce Buck";
+                break;
+            case 3:
+                stylesheet = tottenhamThemeUrl;
+                founder = "Robert Buckle, Sam Casey & John Anderson";
+                chairman = "Daniel Levy";
+                break;
+            case 4:
+                stylesheet = mancityThemeUrl;
+                founder = "Anna & Arthur Connell, William Beastow  & Thomas Goodbehere";
+                chairman = "Khaldoon Al Mubarak";
+                break;
+            default:
+                break;
+        }
+
+    }
+
 }

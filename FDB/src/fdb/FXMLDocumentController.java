@@ -56,6 +56,8 @@ public class FXMLDocumentController implements Initializable {
     public static String stylesheet = "";
     public static int team = 0;
     public static String teamName = "";
+    public static String founder = "";
+    public static String chairman = "";
 
     /**
      *
@@ -97,14 +99,17 @@ public class FXMLDocumentController implements Initializable {
         if (event.getSource() == btnArsenal) {
                 stylesheet = arsenalThemeUrl;
                 teamName = "Arsenal";
+                
                 team = 1;
             } else if (event.getSource() == btnChelsea) {
                 stylesheet = chelseaThemeUrl;
                 teamName = "Chelsea";
+                
                 team = 2;
             } else if (event.getSource() == btnTottenham) {
                 stylesheet = tottenhamThemeUrl;
                 teamName = "Tottenham";
+                
                 team = 3;
             } else if (event.getSource() == btnManCity) {
                 stylesheet = mancityThemeUrl;
