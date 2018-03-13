@@ -13,7 +13,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.control.cell.*?>
 
-<<<<<<< HEAD
 <AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.TeamDetailsController">
     <children>
         <HBox prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
@@ -151,103 +150,4 @@
         </VBox>
         <TextField layoutX="893.0" layoutY="39.0" prefHeight="53.0" prefWidth="425.0" promptText="Search" />
     </children>
-=======
-<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.TeamDetailsController">
-   <children>
-      <HBox prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
-         <children>
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Lato Light" size="30" />
-               </font>
-            </Button>
-            <Button id="btnTeamDetails" fx:id="btnTeamDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Team Details" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="Lato Light" size="30" />
-               </font>
-            </Button>
-            <Button id="btnFixturesAndResults" fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="Lato Light" size="30" />
-               </font>
-            </Button>
-            <Button id="btnClubDetails" fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Club Details" textAlignment="CENTER">
-               <font>
-                  <Font name="Lato Light" size="30" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
-      <Button id="btnHome" fx:id="btnHome" layoutX="1.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER">
-         <font>
-            <Font name="Lato Light" size="30.0" />
-         </font>
-      </Button>
-      <Label fx:id="lblTeamName" layoutX="232.0" layoutY="124.0" prefHeight="94.0" prefWidth="461.0" text="Arsenal" textAlignment="CENTER">
-         <font>
-            <Font name="Lato Light" size="55.0" />
-         </font>
-      </Label>
-      <Label layoutX="232.0" layoutY="213.0" text="Season Records">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <TableView layoutX="215.0" layoutY="258.0" prefHeight="704.0" prefWidth="1180.0">
-        <columns>
-          <TableColumn prefWidth="104.00003051757812" text="First Name" />
-          <TableColumn prefWidth="132.0" text="Last Name" />
-            <TableColumn prefWidth="41.0" text="Age" />
-            <TableColumn prefWidth="60.000030517578125" text="Position" />
-            <TableColumn prefWidth="54.0" text="Height" />
-            <TableColumn prefWidth="179.0" text="Injury Status" />
-            <TableColumn prefWidth="129.0" text="Goals (This Season)" />
-            <TableColumn minWidth="4.0" prefWidth="130.0" text="Assists (This Season)" />
-            <TableColumn minWidth="0.0" prefWidth="161.0" text="Appearances (This Season)" />
-            <TableColumn prefWidth="191.0" text="Nationality" />
-        </columns>
-      </TableView>
-      <VBox layoutX="1.0" layoutY="124.0" prefHeight="846.0" prefWidth="204.0">
-         <children>
-            <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="204.0">
-               <graphic>
-                  <ImageView fitHeight="132.0" fitWidth="112.0">
-                     <image>
-                        <Image url="@Images/ArsenalLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
-               <graphic>
-                  <ImageView fitHeight="114.0" fitWidth="112.0">
-                     <image>
-                        <Image url="@Images/ChelseaLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnTottenham" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
-               <graphic>
-                  <ImageView fitHeight="155.0" fitWidth="155.0">
-                     <image>
-                        <Image url="@Images/TottenhamLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
-               <graphic>
-                  <ImageView fitHeight="114.0" fitWidth="112.0">
-                     <image>
-                        <Image url="@Images/ManCityLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
-      </VBox>
-      <TextField layoutX="893.0" layoutY="39.0" prefHeight="53.0" prefWidth="425.0" promptText="Search" />
-   </children>
->>>>>>> 9f1484a31b2a4dc4479e6d784563fc8ac9efe051
 </AnchorPane>

@@ -379,5 +379,29 @@ public class FDB extends Application {
     }
     return team;
     }
+    public static String populateManagerName(int requestedTeam){
+    String managerName = "";
+    String StadiumName = "";
+    for (Manager mgr: allManagers) {
+        if (mgr.getclubID() == requestedTeam){
+            managerName = mgr.getfirstName() + " " + mgr.getLastName();
+        }
+    }
+    for (Stadium stdm: allStadiums) {
+        if (stdm.getClubID() == requestedTeam){
+            StadiumName = stdm.getName();
+        }
+    }
+    return managerName;
+    }
     
+    public static String populateStadiumName(int requestedTeam){
+    String StadiumName = "";
+    for (Stadium stdm: allStadiums) {
+        if (stdm.getClubID() == requestedTeam){
+            StadiumName = stdm.getName();
+        }
+    }
+    return StadiumName;
+    }
 }
