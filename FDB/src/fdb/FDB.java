@@ -57,13 +57,13 @@ public class FDB extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        ArrayList<Player> team = new ArrayList();
         //See if a team is pre set, if not set up
         readIniFile();
         //Connect to Database
         Connection con = initDatabase();
         //Load in objects
         if (con != null){
+            ArrayList<Player> team = new ArrayList();
             loadPlayers(con); 
             loadManagers(con);
             loadFixtures(con);
@@ -78,7 +78,7 @@ public class FDB extends Application {
             }
         else {System.out.println("Check connection to database");}
         //Load GUI
-        launch(args);
+        //launch(args);
     }
     
     public static Connection initDatabase(){
@@ -371,7 +371,7 @@ public class FDB extends Application {
     
     public static ArrayList<Player> getClubPlayers(int requestedTeam){
     ArrayList<Player> team = new ArrayList();
-    for (Player plr: team) {
+    for (Player plr: allPlayers) {
         if (plr.getclubID() == requestedTeam){
             team.add(plr);
         }
