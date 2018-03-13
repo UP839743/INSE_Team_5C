@@ -5,6 +5,7 @@
  */
 package fdb;
 
+import java.sql.Date;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -16,7 +17,8 @@ import static org.junit.Assert.*;
  */
 public class FixtureTest {
     
-    Fixture testFix = testFix = new Fixture(6767, "2012-08-12", "Fulham", 
+    java.sql.Date testDate = java.sql.Date.valueOf( "1950-01-31" );
+    Fixture testFix = testFix = new Fixture(6767, testDate , "Fulham", 
             "Raiders", 7, 3);
             
     public FixtureTest() {
@@ -47,8 +49,8 @@ public class FixtureTest {
     @Test
     public void testGetMatchDate() {
         System.out.println("getMatchDate");
-        String expResult = "2012-08-12";
-        String result = testFix.getMatchDate();
+        Date expResult = testDate;
+        Date result = testFix.getMatchDate();
         assertEquals(expResult, result);
     }
 
