@@ -43,7 +43,7 @@
             <Font name="Lato Light" size="30.0" />
          </font>
       </Button>
-      <Label fx:id="lblTeamName" layoutX="232.0" layoutY="142.0" prefHeight="94.0" prefWidth="461.0" text="Arsenal" textAlignment="CENTER">
+      <Label fx:id="lblTeamName" layoutX="232.0" layoutY="124.0" prefHeight="94.0" prefWidth="461.0" text="Arsenal" textAlignment="CENTER">
          <font>
             <Font name="Lato Light" size="55.0" />
          </font>
