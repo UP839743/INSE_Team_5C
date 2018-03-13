@@ -5,10 +5,13 @@
  */
 package fdb;
 
+import static fdb.FDB.getClubPlayers;
 import static fdb.FXMLDocumentController.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 /**
@@ -44,11 +48,15 @@ public class TeamDetailsController implements Initializable {
     private Button btnTottenham;
     @FXML
     private Button btnManCity;
+    
+    
 
     private final String arsenalTeamDetailsURL = getClass().getResource("css/ArsenalTeamDetails.css").toExternalForm();
     private final String chelseaTeamDetailsURL = getClass().getResource("css/ChelseaTeamDetails.css").toExternalForm();
     private final String tottenhamTeamDetailsURL = getClass().getResource("css/TottenhamTeamDetails.css").toExternalForm();
     private final String mancityTeamDetailsURL = getClass().getResource("css/ManCityTeamDetails.css").toExternalForm();
+    @FXML
+    private TableView<Player> playerTable;
 
     /**
      * Initialises the controller class.
@@ -58,7 +66,13 @@ public class TeamDetailsController implements Initializable {
         lblTeamName.setText(teamName);
         loadTeamStyle();
         scene.getStylesheets().add(stylesheet);
-    }    
+        
+        ObservableList<Player> players = FXCollections.observableArrayList(getClubPlayers(team));
+
+        playerTable.setItems(players);
+              
+        }
+        
 
     @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
