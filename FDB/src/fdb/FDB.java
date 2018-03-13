@@ -10,6 +10,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -57,13 +58,13 @@ public class FDB extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        ArrayList<Player> team = new ArrayList();
         //See if a team is pre set, if not set up
         readIniFile();
         //Connect to Database
         Connection con = initDatabase();
         //Load in objects
         if (con != null){
+            ArrayList<Player> team = new ArrayList();
             loadPlayers(con); 
             loadManagers(con);
             loadFixtures(con);
@@ -74,7 +75,7 @@ public class FDB extends Application {
             loadPosHistory(con);
             System.out.println("Done...");
             team = getClubPlayers(1);
-            System.out.println("Done...");
+            System.out.println("Got players from Club ID 1");
             }
         else {System.out.println("Check connection to database");}
         //Load GUI
@@ -154,7 +155,7 @@ public class FDB extends Application {
             String position = rs.getString(6);
             String height = rs.getString(7);
             String prefFoot = rs.getString(8);
-            String dob = rs.getString(9);
+            Date dob = rs.getDate(9);
             int clubApps = rs.getInt(10);
             int seasonApps = rs.getInt(11);
             String nationality = rs.getString(12);
@@ -190,7 +191,7 @@ public class FDB extends Application {
             int clubID = rs.getInt(2);
             String managerFirstName = rs.getString(3);
             String managerLastName = rs.getString(4);
-            String dob = rs.getString(5);
+            Date dob = rs.getDate(5);
             String joinedClub = rs.getString(6);
             String nationality = rs.getString(7);
             Manager mngr = new Manager(managerID, clubID, managerFirstName, 
@@ -217,7 +218,7 @@ public class FDB extends Application {
         while (rs.next()) {
             System.out.println(rs.getString(3) + " Vs. " + rs.getString(4));
             int matchID = rs.getInt(1);
-            String matchDate = rs.getString(2);
+            Date matchDate = rs.getDate(2);
             String homeTeam = rs.getString(3);
             String awayTeam = rs.getString(4);
             int homeScore = rs.getInt(5);
@@ -329,7 +330,7 @@ public class FDB extends Application {
             String address = rs.getString(3);
             String postcode = rs.getString(4);
             int capacity = rs.getInt(5);
-            String dateBuilt = rs.getString(6);
+            Date dateBuilt = rs.getDate(6);
             Stadium stad = new Stadium(name, clubID, address, postcode, capacity, dateBuilt);
             allStadiums.add(stad);
             System.out.println("Stadium Loaded In...");
@@ -371,7 +372,7 @@ public class FDB extends Application {
     
     public static ArrayList<Player> getClubPlayers(int requestedTeam){
     ArrayList<Player> team = new ArrayList();
-    for (Player plr: team) {
+    for (Player plr: allPlayers) {
         if (plr.getclubID() == requestedTeam){
             team.add(plr);
         }

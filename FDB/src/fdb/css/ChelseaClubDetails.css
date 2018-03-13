@@ -6,3 +6,23 @@
     -fx-background-color: #034694;
     -fx-text-fill: white;
 }
+
+#btnHome:hover{
+    -fx-background-color: #B0C4DE;
+    -fx-text-fill: white;
+}
+
+#btnTeamDetails:hover{
+    -fx-background-color: #B0C4DE;
+    -fx-text-fill: white;
+}
+
+#btnFixturesAndResults:hover{
+    -fx-background-color: #B0C4DE;
+    -fx-text-fill: white;
+}
+
+#btnClubDetails:hover{
+    -fx-background-color: #B0C4DE;
+    -fx-text-fill: white;
+}
