@@ -9,17 +9,17 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
     <children>
         <Label fx:id="label" alignment="CENTER" layoutX="500" layoutY="400" minHeight="16" minWidth="69" />
-      <Label fx:id="lblWelcome" alignment="TOP_CENTER" layoutX="390.0" layoutY="116.0" prefHeight="113.0" prefWidth="422.0" text="WELCOME" textAlignment="CENTER">
+      <Label fx:id="lblWelcome" alignment="TOP_CENTER" layoutX="405.0" layoutY="134.0" prefHeight="122.0" prefWidth="577.0" text="WELCOME">
          <font>
-            <Font name="Monospaced Regular" size="96.0" />
+            <Font name="Lato Light" size="96.0" />
          </font>
       </Label>
-      <Label fx:id="lblPickTeam" alignment="TOP_CENTER" layoutX="481.0" layoutY="263.0" text="pick your team..">
+      <Label fx:id="lblPickTeam" alignment="TOP_CENTER" layoutX="577.0" layoutY="266.0" text="pick your team..">
          <font>
-            <Font name="Microsoft Sans Serif" size="34.0" />
+            <Font name="Lato Light" size="34.0" />
          </font>
       </Label>
       <HBox alignment="CENTER" layoutX="105.0" layoutY="311.0" prefHeight="240.0" prefWidth="991.0" spacing="60.0" AnchorPane.bottomAnchor="225.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="310.0">

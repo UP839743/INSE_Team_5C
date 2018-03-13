@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.TeamDetailsController">
+<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.TeamDetailsController">
    <children>
       <HBox prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
          <children>
@@ -21,31 +21,31 @@
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
-            <Button fx:id="btnTeamDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Team Details" textAlignment="CENTER" wrapText="true">
+            <Button id="btnTeamDetails" fx:id="btnTeamDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Team Details" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
-            <Button fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
+            <Button id="btnFixturesAndResults" fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
-            <Button fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Club Details" textAlignment="CENTER">
+            <Button id="btnClubDetails" fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Club Details" textAlignment="CENTER">
                <font>
                   <Font name="Lato Light" size="30" />
                </font>
             </Button>
          </children>
       </HBox>
-      <Button fx:id="btnHome" layoutX="1.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER">
+      <Button id="btnHome" fx:id="btnHome" layoutX="1.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER">
          <font>
             <Font name="Lato Light" size="30.0" />
          </font>
       </Button>
-      <Label fx:id="lblTeamName" layoutX="232.0" layoutY="134.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
+      <Label fx:id="lblTeamName" layoutX="232.0" layoutY="124.0" prefHeight="94.0" prefWidth="461.0" text="Arsenal" textAlignment="CENTER">
          <font>
-            <Font name="Monospaced Regular" size="68.0" />
+            <Font name="Lato Light" size="55.0" />
          </font>
       </Label>
       <Label layoutX="232.0" layoutY="213.0" text="Season Records">
