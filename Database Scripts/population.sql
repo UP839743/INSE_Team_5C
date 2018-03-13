@@ -22,16 +22,16 @@ INSERT INTO Position_History (CLUBID, COMPETITION, YEAR, POSITION) VALUES
   (4, "Premier League", 2015, 5)
 ;
 
-INSERT INTO Player (CLUBID, FNAME, LNAME, SQUADNO, PLAYERPOSITION, HEIGHT, PREFFOOT, DOB, CLUBAPPS, SEASONAPPS, NATIONALITY, CLUBGOALS, SEASONGOALS, SEASONASSITS, CLEANSHEETS) VALUES
+INSERT INTO Player (CLUBID, FNAME, LNAME, SQUADNO, PLAYERPOSITION, HEIGHT, PREFFOOT, DOB, CLUBAPPS, SEASONAPPS, NATIONALITY, CLUBGOALS, SEASONGOALS, SEASONASSISTS, CLEANSHEETS) VALUES
   (1, "Petr", "Cech", 33, "GK", "6f4", "L", '1982-10-05', 105, 26, "Czech", 0, 0, 0, 10),
   (1, "Per", "Mertesacker", 4, "DEF", "6f5", "R", '1984-09-29', 220, 11, "Germany", 10, 2, 1, 0),
   (1, "Laurent", "Koscielny", 6, "DEF", "6f1", "R", '1985-09-10', 311, 20, "France", 23, 1, 0, 0),
   (1, "Rob", "Holding", 16, "DEF", "6f1", "R",  '1995-09-20', 37, 19, "England", 1, 1, 0, 0),
   (1, "Nacho", "Monreal", 18, "DEF", "5f9", "R", '1986-02-26', 197, 23, "Spain", 6, 3, 2, 0),
   (1, "Shkodran", "Mustafi", 20, "DEF", "6f0", "L", '1992-04-17', 55, 18, "Germany", 4, 2, 1, 0),
-  (1, "Hector", "Bellerin", 24, "DEF", "5f8", "R", '1995-03-19', 143, 28, "Spain", 7, 3, ,1 0),
+  (1, "Hector", "Bellerin", 24, "DEF", "5f8", "R", '1995-03-19', 143, 28, "Spain", 7, 3, 1, 0),
   (1, "Sead", "Kolasinac", 31, "DEF", "6f0", "R", '1993-06-20', 22, 18, "Bosnia", 3, 3, 4, 0),
-  (1, "Henrikh", "Mkhitaryan", 7, "MID", "5f8", "L", '1989-01-21', 1, 1, "Armenia", 0, 0, ,0 0),
+  (1, "Henrikh", "Mkhitaryan", 7, "MID", "5f8", "L", '1989-01-21', 1, 1, "Armenia", 0, 0, 0, 0),
   (1, "Aaron", "Ramsey", 9, "MID", "5f10", "B", '1990-12-26', 317, 18, "Wales", 51, 3, 8, 0),
   (1, "Jack", "Wilshere", 10, "MID", "5f8", "B", '1992-01-01', 183, 23, "England", 14, 2, 5, 0),
   (1, "Mesut", "Ozil", 11, "MID", "5f11", "L", '1988-10-15', 182, 21, "Germany", 36, 4, 6, 0),
