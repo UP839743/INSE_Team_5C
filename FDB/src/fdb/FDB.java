@@ -10,6 +10,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -74,11 +75,11 @@ public class FDB extends Application {
             loadPosHistory(con);
             System.out.println("Done...");
             team = getClubPlayers(1);
-            System.out.println("Done...");
+            System.out.println("Got players from Club ID 1");
             }
         else {System.out.println("Check connection to database");}
         //Load GUI
-        //launch(args);
+        launch(args);
     }
     
     public static Connection initDatabase(){
