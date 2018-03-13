@@ -5,6 +5,8 @@
  */
 package fdb;
 
+import java.sql.Date;
+
 /**
  *
  * @author accou
@@ -15,9 +17,9 @@ public class Stadium {
     String address;
     String postcode;
     int capacity;
-    String dateBuilt;
+    Date dateBuilt;
     
-    public Stadium(String stadName, int stadClubID, String stadAddress, String stadPostcode, int stadCapacity, String stadDateBuilt) 
+    public Stadium(String stadName, int stadClubID, String stadAddress, String stadPostcode, int stadCapacity, Date stadDateBuilt) 
     {
     Name = stadName;
     clubID = stadClubID;
@@ -47,7 +49,7 @@ public class Stadium {
         return capacity;
     }
     
-    public String getDateBuilt() {
+    public Date getDateBuilt() {
         return dateBuilt;
     }
 }

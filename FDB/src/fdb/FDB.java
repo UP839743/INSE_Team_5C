@@ -154,7 +154,7 @@ public class FDB extends Application {
             String position = rs.getString(6);
             String height = rs.getString(7);
             String prefFoot = rs.getString(8);
-            String dob = rs.getString(9);
+            Date dob = rs.getDate(9);
             int clubApps = rs.getInt(10);
             int seasonApps = rs.getInt(11);
             String nationality = rs.getString(12);
@@ -190,7 +190,7 @@ public class FDB extends Application {
             int clubID = rs.getInt(2);
             String managerFirstName = rs.getString(3);
             String managerLastName = rs.getString(4);
-            String dob = rs.getString(5);
+            Date dob = rs.getDate(5);
             String joinedClub = rs.getString(6);
             String nationality = rs.getString(7);
             Manager mngr = new Manager(managerID, clubID, managerFirstName, 
@@ -217,7 +217,7 @@ public class FDB extends Application {
         while (rs.next()) {
             System.out.println(rs.getString(3) + " Vs. " + rs.getString(4));
             int matchID = rs.getInt(1);
-            String matchDate = rs.getString(2);
+            Date matchDate = rs.getDate(2);
             String homeTeam = rs.getString(3);
             String awayTeam = rs.getString(4);
             int homeScore = rs.getInt(5);
@@ -329,7 +329,7 @@ public class FDB extends Application {
             String address = rs.getString(3);
             String postcode = rs.getString(4);
             int capacity = rs.getInt(5);
-            String dateBuilt = rs.getString(6);
+            Date dateBuilt = rs.getDate(6);
             Stadium stad = new Stadium(name, clubID, address, postcode, capacity, dateBuilt);
             allStadiums.add(stad);
             System.out.println("Stadium Loaded In...");

@@ -5,6 +5,7 @@
  */
 package fdb;
 
+import java.sql.Date;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -16,7 +17,8 @@ import static org.junit.Assert.*;
  */
 public class StadiumTest {
     
-    Stadium testStad = testStad = new Stadium("TestStad", 9991, "TestAddress", "TestPost", 12000, "1992-02-11");
+    java.sql.Date testDate = java.sql.Date.valueOf( "1950-01-31" );
+    Stadium testStad = testStad = new Stadium("TestStad", 9991, "TestAddress", "TestPost", 12000, testDate);
     public StadiumTest() {
     }
     
@@ -89,8 +91,8 @@ public class StadiumTest {
     @Test
     public void testGetDateBuilt() {
         System.out.println("getDateBuilt");
-        String expResult = "1992-02-11";
-        String result = testStad.getDateBuilt();
+        Date expResult = testDate;
+        Date result = testStad.getDateBuilt();
         assertEquals(expResult, result);
     }
     
