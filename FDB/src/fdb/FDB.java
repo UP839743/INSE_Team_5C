@@ -57,6 +57,7 @@ public class FDB extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
+        ArrayList<Player> team = new ArrayList();
         //See if a team is pre set, if not set up
         readIniFile();
         //Connect to Database
@@ -71,6 +72,8 @@ public class FDB extends Application {
             loadTrophies(con);
             loadStadiums(con);
             loadPosHistory(con);
+            System.out.println("Done...");
+            team = getClubPlayers(1);
             System.out.println("Done...");
             }
         else {System.out.println("Check connection to database");}
@@ -365,4 +368,15 @@ public class FDB extends Application {
         System.out.println("All position History Loaded Successfully");
             }
     }
+    
+    public static ArrayList<Player> getClubPlayers(int requestedTeam){
+    ArrayList<Player> team = new ArrayList();
+    for (Player plr: team) {
+        if (plr.getclubID() == requestedTeam){
+            team.add(plr);
+        }
+    }
+    return team;
+    }
+    
 }
