@@ -11,6 +11,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.control.cell.*?>
+
 
 <AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FXMLDocumentController">
    <children>
@@ -81,16 +83,56 @@
       <TextField layoutX="883.0" layoutY="29.0" prefHeight="53.0" prefWidth="425.0" promptText="Search" />
       <TableView layoutX="215.0" layoutY="268.0" prefHeight="704.0" prefWidth="1180.0">
          <columns>
-            <TableColumn prefWidth="104.00003051757812" text="First Name" />
-            <TableColumn prefWidth="132.0" text="Last Name" />
-            <TableColumn prefWidth="41.0" text="Age" />
-            <TableColumn prefWidth="60.000030517578125" text="Position" />
-            <TableColumn prefWidth="54.0" text="Height" />
-            <TableColumn prefWidth="179.0" text="Injury Status" />
-            <TableColumn prefWidth="129.0" text="Goals (This Season)" />
-            <TableColumn minWidth="4.0" prefWidth="130.0" text="Assists (This Season)" />
-            <TableColumn minWidth="0.0" prefWidth="161.0" text="Appearances (This Season)" />
-            <TableColumn prefWidth="191.0" text="Nationality" />
+             <TableColumn prefWidth="104.00003051757812" text="First Name">
+                 <cellValueFactory>
+                        <PropertyValueFactory property="firstName" />
+                    </cellValueFactory>
+             </TableColumn>
+             <TableColumn prefWidth="132.0" text="Last Name">
+                 <cellValueFactory>
+                        <PropertyValueFactory property="lastName" />
+                    </cellValueFactory>
+             </TableColumn>
+             <TableColumn prefWidth="41.0" text="Age" >
+                 <cellValueFactory>
+                        <PropertyValueFactory property="age" />
+                    </cellValueFactory>
+             </TableColumn>
+             <TableColumn prefWidth="60.000030517578125" text="Position" >
+                 <cellValueFactory>
+                        <PropertyValueFactory property="position" />
+                    </cellValueFactory>
+             </TableColumn>
+             <TableColumn prefWidth="54.0" text="Height">
+                 <cellValueFactory>
+                        <PropertyValueFactory property="height" />
+                    </cellValueFactory>
+             </TableColumn>
+             <TableColumn prefWidth="179.0" text="Injury Status" >
+                 <cellValueFactory>
+                        <PropertyValueFactory property="injuryStatus" />
+                    </cellValueFactory>
+             </TableColumn>
+             <TableColumn prefWidth="129.0" text="Goals (This Season)" >
+                 <cellValueFactory>
+                        <PropertyValueFactory property="goals" />
+                    </cellValueFactory>
+             </TableColumn>
+             <TableColumn minWidth="4.0" prefWidth="130.0" text="Assists (This Season)" >
+                 <cellValueFactory>
+                        <PropertyValueFactory property="assists" />
+                    </cellValueFactory>
+             </TableColumn>
+             <TableColumn minWidth="0.0" prefWidth="161.0" text="Appearances (This Season)">
+                 <cellValueFactory>
+                        <PropertyValueFactory property="appearances" />
+                    </cellValueFactory>
+             </TableColumn>
+             <TableColumn prefWidth="191.0" text="Nationality">
+                 <cellValueFactory>
+                        <PropertyValueFactory property="nationality" />
+                    </cellValueFactory>
+             </TableColumn>
          </columns>
       </TableView>
       <Label layoutX="234.0" layoutY="176.0" prefHeight="70.0" prefWidth="369.0" text="Results Found..." />

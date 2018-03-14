@@ -112,6 +112,10 @@ public class HomeController implements Initializable {
         lblChairmanName.setText(chairman);
         lblStadiumName.setText(populateStadiumName(team));  
         lblManagerName.setText(populateManagerName(team));
+        lblLeagueName.setText ("Premier League");
+        seasonBox.getSelectionModel().selectFirst();
+
+
     }
 
     @FXML

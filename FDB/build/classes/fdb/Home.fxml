@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.HomeController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.HomeController">
    
     <children>
         <Label fx:id="lblTeamName" layoutX="222.0" layoutY="124.0" prefHeight="94.0" prefWidth="425.0" text="Arsenal" textAlignment="CENTER">
@@ -149,29 +149,29 @@
             </children>
         </VBox>
         <TextField fx:id="searchField" layoutX="883.0" layoutY="27.0" prefHeight="53.0" prefWidth="425.0" promptText="Search" />
-      <Label fx:id="lblStadiumName" layoutX="815.0" layoutY="209.0" text="Stadium:">
+      <Label fx:id="lblStadiumName" layoutX="815.0" layoutY="209.0">
          <font>
-            <Font size="21.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblFounderName" layoutX="815.0" layoutY="245.0" text="Stadium:">
+      <Label fx:id="lblFounderName" layoutX="815.0" layoutY="245.0">
          <font>
-            <Font size="21.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblManagerName" layoutX="815.0" layoutY="281.0" text="Stadium:">
+      <Label fx:id="lblManagerName" layoutX="815.0" layoutY="281.0">
          <font>
-            <Font size="21.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblChairmanName" layoutX="815.0" layoutY="317.0" text="Stadium:">
+      <Label fx:id="lblChairmanName" layoutX="815.0" layoutY="317.0">
          <font>
-            <Font size="21.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblLeagueName" layoutX="815.0" layoutY="353.0" text="Stadium:">
+      <Label fx:id="lblLeagueName" layoutX="815.0" layoutY="353.0">
          <font>
-            <Font size="21.0" />
+            <Font size="18.0" />
          </font>
       </Label>
     </children>
