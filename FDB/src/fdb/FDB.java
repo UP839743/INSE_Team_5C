@@ -73,9 +73,7 @@ public class FDB extends Application {
             loadTrophies(con);
             loadStadiums(con);
             loadPosHistory(con);
-            System.out.println("Done...");
-            team = getClubPlayers(1);
-            System.out.println("Got players from Club ID 1");
+            System.out.println("DB Cached...");
             }
         else {System.out.println("Check connection to database");}
         //Load GUI
