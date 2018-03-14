@@ -58,7 +58,7 @@
           
         </ComboBox>
       
-        <Label fx:id="lblCurrentPosition" alignment="CENTER" layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" text="werwer" textFill="WHITE" />
+        <Label fx:id="lblCurrentPosition" alignment="CENTER" layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" text="werwer" textFill="BLACK" />
         <Label fx:id="lblStadium" layoutX="727.0" layoutY="209.0" text="Stadium:">
             <font>
                 <Font size="21.0" />

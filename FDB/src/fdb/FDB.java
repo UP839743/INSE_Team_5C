@@ -74,8 +74,8 @@ public class FDB extends Application {
             loadPosHistory(con);
             System.out.println("DB Cached...");
             //Pre GUI imp tests
-            int positition = populatePosition("16/17", 3);
-            int positition2 = populatePosition("17/18", 3);
+            String positition = populatePosition("16/17", 3);
+            String positition2 = populatePosition("17/18", 3);
             String news = populateNews(3);
             ArrayList<Fixture> spursResults = populateResults("Tottenham Hotspur");
             ArrayList<Fixture> spursFixtures = populateFixtures("Tottenham Hotspur");
@@ -421,10 +421,10 @@ public class FDB extends Application {
     return StadiumName;
     }
     
-    public static int populatePosition(String season, int requestedTeam){
-        int pos = 0;
+    public static String populatePosition(String season, int requestedTeam){
+        int pos = 999;
         //Currentseason
-        if (season == "17/18"){
+        if (season.equals("17/18")){
             for (Club clb: allClubs) {
                 if (clb.getClubID() == requestedTeam){
                     pos = clb.getClubPosititon();
@@ -432,21 +432,21 @@ public class FDB extends Application {
             }
         }
         //past seasons
-        else if (season == "16/17"){
+        else if (season.equals("16/17")){
             for (PosHist psHst: AllposHists) {
                 if (psHst.getClubID() == requestedTeam && psHst.getYear() == 2017){
                     pos = psHst.getPosition();
                 }
             }
         }
-        else if (season == "15/16"){
+        else if (season.equals("15/16")){
             for (PosHist psHst: AllposHists) {
                 if (psHst.getClubID() == requestedTeam && psHst.getYear() == 2016){
                     pos = psHst.getPosition();
                 }
             }
         }
-        else if (season == "14/15"){
+        else if (season.equals("14/15")){
             for (PosHist psHst: AllposHists) {
                     if (psHst.getClubID() == requestedTeam && psHst.getYear() == 2015){
                         pos = psHst.getPosition();
@@ -454,7 +454,7 @@ public class FDB extends Application {
                 }
         }
         else{}
-    return pos;
+    return Integer.toString(pos);
     }
     
     public static String populateNews(int requestedTeam){

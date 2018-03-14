@@ -112,9 +112,9 @@ public class HomeController implements Initializable {
         lblChairmanName.setText(chairman);
         lblStadiumName.setText(populateStadiumName(team));  
         lblManagerName.setText(populateManagerName(team));
-        
-        lblLeagueName.setText ("Premier League");
         seasonBox.getSelectionModel().selectFirst();
+        String selectedSeason = seasonBox.getValue();
+        lblCurrentPosition.setText(populatePosition(selectedSeason,team));
 
 
     }
@@ -147,7 +147,9 @@ public class HomeController implements Initializable {
 
     @FXML
     public void showSeasonPosition(ActionEvent event) {
-        lblCurrentPosition.setText(Integer.toString(populatePosition(seasonBox.getValue(),team)));
+        String season = seasonBox.getValue();
+        lblCurrentPosition.setText(populatePosition(season,team));
+        
     }
     
     public void loadClub(ActionEvent event) {
