@@ -22,12 +22,24 @@ import javafx.stage.Stage;
  * @author INSE Team 5C
  */
 public class FDB extends Application {
+<<<<<<< HEAD
 
 
     @Override
+=======
+   
+//    private String arsenalThemeUrl = getClass().getResource("@css/Arsenal.css").toExternalForm();
+//    private String chelseaThemeUrl = getClass().getResource("@css/Chelsea.css").toExternalForm();
+//    private String tottenhamThemeUrl = getClass().getResource("@css/Tottenham.css").toExternalForm();
+//    private String manCityThemeUrl = getClass().getResource("@css/ManCity.css").toExternalForm();
+    
+>>>>>>> 2fd255ea46d31d62dd3ef354b384215c77c33889
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
-        
+        Parent root = null;
+        if (team.equals("")){
+            root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));}
+        else {
+            root = FXMLLoader.load(getClass().getResource("Home.fxml"));}
         Scene scene = new Scene(root);
         stage.setMaxHeight(1000);
         stage.setMaxWidth(1400);
@@ -36,7 +48,8 @@ public class FDB extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    
+   
+    static String team = "";
     static ArrayList<Player> allPlayers = new ArrayList();
     static ArrayList<Manager> allManagers = new ArrayList();
     static ArrayList<Fixture> allFixtures = new ArrayList();
@@ -111,6 +124,7 @@ public class FDB extends Application {
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                 while ((line = br.readLine()) != null) {
                     System.out.println(line);
+                    team = line;
                     //Load GUI to default team page
                     launch(args);
                 }
@@ -120,7 +134,8 @@ public class FDB extends Application {
             System.out.println(e);
             System.out.println("File Read Failed, Creating ini File");
             //Load GUI to welcome page to pick default team
-            launch(args);
+            
+            //launch(args);
         }
     }
     
@@ -128,9 +143,10 @@ public class FDB extends Application {
     public static void createIniFile(String team) throws Exception{
         try{
             //Create directory and file
-            File dir = new File("C:\\FDB");
+            File dir = new File("C:\\Desktop");
             dir.mkdir();
-            File file = new File("C:\\FDB\\ini.txt");
+            File file = new File("C:\\Desktop\\ini.txt");
+
             
             //Create the file
             if (file.createNewFile()){
