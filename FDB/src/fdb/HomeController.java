@@ -5,6 +5,8 @@
  */
 package fdb;
 
+import static fdb.FDB.populateManagerName;
+import static fdb.FDB.populateStadiumName;
 import static fdb.FXMLDocumentController.*;
 import java.io.IOException;
 import java.net.URL;
@@ -103,13 +105,13 @@ public class HomeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ;
+        
         loadHomeStyle();
         lblTeamName.setText(teamName);
         lblFounderName.setText(founder);
         lblChairmanName.setText(chairman);
-          
-
+        lblStadiumName.setText(populateStadiumName(team));  
+        lblManagerName.setText(populateManagerName(team));
     }
 
     @FXML
