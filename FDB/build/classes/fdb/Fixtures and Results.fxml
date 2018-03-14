@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.control.cell.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FixturesAndResultsController">
+<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FixturesAndResultsController">
     <children>
         <HBox prefHeight="124.0" prefWidth="815.0">
             <children>
@@ -72,14 +72,26 @@
             </items> 
         </ComboBox>
         
-        <TableView layoutX="217.0" layoutY="271.0" prefHeight="635.0" prefWidth="393.0">
+        <TableView fx:id="fixtureTable" layoutX="217.0" layoutY="271.0" prefHeight="635.0" prefWidth="393.0">
             <columns>
-                <TableColumn prefWidth="131.0" text="Team1" />
-                <TableColumn prefWidth="131.0" text="Date" />
-                <TableColumn prefWidth="131.0" text="Team2" />
+                <TableColumn prefWidth="131.0" text="Team1">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="team1" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="131.0" text="Date" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="date" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="131.0" text="Team2" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="team2" />
+                    </cellValueFactory>
+                </TableColumn>
             </columns>
         </TableView>
-        <TableView layoutX="793.0" layoutY="269.0" prefHeight="635.0" prefWidth="393.0">
+        <TableView fx:id="resultTable" layoutX="793.0" layoutY="269.0" prefHeight="635.0" prefWidth="393.0">
             <columns>
                 <TableColumn prefWidth="98.25" text="Team1" />
                 <TableColumn prefWidth="100.0" text="Score" />

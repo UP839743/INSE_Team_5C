@@ -5,19 +5,24 @@
  */
 package fdb;
 
+import static fdb.FDB.populateFixtures;
 import static fdb.FXMLDocumentController.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 /**
  * FXML Controller class
@@ -44,6 +49,8 @@ public class FixturesAndResultsController implements Initializable {
     private Button btnManCity;
     @FXML
     private Label lblTeamName;
+    @FXML
+    private TableView<Fixture> fixtureTable;
 
     private final String arsenalFixturesURL = getClass().getResource("css/ArsenalFixturesAndResults.css").toExternalForm();
     private final String chelseaFixturesURL = getClass().getResource("css/ChelseaFixturesAndResults.css").toExternalForm();
@@ -58,6 +65,9 @@ public class FixturesAndResultsController implements Initializable {
         lblTeamName.setText(teamName);
         loadFixtureStyle();
         scene.getStylesheets().add(stylesheet);
+        ObservableList<Fixture> fixtures;
+        fixtures = FXCollections.observableArrayList( populateFixtures(teamName));
+        fixtureTable.setItems(fixtures);
     }
 
     @FXML
