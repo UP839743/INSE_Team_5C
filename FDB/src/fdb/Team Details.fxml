@@ -56,19 +56,19 @@
         </Label>
         <TableView fx:id="playerTable" layoutX="215.0" layoutY="258.0" prefHeight="704.0" prefWidth="1180.0">
             <columns>
-                <TableColumn prefWidth="104.00003051757812" text="First Name" fx:id = "fname">
+                <TableColumn prefWidth="104.00003051757812" text="First Name">
                     <cellValueFactory>
-                        <PropertyValueFactory property="playerFirstName" />
+                        <PropertyValueFactory property="firstName" />
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn prefWidth="132.0" text="Last Name"> 
                 <cellValueFactory>
-                        <PropertyValueFactory property="playerLastName" />
+                        <PropertyValueFactory property="lastName" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="41.0" text="Date of Birth"> 
+                <TableColumn prefWidth="121.0" text="Date of Birth"> 
                     <cellValueFactory>
-                        <PropertyValueFactory property="dob" />
+                        <PropertyValueFactory property="DoB" />
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn prefWidth="60.000030517578125" text="Position">
@@ -81,24 +81,9 @@
                         <PropertyValueFactory property="height" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="179.0" text="Injury Status">
+                <TableColumn prefWidth="179.0" text="Pref Foot">
                     <cellValueFactory>
-                        <PropertyValueFactory property="injuryStatus" />
-                    </cellValueFactory>
-                </TableColumn>
-                <TableColumn prefWidth="129.0" text="Goals (This Season)" >
-                    <cellValueFactory>
-                        <PropertyValueFactory property="goals" />
-                    </cellValueFactory>
-                </TableColumn>
-                <TableColumn minWidth="4.0" prefWidth="130.0" text="Assists (This Season)">
-                    <cellValueFactory>
-                        <PropertyValueFactory property="assists" />
-                    </cellValueFactory>
-                </TableColumn>
-                <TableColumn minWidth="0.0" prefWidth="161.0" text="Appearances (This Season)" >
-                    <cellValueFactory>
-                        <PropertyValueFactory property="appearances" />
+                        <PropertyValueFactory property="prefFoot" />
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn prefWidth="191.0" text="Nationality" >
