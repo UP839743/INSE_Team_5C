@@ -157,6 +157,27 @@ INSERT INTO Fixture (MATCHDATE, HOMETEAM, AWAYTEAM, HOMETEAMSCORE, AWAYTEAMSCORE
   ('2017-10-14', "Crystal Palace",  "Chelsea",  2, 1 ),
   ('2017-10-21', "Chelsea",  "Watford",  4, 2 ),
   ('2017-10-28', "Bournemouth",  "Chelsea", 0, 1 ),
+  ('2017-11-05', "Chelsea",  "Manchester United",  1, 0 ),
+  ('2017-11-18', "West Brom",  "Chelsea",  0, 4 ),
+  ('2017-11-25', "Liverpool",  "Chelsea",  1, 1 ),
+  ('2017-11-29', "Chelsea",  "Swansea City",  1, 0 ),
+  ('2017-12-02', "Chelsea",  "Newcastle United",  3, 1 ),
+  ('2017-12-09', "West Ham United",  "Chelsea",  1, 0 ),
+  ('2017-12-12', "Huddersfield Town",  "Chelsea",  1, 3 ),
+  ('2017-12-16', "Chelsea",  "Southampton",  1, 0 ),
+  ('2017-12-23', "Everton",  "Chelsea",  0, 0 ),
+  ('2017-12-26', "Chelsea",  "Brightion",  2, 0 ),
+  ('2017-12-30', "Chelsea",  "Stoke City",  5, 0 ),
+  ('2018-01-03', "Arsenal",  "Chelsea",  2, 2 ),
+  ('2018-01-13', "Chelsea",  "Leicester City",  2, 2 ),
+  ('2018-01-20', "Brighton",  "Chelsea",  0, 4),
+  ('2018-01-31', "Chelsea",  "Bournemouth",  0, 3 ),
+  ('2018-02-05', "Watford",  "Chelsea",  4, 1 ),
+  ('2018-02-12', "Chelsea",  "West Brom",  3, 0 ),
+  ('2018-04-21', "Chelsea",  "Chelsea",  null, null ),
+  ('2018-04-28', "Swansea City",  "Chelsea",  null, null ),
+  ('2018-05-05', "Chelsea",  "Liverpool",  null, null ),
+  ('2018-05-13', "Newcastle United",  "Chelsea",  null, null ),
   ('2017-08-12', "Brighton",  "Manchester City",  0, 2 ),
   ('2017-08-21', "Manchester City",  "Everton",  1, 1 ),
   ('2017-08-26', "Bournemouth",  "Manchester City",  1, 2 ),
@@ -184,6 +205,7 @@ INSERT INTO Fixture (MATCHDATE, HOMETEAM, AWAYTEAM, HOMETEAMSCORE, AWAYTEAMSCORE
   ('2017-10-14', "Tottenham Hotspur",  "Bournemouth",  0, 4 ),
   ('2017-10-22', "Tottenham Hotspur",  "Liverpool",  1, 0 ),
   ('2017-10-28', "Manchester United",  "Tottenham Hotspur",  1, 0 )
+
 ;
 
 INSERT INTO News (CLUBID, TITLE, CONTENT, AUTHOR) VALUES
