@@ -25,7 +25,7 @@
       </Label>
       <HBox id="teamList" fx:id="teamList" alignment="CENTER" layoutX="94.0" layoutY="310.0" prefHeight="240.0" prefWidth="991.0" spacing="60.0" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="93.0" AnchorPane.topAnchor="310.0">
          <children>
-            <Button id="btnArsenal" fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: white;">
+            <Button id="btnArsenal" fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: white;" stylesheets="@css/Welcome.css">
                <graphic>
                   <ImageView id="arsenalButton" fitHeight="194.0" fitWidth="175.0">
                      <image>
@@ -37,7 +37,7 @@
                   <Reflection />
                </effect>
             </Button>
-          <Button id="btnChelsea" fx:id="btnChelsea" onAction="#handleButtonAction" style="-fx-background-color: white;">
+          <Button id="btnChelsea" fx:id="btnChelsea" onAction="#handleButtonAction" style="-fx-background-color: white;" stylesheets="@css/Welcome.css">
                <graphic>
                 <ImageView id="chelseaButton" fitHeight="194.0" fitWidth="198.0">
                   <image>
@@ -52,7 +52,7 @@
                   <Reflection />
                </effect>
             </Button>
-            <Button id="btnTottenham" fx:id="btnTottenham" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: white;">
+            <Button id="btnTottenham" fx:id="btnTottenham" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: white;" stylesheets="@css/Welcome.css">
                <graphic>
                   <ImageView id="tottenhamButton" fitHeight="194.0" fitWidth="198.0">
                      <image>
@@ -64,7 +64,7 @@
                   <Reflection />
                </effect>
             </Button>
-            <Button id="btnManCity" fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: white;">
+            <Button id="btnManCity" fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: white;" stylesheets="@css/Welcome.css">
                <graphic>
                   <ImageView id="manCItyButton" fitHeight="194.0" fitWidth="198.0">
                      <image>
