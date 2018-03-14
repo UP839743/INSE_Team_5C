@@ -3,23 +3,23 @@ USE FDB;
 INSERT INTO Club (CLUBID, CLUBNAME, STADIUM, CURRENTPOSITION) VALUES
   (1, "Arsenal", "Emirates", 6),
   (2, "Chelsea", "Stamford Bridge", 4),
-  (3, "Manchester City", "The Etihad Arena", 1),
-  (4, "Tottenham Hotspur", "White Heart Lane", 5)
+  (3, "Tottenham Hotspur", "White Heart Lane", 5),
+  (4, "Manchester City", "The Etihad Arena", 1)
 ;
 
 INSERT INTO Position_History (CLUBID, COMPETITION, YEAR, POSITION) VALUES
   (2, "Premier League", 2017, 1),
-  (4, "Premier League", 2017, 2),
-  (3, "Premier League", 2017, 3),
+  (3, "Premier League", 2017, 2),
+  (4, "Premier League", 2017, 3),
   (1, "Premier League", 2017, 5),
   (1, "Premier League", 2016, 2),
-  (4, "Premier League", 2016, 3),
-  (3, "Premier League", 2016, 4),
+  (3, "Premier League", 2016, 3),
+  (4, "Premier League", 2016, 4),
   (2, "Premier League", 2016, 10),
   (2, "Premier League", 2015, 1),
-  (3, "Premier League", 2015, 2),
+  (4, "Premier League", 2015, 2),
   (1, "Premier League", 2015, 3),
-  (4, "Premier League", 2015, 5)
+  (3, "Premier League", 2015, 5)
 ;
 
 INSERT INTO Player (CLUBID, FNAME, LNAME, SQUADNO, PLAYERPOSITION, HEIGHT, PREFFOOT, DOB, CLUBAPPS, SEASONAPPS, NATIONALITY, CLUBGOALS, SEASONGOALS, SEASONASSISTS, CLEANSHEETS) VALUES
@@ -108,15 +108,15 @@ INSERT INTO Player (CLUBID, FNAME, LNAME, SQUADNO, PLAYERPOSITION, HEIGHT, PREFF
 INSERT INTO Manager (CLUBID, FNAME, LNAME, DOB, JOINEDCLUB, NATIONALITY) VALUES
   (1, "Arsene", "Wenger", '1949-10-22', '1996-1-10', "France"),
   (2, "Antonio", "Conte", '1969-07-31', '2016-4-1', "Italy"),
-  (3, "Pep", "Guardiola", '1971-1-18', '2013-1-16', "Spanish"),
-  (4, "Mauricio", "Pochettino", '1972-3-2', '2014-5-27', "Argentina")
+  (3, "Mauricio", "Pochettino", '1972-3-2', '2014-5-27', "Argentina"),
+  (4, "Pep", "Guardiola", '1971-1-18', '2013-1-16', "Spanish")
 ;
 
 INSERT INTO Stadium (NAME, CLUBID, ADDRESS, POSTCODE, CAPACITY, DATEBUILT) VALUES
   ("Emirates", 1, "Hornsey Road, London", "N7 7AJ", 59867, '2006-7-22'),
   ("Stamford Bridge", 2, "Fulham Road, Fulham, London", "SW6 1HS", 41631, '1876-1-1'),
-  ("The Etihad", 3, "Ashton New Road, Manchester", "M11 3FF", 55097, '2003-10-8'),
-  ("White Hart Lane", 4, "High Road, Tottenham", "N17 0AP", 36284, '1899-4-9')
+  ("White Hart Lane", 3, "High Road, Tottenham", "N17 0AP", 36284, '1899-4-9'),
+  ("The Etihad", 4, "Ashton New Road, Manchester", "M11 3FF", 55097, '2003-10-8')
 ;
 
 INSERT INTO Trophy (COMPETITION, YEAR, CLUBID) VALUES
@@ -126,9 +126,9 @@ INSERT INTO Trophy (COMPETITION, YEAR, CLUBID) VALUES
   ("Premier League", 2005, 2),
   ("Premier League", 2006, 2),
   ("Premier League", 2010, 2),
-  ("Premier League", 2012, 3),
-  ("Premier League", 2014, 3),
-  ("Premier League", 2015, 2),
+  ("Premier League", 2012, 4),
+  ("Premier League", 2014, 4),
+  ("Premier League", 2015, 4),
   ("Premier League", 2017, 2),
   ("FA Cup", 1998, 1),
   ("FA Cup", 2000, 2),
@@ -138,7 +138,7 @@ INSERT INTO Trophy (COMPETITION, YEAR, CLUBID) VALUES
   ("FA Cup", 2007, 2),
   ("FA Cup", 2009, 2),
   ("FA Cup", 2010, 2),
-  ("FA Cup", 2011, 3),
+  ("FA Cup", 2011, 4),
   ("FA Cup", 2012, 2),
   ("FA Cup", 2014, 1),
   ("FA Cup", 2015, 1),
@@ -188,5 +188,7 @@ INSERT INTO Fixture (MATCHDATE, HOMETEAM, AWAYTEAM, HOMETEAMSCORE, AWAYTEAMSCORE
 
 INSERT INTO News (CLUBID, TITLE, CONTENT, AUTHOR) VALUES
   (1, "Sample Title", "Sample Content", "Joe Bloggs"),
-  (3, "Another Sample Title", "Some more sample content", "Joe Bloggs")
+  (3, "Another Sample Title", "Some more sample content", "Joe Bloggs"),
+  (3, "A third Sample Title", "Some more sample content", "Joe Bloggs"),
+  (4, "Sample Title: IV: A new hope", "Some more sample content", "Joe Bloggs")
 ;
