@@ -147,7 +147,7 @@ INSERT INTO Trophy (COMPETITION, YEAR, CLUBID) VALUES
 ;
 
 INSERT INTO Fixture (MATCHDATE, HOMETEAM, AWAYTEAM, HOMETEAMSCORE, AWAYTEAMSCORE) VALUES
-  ('2017-8-12', "Chelsea", "Burnley", 2, 3),
+  ('2017-08-12', "Chelsea", "Burnley", 2, 3),
   ('2017-08-20', "Tottenham Hotspur", "Chelsea",  1, 2),
   ('2017-07-27', "Chelsea",  "Everton",  2, 0 ),
   ('2017-09-09', "Leicester City",  "Chelsea",  1,  2),
@@ -174,10 +174,11 @@ INSERT INTO Fixture (MATCHDATE, HOMETEAM, AWAYTEAM, HOMETEAMSCORE, AWAYTEAMSCORE
   ('2018-01-31', "Chelsea",  "Bournemouth",  0, 3 ),
   ('2018-02-05', "Watford",  "Chelsea",  4, 1 ),
   ('2018-02-12', "Chelsea",  "West Brom",  3, 0 ),
-  ('2018-04-21', "Chelsea",  "Chelsea",  null, null ),
+  ('2018-04-21', "Chelsea",  "Huddersfield Town",  null, null ),
   ('2018-04-28', "Swansea City",  "Chelsea",  null, null ),
   ('2018-05-05', "Chelsea",  "Liverpool",  null, null ),
   ('2018-05-13', "Newcastle United",  "Chelsea",  null, null ),
+
   ('2017-08-12', "Brighton",  "Manchester City",  0, 2 ),
   ('2017-08-21', "Manchester City",  "Everton",  1, 1 ),
   ('2017-08-26', "Bournemouth",  "Manchester City",  1, 2 ),
@@ -187,6 +188,7 @@ INSERT INTO Fixture (MATCHDATE, HOMETEAM, AWAYTEAM, HOMETEAMSCORE, AWAYTEAMSCORE
   ('2017-09-30', "Manchester City",  "Stoke City",  7, 2 ),
   ('2017-10-14', "Manchester City",  "Burnley",  3, 0 ),
   ('2017-10-21', "West Brom",  "Manchester City",  2, 3 ),
+
   ('2017-08-11', "Arsenal",  "Leicester City",  4, 3 ),
   ('2017-08-19', "Stoke City",  "Arsenal",  1, 0 ),
   ('2017-08-27', "Liverpool",  "Arsenal",  4, 0 ),
@@ -196,6 +198,7 @@ INSERT INTO Fixture (MATCHDATE, HOMETEAM, AWAYTEAM, HOMETEAMSCORE, AWAYTEAMSCORE
   ('2017-10-1', "Watford",  "Arsenal",  2, 1 ),
   ('2017-10-22', "Everton",  "Arsenal",  2, 5 ),
   ('2017-10-28', "Arsenal",  "Swansea City",  2, 1 ),
+
   ('2017-08-13', "Newcastle",  "Tottenham Hotspur",  0, 2 ),
   ('2017-08-27', "Tottenham Hotspur",  "Burnley",  1, 2 ),
   ('2017-09-09', "Everton",  "Tottenham Hotspur",  1, 1  ),
