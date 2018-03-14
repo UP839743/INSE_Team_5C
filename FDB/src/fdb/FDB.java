@@ -22,24 +22,18 @@ import javafx.stage.Stage;
  * @author INSE Team 5C
  */
 public class FDB extends Application {
-<<<<<<< HEAD
-
-
-    @Override
-=======
    
 //    private String arsenalThemeUrl = getClass().getResource("@css/Arsenal.css").toExternalForm();
 //    private String chelseaThemeUrl = getClass().getResource("@css/Chelsea.css").toExternalForm();
 //    private String tottenhamThemeUrl = getClass().getResource("@css/Tottenham.css").toExternalForm();
 //    private String manCityThemeUrl = getClass().getResource("@css/ManCity.css").toExternalForm();
     
->>>>>>> 2fd255ea46d31d62dd3ef354b384215c77c33889
     public void start(Stage stage) throws Exception {
         Parent root = null;
-        if (team.equals("")){
-            root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));}
-        else {
+        if (team.equals("Arsenal") || team.equals("Tottenham") || team.equals("Man City") || team.equals("Chelsea")){
             root = FXMLLoader.load(getClass().getResource("Home.fxml"));}
+        else {
+            root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));}
         Scene scene = new Scene(root);
         stage.setMaxHeight(1000);
         stage.setMaxWidth(1400);
@@ -99,7 +93,8 @@ public class FDB extends Application {
             }
         else {System.out.println("Check connection to database");}
         //See if a team is pre set, if not set up (then launch gui)
-        readIniFile(args);
+        readIniFile();
+        launch(args);
     }
     
     public static Connection initDatabase(){
@@ -117,7 +112,7 @@ public class FDB extends Application {
     }
     
     //TODO - Ini with GUI
-    public static void readIniFile(String[] args) throws Exception{
+    public static void readIniFile() throws Exception{
         try{
             String file = "C:\\FDB\\ini.txt";
             String line;
@@ -126,7 +121,6 @@ public class FDB extends Application {
                     System.out.println(line);
                     team = line;
                     //Load GUI to default team page
-                    launch(args);
                 }
             }
         }
@@ -134,8 +128,7 @@ public class FDB extends Application {
             System.out.println(e);
             System.out.println("File Read Failed, Creating ini File");
             //Load GUI to welcome page to pick default team
-            
-            //launch(args);
+            createIniFile(team);
         }
     }
     
@@ -143,9 +136,9 @@ public class FDB extends Application {
     public static void createIniFile(String team) throws Exception{
         try{
             //Create directory and file
-            File dir = new File("C:\\Desktop");
+            File dir = new File("C:\\FDB");
             dir.mkdir();
-            File file = new File("C:\\Desktop\\ini.txt");
+            File file = new File("C:\\FDB\\ini.txt");
 
             
             //Create the file
@@ -156,6 +149,7 @@ public class FDB extends Application {
 
             //Write team to file
             FileWriter writer = new FileWriter(file);
+            if (team.equals("")){team = "Arsenal";}
             writer.write(team);
             writer.close();
         }

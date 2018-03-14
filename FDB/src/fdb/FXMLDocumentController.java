@@ -49,7 +49,7 @@ public class FXMLDocumentController implements Initializable {
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
     private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
     private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
-    private final String welcomeThemeUrl = getClass().getResource("css/Welcome.css").toExternalForm();
+    //private final String welcomeThemeUrl = getClass().getResource("css/Welcome.css").toExternalForm();
     
     public static Scene scene;
     public static Stage stage;
