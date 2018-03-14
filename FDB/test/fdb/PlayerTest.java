@@ -21,7 +21,7 @@ public class PlayerTest {
     Player testPlr = testPlr = new Player(999, 999, "Testy", 
                         "Testil", 9999, "LeftBack", "9f9", 
                         "right", testDate, 9999, 999, "Mongolian",
-                        9899, 878, 1000);;
+                        9899, 878, 999,1000);
     
     public PlayerTest() {
     }
@@ -63,7 +63,7 @@ public class PlayerTest {
     public void testGetfirstName() {
         System.out.println("getfirstName");
         String expResult = "Testy";
-        String result = testPlr.getfirstName();
+        String result = testPlr.getFirstName();
         assertEquals(expResult, result);
     }
 
@@ -186,6 +186,17 @@ public class PlayerTest {
         System.out.println("getseasonGoals");
         int expResult = 878;
         int result = testPlr.getseasonGoals();
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of getseasonGoals method, of class Player.
+     */
+    @Test
+    public void testGetSeasonAssists() {
+        System.out.println("GetSeasonAssists");
+        int expResult = 999;
+        int result = testPlr.getSeasonAssists();
         assertEquals(expResult, result);
     }
 

@@ -159,11 +159,12 @@ public class FDB extends Application {
             String nationality = rs.getString(12);
             int clubGoals = rs.getInt(13);
             int seasonGoals = rs.getInt(14);
-            int cleanSheets = rs.getInt(15);
+            int seasonAssists = rs.getInt(15);
+            int cleanSheets = rs.getInt(16);
             Player plr = new Player(playerID, clubID, playerFirstName, 
                         playerLastName, squadNumber, position, height, 
                         prefFoot, dob, clubApps, seasonApps, nationality,
-                        clubGoals, seasonGoals, cleanSheets);
+                        clubGoals, seasonGoals, seasonAssists, cleanSheets);
             allPlayers.add(plr);
             System.out.println("Player Loaded In...");
         }
@@ -379,15 +380,9 @@ public class FDB extends Application {
     }
     public static String populateManagerName(int requestedTeam){
     String managerName = "";
-    String StadiumName = "";
     for (Manager mgr: allManagers) {
         if (mgr.getclubID() == requestedTeam){
             managerName = mgr.getfirstName() + " " + mgr.getLastName();
-        }
-    }
-    for (Stadium stdm: allStadiums) {
-        if (stdm.getClubID() == requestedTeam){
-            StadiumName = stdm.getName();
         }
     }
     return managerName;

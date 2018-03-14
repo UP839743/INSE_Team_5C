@@ -26,13 +26,14 @@ public class Player {
     String nationality;
     int clubGoals;
     int seasonGoals;
+    int seasonAssists;
     int cleanSheets;
     
     public Player(int PlayerID, int playerClubID, String playerFirstName, 
             String playerLastName, int playerSquadNumber, String playerPosition, 
             String playerHeight, String playerPrefFoot, Date playerDoB, int playerClubApps, 
             int playerSeasonApps, String playerNationality, int playerClubGoals, 
-            int playerSeasonGoals, int playerCleanSheets) 
+            int playerSeasonGoals, int playerSeasonAssists , int playerCleanSheets) 
     {
         playerID = PlayerID;
         clubID = playerClubID;
@@ -48,6 +49,7 @@ public class Player {
         nationality = playerNationality;
         clubGoals = playerClubGoals;
         seasonGoals = playerSeasonGoals;
+        seasonAssists = playerSeasonAssists;
         cleanSheets = playerCleanSheets;
     }
 
@@ -60,7 +62,7 @@ public class Player {
         return clubID;
     }
     
-    public String getfirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
@@ -106,6 +108,10 @@ public class Player {
     
     public int getseasonGoals() {
         return seasonGoals;
+    }
+    
+    public int getSeasonAssists() {
+        return seasonAssists;
     }
     
     public int getcleanSheets() {

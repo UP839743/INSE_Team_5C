@@ -9,6 +9,7 @@ import static fdb.FDB.getClubPlayers;
 import static fdb.FXMLDocumentController.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -68,7 +69,6 @@ public class TeamDetailsController implements Initializable {
         scene.getStylesheets().add(stylesheet);
         
         ObservableList<Player> players = FXCollections.observableArrayList(getClubPlayers(team));
-
         playerTable.setItems(players);
               
         }
