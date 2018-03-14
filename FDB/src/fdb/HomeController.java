@@ -7,6 +7,7 @@ package fdb;
 
 import static fdb.FDB.populateManagerName;
 import static fdb.FDB.populateStadiumName;
+import static fdb.FDB.populatePosition;
 import static fdb.FXMLDocumentController.*;
 import java.io.IOException;
 import java.net.URL;
@@ -15,7 +16,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -48,7 +48,7 @@ public class HomeController implements Initializable {
     @FXML
     private Label lblPosition;
     @FXML
-    private ComboBox<?> seasonBox;
+    private ComboBox<String> seasonBox;
     @FXML
     private Label lblCurrentPosition;
     @FXML
@@ -112,6 +112,7 @@ public class HomeController implements Initializable {
         lblChairmanName.setText(chairman);
         lblStadiumName.setText(populateStadiumName(team));  
         lblManagerName.setText(populateManagerName(team));
+        
         lblLeagueName.setText ("Premier League");
         seasonBox.getSelectionModel().selectFirst();
 
@@ -144,6 +145,11 @@ public class HomeController implements Initializable {
 
     }
 
+    @FXML
+    public void showSeasonPosition(ActionEvent event) {
+        lblCurrentPosition.setText(Integer.toString(populatePosition(seasonBox.getValue(),team)));
+    }
+    
     public void loadClub(ActionEvent event) {
 
         if (event.getSource() == btnArsenal) {

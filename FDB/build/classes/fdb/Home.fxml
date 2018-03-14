@@ -46,12 +46,13 @@
                 <Font size="30.0" />
             </font>
         </Label>
-        <ComboBox fx:id="seasonBox" layoutX="650.0" layoutY="595.0" prefHeight="71.0" prefWidth="188.0" promptText="Select a Season">
+        <ComboBox fx:id="seasonBox" layoutX="650.0" layoutY="595.0" onAction="#showSeasonPosition" prefHeight="71.0" prefWidth="188.0" promptText="Select a Season">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:id="17_18" fx:value="17/18" />
                     <String fx:id="16_17" fx:value="16/17" />
                     <String fx:id="15_16" fx:value="15/16" />
+                    <String fx:id="14_15" fx:value="14/15" />
                 </FXCollections>
             </items>           
           
@@ -85,7 +86,7 @@
         </Label>
         <HBox fx:id="menuBox" prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
             <children>
-                <Button id="btnHome" fx:id="btnHome" mnemonicParsing="false" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER" textFill="WHITE">
+                <Button id="btnHome" fx:id="btnHome" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Home" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="Lato Light" size="30.0" />
                     </font>
