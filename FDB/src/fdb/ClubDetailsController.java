@@ -44,7 +44,9 @@ public class ClubDetailsController implements Initializable {
     private Button btnTottenham;
     @FXML
     private Button btnManCity;
-
+    @FXML
+    private Button btnChangeDefaultClub;
+    
     private final String arsenalClubDetailsURL = getClass().getResource("css/ArsenalClubDetails.css").toExternalForm();
     private final String chelseaClubDetailsURL = getClass().getResource("css/ChelseaClubDetails.css").toExternalForm();
     private final String tottenhamClubDetailsURL = getClass().getResource("css/TottenhamClubDetails.css").toExternalForm();
@@ -84,6 +86,11 @@ public class ClubDetailsController implements Initializable {
             stage = (Stage) btnClubDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
             
+        }
+        else if (event.getSource() == btnChangeDefaultClub) {
+            stage = (Stage) btnChangeDefaultClub.getScene().getWindow();
+            root =  FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+            stylesheet = "";
         }
         //create a new scene with root and set the stage
         scene = new Scene(root);

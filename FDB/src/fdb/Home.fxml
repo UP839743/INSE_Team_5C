@@ -149,7 +149,7 @@
                 </Button>
             </children>
         </VBox>
-        <TextField fx:id="searchField" layoutX="883.0" layoutY="27.0" prefHeight="53.0" prefWidth="425.0" promptText="Search" />
+        <TextField fx:id="searchField" layoutX="838.0" layoutY="71.0" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." AnchorPane.rightAnchor="105.0" />
       <Label fx:id="lblStadiumName" layoutX="815.0" layoutY="209.0">
          <font>
             <Font size="18.0" />
@@ -175,5 +175,10 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Button id="btnChangeDefaultClub" fx:id="btnChangeDefaultClub" layoutX="1126.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="37.0" prefWidth="169.0" text="Change Default Club" AnchorPane.rightAnchor="105.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

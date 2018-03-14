@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.control.cell.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FixturesAndResultsController">
     <children>
@@ -127,6 +126,11 @@
                 </Button>
             </children>
         </VBox>
-        <TextField layoutX="893.0" layoutY="39.0" prefHeight="53.0" prefWidth="425.0" promptText="Search" />
+      <TextField fx:id="searchField" layoutX="838.0" layoutY="71.0" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
+      <Button id="btnChangeDefaultClub" fx:id="btnChangeDefaultClub" layoutX="1126.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="37.0" prefWidth="169.0" text="Change Default Club">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

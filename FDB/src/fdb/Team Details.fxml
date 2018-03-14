@@ -5,15 +5,15 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.control.cell.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.TeamDetailsController">
+<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.TeamDetailsController">
     <children>
         <HBox prefHeight="124.0" prefWidth="815.0" style="-fx-background-color: grey;">
             <children>
@@ -46,7 +46,7 @@
         </Button>
         <Label fx:id="lblTeamName" layoutX="232.0" layoutY="134.0" prefHeight="94.0" prefWidth="290.0" text="Arsenal" textAlignment="CENTER">
             <font>
-                <Font name="Monospaced Regular" size="68.0" />
+                <Font name="Lato Light" size="55.0" />
             </font>
         </Label>
         <Label layoutX="232.0" layoutY="213.0" text="Season Records">
@@ -73,7 +73,7 @@
                 </TableColumn>
                 <TableColumn prefWidth="60.000030517578125" text="Position">
                     <cellValueFactory>
-                        <PropertyValueFactory property= "position" />
+                        <PropertyValueFactory property="position" />
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn prefWidth="54.0" text="Height">
@@ -86,7 +86,7 @@
                         <PropertyValueFactory property="prefFoot" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="191.0" text="Nationality" >
+                <TableColumn prefWidth="191.0" text="Nationality">
                     <cellValueFactory>
                         <PropertyValueFactory property="nationality" />
                     </cellValueFactory>
@@ -133,6 +133,11 @@
                 </Button>
             </children>
         </VBox>
-        <TextField layoutX="893.0" layoutY="39.0" prefHeight="53.0" prefWidth="425.0" promptText="Search" />
+      <TextField fx:id="searchField" layoutX="838.0" layoutY="71.0" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
+      <Button id="btnChangeDefaultClub" fx:id="btnChangeDefaultClub" layoutX="1126.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Change Default Club">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

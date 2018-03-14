@@ -44,6 +44,8 @@ public class FixturesAndResultsController implements Initializable {
     private Button btnManCity;
     @FXML
     private Label lblTeamName;
+    @FXML
+    private Button btnChangeDefaultClub;
 
     private final String arsenalFixturesURL = getClass().getResource("css/ArsenalFixturesAndResults.css").toExternalForm();
     private final String chelseaFixturesURL = getClass().getResource("css/ChelseaFixturesAndResults.css").toExternalForm();
@@ -80,6 +82,11 @@ public class FixturesAndResultsController implements Initializable {
             stage = (Stage) btnClubDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
 
+        }
+        else if (event.getSource() == btnChangeDefaultClub) {
+            stage = (Stage) btnChangeDefaultClub.getScene().getWindow();
+            root =  FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+            stylesheet = "";
         }
         //create a new scene with root and set the stage
         Scene scene = new Scene(root);

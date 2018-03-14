@@ -88,7 +88,7 @@ public class HomeController implements Initializable {
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
     private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
     private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
-
+    
     @FXML
     private Label lblStadiumName;
     @FXML
@@ -99,6 +99,8 @@ public class HomeController implements Initializable {
     private Label lblChairmanName;
     @FXML
     private Label lblLeagueName;
+    @FXML
+    private Button btnChangeDefaultClub;
     
     /**
      * Initializes the controller class.
@@ -136,6 +138,11 @@ public class HomeController implements Initializable {
         } else if (event.getSource() == btnClubDetails || event.getSource() == btnMoreDetails) {
             stage = (Stage) btnClubDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
+        }
+        else if (event.getSource() == btnChangeDefaultClub) {
+            stage = (Stage) btnChangeDefaultClub.getScene().getWindow();
+            root =  FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+            stylesheet = "WelcomeFromChangeDefaultClub.css";
         }
         //create a new scene with root and set the stage
         scene = new Scene(root);

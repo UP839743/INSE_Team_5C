@@ -49,6 +49,7 @@ public class FXMLDocumentController implements Initializable {
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
     private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
     private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
+    private final String welcomeThemeUrl = getClass().getResource("css/Welcome.css").toExternalForm();
     
     public static Scene scene;
     public static Stage stage;
@@ -81,6 +82,7 @@ public class FXMLDocumentController implements Initializable {
             stage = (Stage) btnClubDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
         }
+        
         //create a new scene with root and set the stage
         scene = new Scene(root);
         stage.setScene(scene);
@@ -91,7 +93,7 @@ public class FXMLDocumentController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-          
+
     }
     
     public void loadClub(ActionEvent event){

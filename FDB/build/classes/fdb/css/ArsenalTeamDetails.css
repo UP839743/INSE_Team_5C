@@ -45,3 +45,8 @@
     -fx-background-color: #B0C4DE;
     -fx-text-fill: white;
 }
+
+#btnChangeDefaultClub:hover{
+    -fx-background-color: #B0C4DE;
+    -fx-text-fill: white;
+}
