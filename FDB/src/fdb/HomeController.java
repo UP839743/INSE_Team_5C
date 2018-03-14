@@ -9,6 +9,7 @@ import static fdb.FDB.populateManagerName;
 import static fdb.FDB.populateStadiumName;
 import static fdb.FDB.populatePosition;
 import static fdb.FXMLDocumentController.*;
+import static fdb.TeamDetailsController.searchString;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,12 +19,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -98,6 +100,9 @@ public class HomeController implements Initializable {
     private Label lblLeagueName;
     @FXML
     private Button btnChangeDefaultClub;
+    @FXML
+    private TextField searchBar;
+    
 
     private final String chelseaThemeUrl = getClass().getResource("css/Chelsea.css").toExternalForm();
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
@@ -139,6 +144,22 @@ public class HomeController implements Initializable {
         lblCurrentPosition.setText(""+FDB.populatePosition(seasonBox.getValue(), teamID));
         lblStory.setText(FDB.populateNews(teamID));
 
+
+    }
+    
+        @FXML
+    public void search(KeyEvent keyEvent) throws IOException {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            searchString = searchBar.getText();
+            searchBar.setText("");
+            root = FXMLLoader.load(getClass().getResource("SearchResults.fxml"));
+            Scene scene = new Scene(root);
+            System.out.println("Scene: " + scene);
+            stage.setScene(scene);
+            scene.getStylesheets().add(stylesheet);
+            stage.show();
+        }
+        //create a new scene with root and set the stage
 
     }
 

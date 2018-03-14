@@ -89,26 +89,31 @@
             </Button>
          </children>
       </VBox>
-      <TableView layoutX="226.0" layoutY="277.0" prefHeight="678.0" prefWidth="488.0">
+      <TableView fx:id="recordTable" layoutX="226.0" layoutY="277.0" prefHeight="678.0" prefWidth="600.0">
          <columns>
-             <TableColumn prefWidth="122.0" text="Player">
+             <TableColumn prefWidth="122.0" text="First Name">
                  <cellValueFactory>
-                        <PropertyValueFactory property="player" />
+                        <PropertyValueFactory property="firstName" />
+                    </cellValueFactory>
+             </TableColumn>
+             <TableColumn prefWidth="122.0" text="Last Name">
+                 <cellValueFactory>
+                        <PropertyValueFactory property="lastName" />
                     </cellValueFactory>
              </TableColumn>
              <TableColumn prefWidth="122.0" text="Goals">
                  <cellValueFactory>
-                        <PropertyValueFactory property="goals" />
+                        <PropertyValueFactory property="clubGoals" />
                     </cellValueFactory>
              </TableColumn>
-             <TableColumn prefWidth="122.0" text="Assists">
+             <TableColumn prefWidth="122.0" text="Assists(TO DO)">
                  <cellValueFactory>
-                        <PropertyValueFactory property="assists" />
+                        <PropertyValueFactory property="clubAssists" />
                     </cellValueFactory>
              </TableColumn>
              <TableColumn prefWidth="122.0" text="Appearances">
                  <cellValueFactory>
-                        <PropertyValueFactory property="appearances" />
+                        <PropertyValueFactory property="clubApps" />
                     </cellValueFactory>
              </TableColumn>
          </columns>
@@ -123,15 +128,21 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <TableView layoutX="815.0" layoutY="181.0" prefHeight="735.0" prefWidth="498.0">
+      <TableView fx:id="trophyCabinet" layoutX="850.0" layoutY="181.0" prefHeight="735.0" prefWidth="250.0">
         <columns>
-          <TableColumn prefWidth="124.5" text="Premier League" />
-          <TableColumn prefWidth="124.5" text="FA Cup" />
-            <TableColumn prefWidth="124.5" text="League Cup" />
-            <TableColumn prefWidth="124.5" text="Community Shield" />
+          <TableColumn prefWidth="124.5" text="Competition">
+              <cellValueFactory>
+                        <PropertyValueFactory property="competition" />
+              </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="124.5" text="Year">
+              <cellValueFactory>
+                        <PropertyValueFactory property="year" />
+              </cellValueFactory>
+          </TableColumn>
         </columns>
       </TableView>
-      <TextField fx:id="searchField" layoutX="838.0" layoutY="71.0" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
+      <TextField fx:id="searchBar" onAction="#search" layoutX="838.0" layoutY="71.0"  prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
       <Button id="btnChangeDefaultClub" fx:id="btnChangeDefaultClub" layoutX="1126.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="37.0" prefWidth="169.0" text="Change Default Club">
          <font>
             <Font size="16.0" />

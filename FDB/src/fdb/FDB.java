@@ -97,11 +97,11 @@ public class FDB extends Application {
             int positition = populatePosition("16/17", 3);
             int positition2 = populatePosition("17/18", 3);
             String news = populateNews(3);
-            ArrayList<Fixture> spursResults = populateResults("Tottenham Hotspur");
-            ArrayList<Fixture> spursFixtures = populateFixtures("Tottenham Hotspur");
+            ArrayList<Fixture> chelseaResults = populateResults("Chelsea", "16/17");
+            ArrayList<Fixture> chelseaFixtures = populateFixtures("Chelsea");
             ArrayList<Trophy> trophyCabinet = populateTrophies(1);
             //tests as follows 1-SquadNo 2- LastName 3-Position 4-Nationality 5-PrefFoot 6-FirstName 7-First and last name together
-            ArrayList<Player> searchedPlayers = searchPlayers(7);
+            //ArrayList<Player> searchedPlayers = searchPlayers(7);
             ArrayList<Player> searchedPlayers2 = searchPlayers("Son");
             ArrayList<Player> searchedPlayers3 = searchPlayers("MID");
             ArrayList<Player> searchedPlayers4 = searchPlayers("England");
@@ -508,13 +508,40 @@ public class FDB extends Application {
     return results;
     }
     
-    public static ArrayList<Fixture> populateResults(String requestedTeam){
+    public static ArrayList<Fixture> populateResults(String requestedTeam, String season){
     java.sql.Date currentDate = new java.sql.Date(new java.util.Date().getTime());
     ArrayList<Fixture> results = new ArrayList();
+    java.sql.Date seasonStartDate = null;
+    java.sql.Date seasonEndDate = null;
+        switch (season) {
+            case "17/18":
+                seasonStartDate = java.sql.Date.valueOf( "2017-08-12" );
+                seasonEndDate = java.sql.Date.valueOf( "2018-05-13" );
+                break;
+            case "16/17":
+                //	13 August 2016 – 21 May 2017
+                seasonStartDate = java.sql.Date.valueOf( "2016-08-13" );
+                seasonEndDate = java.sql.Date.valueOf( "2017-05-21" );
+                break;
+            case "15/16":
+                //8 August 2015 – 17 May 2016
+                seasonStartDate = java.sql.Date.valueOf( "2015-08-08" );
+                seasonEndDate = java.sql.Date.valueOf( "2016-05-17" );
+                break;
+            case "14/15":
+                //16 August 2014 and concluded on 24 May 2015.
+                seasonStartDate = java.sql.Date.valueOf( "2014-08-16" );
+                seasonEndDate = java.sql.Date.valueOf( "2015-05-24" );
+                break;
+            default:
+                break;
+        }
     for (Fixture ftx: allFixtures) {
         if (ftx.getHomeTeam().equals(requestedTeam) || ftx.getAwayTeam().equals(requestedTeam)){
             if (ftx.getMatchDate().compareTo(currentDate) < 0){
-            results.add(ftx);}}
+                if (ftx.getMatchDate().compareTo(seasonStartDate) >= 0 &&
+                        ftx.getMatchDate().compareTo(seasonEndDate) <= 0){
+                    results.add(ftx);}}}
     }
     return results;
     }
@@ -530,15 +557,16 @@ public class FDB extends Application {
     }
     
     //Overwritting methods with different arguments!
-    public static ArrayList<Player> searchPlayers(int SquadNo){
-    ArrayList<Player> players = new ArrayList();
-    for (Player plr: allPlayers) {
-        if (plr.getSquadNumber() == SquadNo){
-            players.add(plr);
-        }
-    }
-    return players;
-    }
+    //Feature temporaily disabled
+//    public static ArrayList<Player> searchPlayers(int SquadNo){
+//    ArrayList<Player> players = new ArrayList();
+//    for (Player plr: allPlayers) {
+//        if (plr.getSquadNumber() == SquadNo){
+//            players.add(plr);
+//        }
+//    }
+//    return players;
+//    }
     
     public static ArrayList<Player> searchPlayers(String searchString){
     ArrayList<Player> players = new ArrayList();

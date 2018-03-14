@@ -58,7 +58,7 @@
           
         </ComboBox>
       
-        <Label fx:id="lblCurrentPosition" alignment="CENTER" layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" textFill="BLACK" >
+        <Label fx:id="lblCurrentPosition" alignment="CENTER" layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" textFill="BLACK">
             <font>
                 <Font size="21.0" />
             </font>
@@ -153,7 +153,7 @@
                 </Button>
             </children>
         </VBox>
-        <TextField fx:id="searchField" layoutX="838.0" layoutY="71.0" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." AnchorPane.rightAnchor="105.0" />
+        <TextField fx:id="searchBar" onAction="#search" layoutX="838.0" layoutY="71.0" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." AnchorPane.rightAnchor="105.0" />
       <Label fx:id="lblStadiumName" layoutX="815.0" layoutY="209.0">
          <font>
             <Font size="18.0" />

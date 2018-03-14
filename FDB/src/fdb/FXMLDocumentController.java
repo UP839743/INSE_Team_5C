@@ -16,6 +16,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -24,8 +27,6 @@ import javafx.stage.Stage;
  */
 public class FXMLDocumentController implements Initializable {
 
-    @FXML
-    private Label lblTeamName;
     @FXML
     private Button btnChelsea;
     @FXML
@@ -37,13 +38,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button btnTeamDetails;
     @FXML
-    private Button btnHome;
-    @FXML
     private Button btnFixtures;
     @FXML
     private Button btnClubDetails;
-    @FXML
-    private Button btnMoreDetails;
 
     private final String chelseaThemeUrl = getClass().getResource("css/Chelsea.css").toExternalForm();
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
@@ -59,6 +56,11 @@ public class FXMLDocumentController implements Initializable {
     public static String teamName = "";
     public static String founder = "";
     public static String chairman = "";
+    @FXML
+    private TextField searchBar;
+    @FXML
+    private TableView<?> searchTable;
+    
 
     /**
      *
@@ -121,6 +123,10 @@ public class FXMLDocumentController implements Initializable {
             teamID = 4;
         }
 
+    }
+
+    @FXML
+    private void search(KeyEvent event) {
     }
 
 }

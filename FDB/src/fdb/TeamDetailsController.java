@@ -9,7 +9,6 @@ import static fdb.FDB.populateClubPlayers;
 import static fdb.FXMLDocumentController.*;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Date;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,11 +16,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -51,6 +52,8 @@ public class TeamDetailsController implements Initializable {
     private Button btnManCity;
     @FXML
     private Button btnChangeDefaultClub;
+    @FXML
+    private TextField searchBar;
 
     private final String arsenalTeamDetailsURL = getClass().getResource("css/ArsenalTeamDetails.css").toExternalForm();
     private final String chelseaTeamDetailsURL = getClass().getResource("css/ChelseaTeamDetails.css").toExternalForm();
@@ -58,33 +61,49 @@ public class TeamDetailsController implements Initializable {
     private final String mancityTeamDetailsURL = getClass().getResource("css/ManCityTeamDetails.css").toExternalForm();
     @FXML
     private TableView<Player> playerTable;
+    public static String searchString = "";
 
     /**
      * Initialises the controller class.
+     *
      * @param url
      * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lblTeamName.setText(teamName);
+
         loadTeamStyle();
         scene.getStylesheets().add(stylesheet);
-        
+
         ObservableList<Player> players = FXCollections.observableArrayList(populateClubPlayers(teamID));
         playerTable.setItems(players);
-              
+
+    }
+
+    @FXML
+    public void search(KeyEvent keyEvent) throws IOException {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            searchString = searchBar.getText();
+            searchBar.setText("");
+            root = FXMLLoader.load(getClass().getResource("SearchResults.fxml"));
+            Scene scene = new Scene(root);
+            System.out.println("Scene: " + scene);
+            stage.setScene(scene);
+            scene.getStylesheets().add(stylesheet);
+            stage.show();
         }
-        
+        //create a new scene with root and set the stage
+
+    }
 
     @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
-        
-
         if (event.getSource() == btnChelsea || event.getSource() == btnArsenal || event.getSource() == btnTottenham || event.getSource() == btnManCity || event.getSource() == btnHome) {
             selectClub(event);
             Button btn = (Button) event.getSource();
             stage = (Stage) btn.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("Home.fxml"));     
+            root = FXMLLoader.load(getClass().getResource("Home.fxml"));
         } else if (event.getSource() == btnTeamDetails) {
             stage = (Stage) btnTeamDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Team Details.fxml"));
@@ -94,10 +113,9 @@ public class TeamDetailsController implements Initializable {
         } else if (event.getSource() == btnClubDetails) {
             stage = (Stage) btnClubDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
-        }
-        else if (event.getSource() == btnChangeDefaultClub) {
+        } else if (event.getSource() == btnChangeDefaultClub) {
             stage = (Stage) btnChangeDefaultClub.getScene().getWindow();
-            root =  FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+            root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
             stylesheet = "";
         }
         //create a new scene with root and set the stage
@@ -105,49 +123,48 @@ public class TeamDetailsController implements Initializable {
         stage.setScene(scene);
         scene.getStylesheets().add(stylesheet);
         stage.show();
-        
+
     }
-    
-        public void loadTeamStyle(){
+
+    public void loadTeamStyle() {
         switch (teamID) {
-                case 1:
-                    stylesheet = arsenalTeamDetailsURL;
+            case 1:
+                stylesheet = arsenalTeamDetailsURL;
 
-                    break;
-                case 2:
-                    stylesheet = chelseaTeamDetailsURL;
+                break;
+            case 2:
+                stylesheet = chelseaTeamDetailsURL;
 
-                    break;
-                case 3:
-                    stylesheet = tottenhamTeamDetailsURL;
+                break;
+            case 3:
+                stylesheet = tottenhamTeamDetailsURL;
 
-                    break;
-                case 4:
-                    stylesheet = mancityTeamDetailsURL;
+                break;
+            case 4:
+                stylesheet = mancityTeamDetailsURL;
 
-                    break;
-                default:
-                    break;
-            }
+                break;
+            default:
+                break;
+        }
     }
-        
-        public void selectClub(ActionEvent event){
-        
+
+    public void selectClub(ActionEvent event) {
+
         if (event.getSource() == btnArsenal) {
-                teamName = "Arsenal";
-                teamID = 1;
-            } else if (event.getSource() == btnChelsea) {
-                teamName = "Chelsea";
-                teamID = 2;
-            } else if (event.getSource() == btnTottenham) {
-                teamName = "Tottenham";
-                teamID = 3;
-            } else if (event.getSource() == btnManCity) {
-                teamName = "Man City";
-                teamID = 4;
-            }
-        
-           
+            teamName = "Arsenal";
+            teamID = 1;
+        } else if (event.getSource() == btnChelsea) {
+            teamName = "Chelsea";
+            teamID = 2;
+        } else if (event.getSource() == btnTottenham) {
+            teamName = "Tottenham";
+            teamID = 3;
+        } else if (event.getSource() == btnManCity) {
+            teamName = "Man City";
+            teamID = 4;
+        }
+
     }
-    
+
 }

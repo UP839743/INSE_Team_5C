@@ -158,7 +158,7 @@
                 </Button>
             </children>
         </VBox>
-      <TextField fx:id="searchField" layoutX="838.0" layoutY="71.0" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
+      <TextField fx:id="searchBar" layoutX="838.0" layoutY="71.0" onKeyPressed="#search" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
       <Button id="btnChangeDefaultClub" fx:id="btnChangeDefaultClub" layoutX="1126.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Change Default Club">
          <font>
             <Font size="16.0" />
