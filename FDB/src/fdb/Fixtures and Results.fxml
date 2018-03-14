@@ -76,17 +76,17 @@
             <columns>
                 <TableColumn prefWidth="131.0" text="Team1">
                     <cellValueFactory>
-                        <PropertyValueFactory property="team1" />
+                        <PropertyValueFactory property="homeTeam" />
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn prefWidth="131.0" text="Date" >
                     <cellValueFactory>
-                        <PropertyValueFactory property="date" />
+                        <PropertyValueFactory property="matchDate" />
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn prefWidth="131.0" text="Team2" >
                     <cellValueFactory>
-                        <PropertyValueFactory property="team2" />
+                        <PropertyValueFactory property="awayTeam" />
                     </cellValueFactory>
                 </TableColumn>
             </columns>
