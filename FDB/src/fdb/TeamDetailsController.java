@@ -70,7 +70,7 @@ public class TeamDetailsController implements Initializable {
         loadTeamStyle();
         scene.getStylesheets().add(stylesheet);
         
-        ObservableList<Player> players = FXCollections.observableArrayList(populateClubPlayers(team));
+        ObservableList<Player> players = FXCollections.observableArrayList(populateClubPlayers(teamID));
         playerTable.setItems(players);
               
         }
@@ -109,7 +109,7 @@ public class TeamDetailsController implements Initializable {
     }
     
         public void loadTeamStyle(){
-        switch (team) {
+        switch (teamID) {
                 case 1:
                     stylesheet = arsenalTeamDetailsURL;
 
@@ -135,16 +135,16 @@ public class TeamDetailsController implements Initializable {
         
         if (event.getSource() == btnArsenal) {
                 teamName = "Arsenal";
-                team = 1;
+                teamID = 1;
             } else if (event.getSource() == btnChelsea) {
                 teamName = "Chelsea";
-                team = 2;
+                teamID = 2;
             } else if (event.getSource() == btnTottenham) {
                 teamName = "Tottenham";
-                team = 3;
+                teamID = 3;
             } else if (event.getSource() == btnManCity) {
                 teamName = "Man City";
-                team = 4;
+                teamID = 4;
             }
         
            

@@ -30,7 +30,7 @@ public class FDB extends Application {
     
     public void start(Stage stage) throws Exception {
         Parent root = null;
-        if (team.equals("Arsenal") || team.equals("Tottenham") || team.equals("Man City") || team.equals("Chelsea")){
+        if (teamString.equals("Arsenal") || teamString.equals("Tottenham") || teamString.equals("Man City") || teamString.equals("Chelsea")){
             root = FXMLLoader.load(getClass().getResource("Home.fxml"));}
         else {
             root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));}
@@ -43,7 +43,7 @@ public class FDB extends Application {
         stage.show();
     }
    
-    static String team = "";
+    static String teamString = "";
     static ArrayList<Player> allPlayers = new ArrayList();
     static ArrayList<Manager> allManagers = new ArrayList();
     static ArrayList<Fixture> allFixtures = new ArrayList();
@@ -53,6 +53,27 @@ public class FDB extends Application {
     static ArrayList<Stadium> allStadiums = new ArrayList();
     static ArrayList<PosHist> AllposHists = new ArrayList();
 
+    public static int teamStringToID(String teamName){
+        int teamID = 0;
+        switch (teamName) {
+            case "Arsenal":
+                teamID = 1;
+                break;
+            case "Chelsea":
+                teamID = 2;
+                break;
+            case "Tottenham":
+                teamID = 3;
+                break;
+            case "Man City":
+                teamID = 4;
+                break;
+            default:
+                break;
+        }
+        return teamID;
+    }
+       
     /**
      * @param args the command line arguments
      */
@@ -62,7 +83,7 @@ public class FDB extends Application {
         Connection con = initDatabase();
         //Load in objects
         if (con != null){
-            ArrayList<Player> team = new ArrayList();
+            ArrayList<Player> teamString = new ArrayList();
             loadPlayers(con); 
             loadManagers(con);
             loadFixtures(con);
@@ -92,7 +113,7 @@ public class FDB extends Application {
             //End Of Tests
             }
         else {System.out.println("Check connection to database");}
-        //See if a team is pre set, if not set up (then launch gui)
+        //See if a teamString is pre set, if not set up (then launch gui)
         readIniFile();
         launch(args);
     }
@@ -112,28 +133,32 @@ public class FDB extends Application {
     }
     
     //TODO - Ini with GUI
-    public static void readIniFile() throws Exception{
+    public static int readIniFile() throws Exception{
+        int teamID = 0;
         try{
             String file = "C:\\FDB\\ini.txt";
             String line;
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                 while ((line = br.readLine()) != null) {
                     System.out.println(line);
-                    team = line;
-                    //Load GUI to default team page
+                    teamString = line;
+                    teamID = teamStringToID(teamString);
+                    
+                    //Load GUI to default teamString page
                 }
             }
         }
         catch(Exception e){
             System.out.println(e);
             System.out.println("File Read Failed, Creating ini File");
-            //Load GUI to welcome page to pick default team
-            createIniFile(team);
+            //Load GUI to welcome page to pick default teamString
+            createIniFile(teamString);
         }
+        return teamID;
     }
     
         //TODO - Ini with GUI
-    public static void createIniFile(String team) throws Exception{
+    public static void createIniFile(String teamString) throws Exception{
         try{
             //Create directory and file
             File dir = new File("C:\\FDB");
@@ -147,10 +172,10 @@ public class FDB extends Application {
             else{
                 System.out.println("File already exists.");}
 
-            //Write team to file
+            //Write teamString to file
             FileWriter writer = new FileWriter(file);
-            if (team.equals("")){team = "Arsenal";}
-            writer.write(team);
+            if (teamString.equals("")){teamString = "Arsenal";}
+            writer.write(teamString);
             writer.close();
         }
         catch(Exception e){
@@ -425,50 +450,51 @@ public class FDB extends Application {
     
     public static int populatePosition(String season, int requestedTeam){
         int pos = 0;
-        //Currentseason
-        if (season == "17/18"){
-            for (Club clb: allClubs) {
-                if (clb.getClubID() == requestedTeam){
-                    pos = clb.getClubPosititon();
-                }
-            }
-        }
-        //past seasons
-        else if (season == "16/17"){
-            for (PosHist psHst: AllposHists) {
-                if (psHst.getClubID() == requestedTeam && psHst.getYear() == 2017){
-                    pos = psHst.getPosition();
-                }
-            }
-        }
-        else if (season == "15/16"){
-            for (PosHist psHst: AllposHists) {
-                if (psHst.getClubID() == requestedTeam && psHst.getYear() == 2016){
-                    pos = psHst.getPosition();
-                }
-            }
-        }
-        else if (season == "14/15"){
-            for (PosHist psHst: AllposHists) {
+       
+        switch (season) {
+            case "17/18":
+                for (Club clb: allClubs) {
+                    if (clb.getClubID() == requestedTeam){
+                        pos = clb.getClubPosititon();
+                    }
+                }   break;
+            case "16/17":
+                for (PosHist psHst: AllposHists) {
+                    if (psHst.getClubID() == requestedTeam && psHst.getYear() == 2017){
+                        pos = psHst.getPosition();
+                    }
+                }   break;
+            case "15/16":
+                for (PosHist psHst: AllposHists) {
+                    if (psHst.getClubID() == requestedTeam && psHst.getYear() == 2016){
+                        pos = psHst.getPosition();
+                    }
+                }   break;
+            case "14/15":
+                for (PosHist psHst: AllposHists) {
                     if (psHst.getClubID() == requestedTeam && psHst.getYear() == 2015){
                         pos = psHst.getPosition();
                     }
                 }
+                break;
+            default:
+                break;
         }
-        else{}
     return pos;
     }
     
     public static String populateNews(int requestedTeam){
-    String StadiumNews = "";
+    String clubNews = "";
+    String clubStory = "";
     for (News nws: allNews) {
         if (nws.getClubId() == requestedTeam){
-            StadiumNews = "--" + nws.getTitle() + "-- \n" 
+            clubStory = "--" + nws.getTitle() + "-- \n" 
                     + nws.getAuthor() + "\n"
                     + nws.getContent();
+            clubNews += clubStory + "\n \n";
         }
     }
-    return StadiumNews;
+    return clubNews;
     }
     
     public static ArrayList<Fixture> populateFixtures(String requestedTeam){

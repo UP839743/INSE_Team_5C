@@ -100,7 +100,7 @@ public class ClubDetailsController implements Initializable {
         
     }
         public void loadClubStyle(){
-        switch (team) {
+        switch (teamID) {
                 case 1:
                     stylesheet = arsenalClubDetailsURL;
 
@@ -126,16 +126,16 @@ public class ClubDetailsController implements Initializable {
         
         if (event.getSource() == btnArsenal) {
                 teamName = "Arsenal";
-                team = 1;
+                teamID = 1;
             } else if (event.getSource() == btnChelsea) {
                 teamName = "Chelsea";
-                team = 2;
+                teamID = 2;
             } else if (event.getSource() == btnTottenham) {
                 teamName = "Tottenham";
-                team = 3;
+                teamID = 3;
             } else if (event.getSource() == btnManCity) {
                 teamName = "Man City";
-                team = 4;
+                teamID = 4;
             }
         
            

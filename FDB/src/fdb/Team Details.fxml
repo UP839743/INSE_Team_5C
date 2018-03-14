@@ -76,7 +76,7 @@
                         <PropertyValueFactory property="position" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="54.0" text="Height">
+                <TableColumn prefWidth="54.0" text="Height(ft)">
                     <cellValueFactory>
                         <PropertyValueFactory property="height" />
                     </cellValueFactory>
@@ -89,6 +89,31 @@
                 <TableColumn prefWidth="191.0" text="Nationality">
                     <cellValueFactory>
                         <PropertyValueFactory property="nationality" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="55.0" text="Squad Number">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="squadNumber" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="55.0" text="Season Apps">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="seasonApps" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="55.0" text="Season Goals">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="seasonGoals" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="55.0" text="Season Assists">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="seasonAssists" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="55.0" text="Cleansheets">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="cleanSheets" />
                     </cellValueFactory>
                 </TableColumn>
             </columns>

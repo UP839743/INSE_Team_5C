@@ -14,6 +14,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
 
 <AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.FixturesAndResultsController">
     <children>
@@ -71,14 +73,26 @@
             </items> 
         </ComboBox>
         
-        <TableView layoutX="217.0" layoutY="271.0" prefHeight="635.0" prefWidth="393.0">
+        <TableView fx:id = "fixtureTable" layoutX="217.0" layoutY="271.0" prefHeight="635.0" prefWidth="393.0">
             <columns>
-                <TableColumn prefWidth="131.0" text="Team1" />
-                <TableColumn prefWidth="131.0" text="Date" />
-                <TableColumn prefWidth="131.0" text="Team2" />
+                <TableColumn prefWidth="131.0" text="Home">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="homeTeam" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="131.0" text="Date">
+                   <cellValueFactory>
+                        <PropertyValueFactory property="matchDate" />
+                    </cellValueFactory> 
+                </TableColumn>    
+                <TableColumn prefWidth="131.0" text="Away">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="awayTeam" />
+                    </cellValueFactory>
+                </TableColumn>
             </columns>
         </TableView>
-        <TableView layoutX="793.0" layoutY="269.0" prefHeight="635.0" prefWidth="393.0">
+        <TableView fx:id = "resultTable" layoutX="793.0" layoutY="269.0" prefHeight="635.0" prefWidth="393.0">
             <columns>
                 <TableColumn prefWidth="98.25" text="Team1" />
                 <TableColumn prefWidth="100.0" text="Score" />

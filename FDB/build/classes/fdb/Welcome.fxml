@@ -18,7 +18,7 @@
             <Font name="Lato Light" size="96.0" />
          </font>
       </Label>
-      <Label fx:id="lblPickTeam" alignment="TOP_CENTER" layoutX="577.0" layoutY="266.0" text="pick your team..">
+      <Label fx:id="lblPickTeam" alignment="TOP_CENTER" layoutX="577.0" layoutY="266.0" text="pick your teamID..">
          <font>
             <Font name="Lato Light" size="34.0" />
          </font>
