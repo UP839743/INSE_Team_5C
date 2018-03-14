@@ -5,7 +5,7 @@
  */
 package fdb;
 
-import static fdb.FDB.getClubPlayers;
+import static fdb.FDB.populateClubPlayers;
 import static fdb.FXMLDocumentController.*;
 import java.io.IOException;
 import java.net.URL;
@@ -70,7 +70,7 @@ public class TeamDetailsController implements Initializable {
         loadTeamStyle();
         scene.getStylesheets().add(stylesheet);
         
-        ObservableList<Player> players = FXCollections.observableArrayList(getClubPlayers(team));
+        ObservableList<Player> players = FXCollections.observableArrayList(populateClubPlayers(team));
         playerTable.setItems(players);
               
         }

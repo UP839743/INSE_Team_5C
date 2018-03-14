@@ -58,8 +58,7 @@ public class FDB extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        //See if a team is pre set, if not set up
-        readIniFile();
+        
         //Connect to Database
         Connection con = initDatabase();
         //Load in objects
@@ -74,10 +73,28 @@ public class FDB extends Application {
             loadStadiums(con);
             loadPosHistory(con);
             System.out.println("DB Cached...");
+            //Pre GUI imp tests
+            int positition = populatePosition("16/17", 3);
+            int positition2 = populatePosition("17/18", 3);
+            String news = populateNews(3);
+            ArrayList<Fixture> spursResults = populateResults("Tottenham Hotspur");
+            ArrayList<Fixture> spursFixtures = populateFixtures("Tottenham Hotspur");
+            ArrayList<Trophy> trophyCabinet = populateTrophies(1);
+            //tests as follows 1-SquadNo 2- LastName 3-Position 4-Nationality 5-PrefFoot 6-FirstName 7-First and last name together
+            ArrayList<Player> searchedPlayers = searchPlayers(7);
+            ArrayList<Player> searchedPlayers2 = searchPlayers("Son");
+            ArrayList<Player> searchedPlayers3 = searchPlayers("MID");
+            ArrayList<Player> searchedPlayers4 = searchPlayers("England");
+            ArrayList<Player> searchedPlayers5 = searchPlayers("L");
+            ArrayList<Player> searchedPlayers6 = searchPlayers("Harry");
+            ArrayList<Player> searchedPlayers7 = searchPlayers("Harry Kane");
+            System.out.println(news);
+            System.out.println("breakpoint met");
+            //End Of Tests
             }
         else {System.out.println("Check connection to database");}
-        //Load GUI
-        launch(args);
+        //See if a team is pre set, if not set up (then launch gui)
+        readIniFile(args);
     }
     
     public static Connection initDatabase(){
@@ -94,24 +111,28 @@ public class FDB extends Application {
         return con;
     }
     
-    public static void readIniFile() throws Exception{
+    //TODO - Ini with GUI
+    public static void readIniFile(String[] args) throws Exception{
         try{
             String file = "C:\\FDB\\ini.txt";
             String line;
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                 while ((line = br.readLine()) != null) {
                     System.out.println(line);
+                    //Load GUI to default team page
+                    launch(args);
                 }
             }
         }
         catch(Exception e){
             System.out.println(e);
             System.out.println("File Read Failed, Creating ini File");
-            //Change this later - call welcome page, then call create.
-            createIniFile("spurs");
+            //Load GUI to welcome page to pick default team
+            launch(args);
         }
     }
     
+        //TODO - Ini with GUI
     public static void createIniFile(String team) throws Exception{
         try{
             //Create directory and file
@@ -369,15 +390,17 @@ public class FDB extends Application {
             }
     }
     
-    public static ArrayList<Player> getClubPlayers(int requestedTeam){
-    ArrayList<Player> team = new ArrayList();
+    //SHIV - Can we just re-use this for Club details left table?
+    public static ArrayList<Player> populateClubPlayers(int requestedTeam){
+    ArrayList<Player> players = new ArrayList();
     for (Player plr: allPlayers) {
         if (plr.getclubID() == requestedTeam){
-            team.add(plr);
+            players.add(plr);
         }
     }
-    return team;
+    return players;
     }
+    
     public static String populateManagerName(int requestedTeam){
     String managerName = "";
     for (Manager mgr: allManagers) {
@@ -397,4 +420,109 @@ public class FDB extends Application {
     }
     return StadiumName;
     }
+    
+    public static int populatePosition(String season, int requestedTeam){
+        int pos = 0;
+        //Currentseason
+        if (season == "17/18"){
+            for (Club clb: allClubs) {
+                if (clb.getClubID() == requestedTeam){
+                    pos = clb.getClubPosititon();
+                }
+            }
+        }
+        //past seasons
+        else if (season == "16/17"){
+            for (PosHist psHst: AllposHists) {
+                if (psHst.getClubID() == requestedTeam && psHst.getYear() == 2017){
+                    pos = psHst.getPosition();
+                }
+            }
+        }
+        else if (season == "15/16"){
+            for (PosHist psHst: AllposHists) {
+                if (psHst.getClubID() == requestedTeam && psHst.getYear() == 2016){
+                    pos = psHst.getPosition();
+                }
+            }
+        }
+        else if (season == "14/15"){
+            for (PosHist psHst: AllposHists) {
+                    if (psHst.getClubID() == requestedTeam && psHst.getYear() == 2015){
+                        pos = psHst.getPosition();
+                    }
+                }
+        }
+        else{}
+    return pos;
+    }
+    
+    public static String populateNews(int requestedTeam){
+    String StadiumNews = "";
+    for (News nws: allNews) {
+        if (nws.getClubId() == requestedTeam){
+            StadiumNews = "--" + nws.getTitle() + "-- \n" 
+                    + nws.getAuthor() + "\n"
+                    + nws.getContent();
+        }
+    }
+    return StadiumNews;
+    }
+    
+    public static ArrayList<Fixture> populateFixtures(String requestedTeam){
+    java.sql.Date currentDate = new java.sql.Date(new java.util.Date().getTime());
+    ArrayList<Fixture> results = new ArrayList();
+    for (Fixture ftx: allFixtures) {
+        if (ftx.getHomeTeam().equals(requestedTeam) || ftx.getAwayTeam().equals(requestedTeam)){
+            if (ftx.getMatchDate().compareTo(currentDate) > 0){
+            results.add(ftx);}}
+    }
+    return results;
+    }
+    
+    public static ArrayList<Fixture> populateResults(String requestedTeam){
+    java.sql.Date currentDate = new java.sql.Date(new java.util.Date().getTime());
+    ArrayList<Fixture> results = new ArrayList();
+    for (Fixture ftx: allFixtures) {
+        if (ftx.getHomeTeam().equals(requestedTeam) || ftx.getAwayTeam().equals(requestedTeam)){
+            if (ftx.getMatchDate().compareTo(currentDate) < 0){
+            results.add(ftx);}}
+    }
+    return results;
+    }
+    
+    public static ArrayList<Trophy> populateTrophies(int requestedTeam){
+    ArrayList<Trophy> TrophyCabinet = new ArrayList();
+    for (Trophy trphy: allTrophies) {
+        if (trphy.getClubId() == requestedTeam){
+            TrophyCabinet.add(trphy);
+        }
+    }
+    return TrophyCabinet;
+    }
+    
+    //Overwritting methods with different arguments!
+    public static ArrayList<Player> searchPlayers(int SquadNo){
+    ArrayList<Player> players = new ArrayList();
+    for (Player plr: allPlayers) {
+        if (plr.getSquadNumber() == SquadNo){
+            players.add(plr);
+        }
+    }
+    return players;
+    }
+    
+    public static ArrayList<Player> searchPlayers(String searchString){
+    ArrayList<Player> players = new ArrayList();
+    for (Player plr: allPlayers) {
+        //Used contains for first and last name so that users can input part or all of a name
+        if (searchString.contains(plr.getFirstName())|| searchString.contains(plr.getLastName())
+                || plr.getNationality().equals(searchString)|| plr.getPrefFoot().equals(searchString) 
+                || plr.getPosition().equals(searchString)){
+            players.add(plr);
+        }
+    }
+    return players;
+    }
 }
+

@@ -32,6 +32,7 @@ public class PosHist {
         return competition;
     }
     
+    //Year the season concludes
     public int getYear() {
         return year;
     }
