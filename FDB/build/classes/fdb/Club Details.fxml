@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.ClubDetailsController">
+<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.ClubDetailsController">
    <children>
       <HBox prefHeight="124.0" prefWidth="815.0">
          <children>
@@ -142,7 +142,7 @@
           </TableColumn>
         </columns>
       </TableView>
-      <TextField fx:id="searchBar" onAction="#search" layoutX="838.0" layoutY="71.0"  prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
+      <TextField fx:id="searchBar" layoutX="838.0" layoutY="71.0" onKeyPressed="#search" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
       <Button id="btnChangeDefaultClub" fx:id="btnChangeDefaultClub" layoutX="1126.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="37.0" prefWidth="169.0" text="Change Default Club">
          <font>
             <Font size="16.0" />
