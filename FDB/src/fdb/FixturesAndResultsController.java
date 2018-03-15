@@ -62,7 +62,6 @@ public class FixturesAndResultsController implements Initializable {
     @FXML
     private TextField searchBar;
 
-
     private final String arsenalFixturesURL = getClass().getResource("css/ArsenalFixturesAndResults.css").toExternalForm();
     private final String chelseaFixturesURL = getClass().getResource("css/ChelseaFixturesAndResults.css").toExternalForm();
     private final String tottenhamFixturesURL = getClass().getResource("css/TottenhamFixturesAndResults.css").toExternalForm();
@@ -80,18 +79,18 @@ public class FixturesAndResultsController implements Initializable {
         ObservableList<Fixture> fixtures = FXCollections.observableArrayList(FDB.populateFixtures(teamName));
         fixtureTable.setItems(fixtures);
         String season = (String) resultSeason.getValue();
-        ObservableList<Fixture> results = FXCollections.observableArrayList(FDB.populateResults(teamName,season));
+        ObservableList<Fixture> results = FXCollections.observableArrayList(FDB.populateResults(teamName, season));
         resultTable.setItems(results);
     }
 
-        @FXML
+    @FXML
     public void search(KeyEvent keyEvent) throws IOException {
-        if (keyEvent.getCode() == KeyCode.ENTER) {
+        //if key pressed is enter AND text box is not empty
+        if (keyEvent.getCode() == KeyCode.ENTER && !"".equals(searchBar.getText())) {
             searchString = searchBar.getText();
             searchBar.setText("");
-            root = FXMLLoader.load(getClass().getResource("SearchResults.fxml"));
+            root = FXMLLoader.load(getClass().getResource("Search Results.fxml"));
             Scene scene = new Scene(root);
-            System.out.println("Scene: " + scene);
             stage.setScene(scene);
             scene.getStylesheets().add(stylesheet);
             stage.show();
@@ -99,7 +98,7 @@ public class FixturesAndResultsController implements Initializable {
         //create a new scene with root and set the stage
 
     }
-    
+
     @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
 
@@ -120,10 +119,9 @@ public class FixturesAndResultsController implements Initializable {
             stage = (Stage) btnClubDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
 
-        }
-        else if (event.getSource() == btnChangeDefaultClub) {
+        } else if (event.getSource() == btnChangeDefaultClub) {
             stage = (Stage) btnChangeDefaultClub.getScene().getWindow();
-            root =  FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+            root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
             stylesheet = "";
         }
         //create a new scene with root and set the stage
@@ -133,11 +131,11 @@ public class FixturesAndResultsController implements Initializable {
         stage.show();
 
     }
-    
-     @FXML
+
+    @FXML
     public void showSeasonPosition(ActionEvent event) {
         String season = (String) resultSeason.getValue();
-        ObservableList<Fixture> results = FXCollections.observableArrayList(FDB.populateResults(teamName,season));
+        ObservableList<Fixture> results = FXCollections.observableArrayList(FDB.populateResults(teamName, season));
         resultTable.setItems(results);
     }
 

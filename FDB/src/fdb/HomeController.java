@@ -107,27 +107,22 @@ public class HomeController implements Initializable {
     private TextField searchBar;
     @FXML
     private AnchorPane homeAP;
-    
 
     private final String chelseaThemeUrl = getClass().getResource("css/Chelsea.css").toExternalForm();
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
     private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
     private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
     private static Boolean intialised = false;
-    
 
-    
-
-  
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if(!intialised){
+        if (!intialised) {
             try {
                 teamID = FDB.readIniFile();
-               
+
                 intialised = true;
             } catch (Exception ex) {
                 Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
@@ -138,44 +133,37 @@ public class HomeController implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            System.out.println("Stylesheet: "+ root);
+            System.out.println("Stylesheet: " + root);
             Scene scene = new Scene(root);
             scene.getStylesheets().add(stylesheet);
-                        System.out.println("Stylesheet: "+ root);
+            System.out.println("Stylesheet: " + root);
 
         }
         //Sets root
-      
-        
-        
+
         //Stylesheet stuff
-        
-        
-        
         loadHomeStyle();
         lblTeamName.setText(teamName);
         lblFounderName.setText(founder);
         lblChairmanName.setText(chairman);
-        lblStadiumName.setText(populateStadiumName(teamID));  
+        lblStadiumName.setText(populateStadiumName(teamID));
         lblManagerName.setText(populateManagerName(teamID));
-        lblLeagueName.setText ("Premier League");
+        lblLeagueName.setText("Premier League");
         seasonBox.getSelectionModel().selectFirst();
-        lblCurrentPosition.setText(""+FDB.populatePosition(seasonBox.getValue(), teamID));
+        lblCurrentPosition.setText("" + FDB.populatePosition(seasonBox.getValue(), teamID));
         lblStory.setText(FDB.populateNews(teamID));
 
-
     }
-    
-        @FXML
+
+    @FXML
     public void search(KeyEvent keyEvent) throws IOException {
         //if key pressed is enter AND text box is not empty
         if (keyEvent.getCode() == KeyCode.ENTER && !"".equals(searchBar.getText())) {
             searchString = searchBar.getText();
             searchBar.setText("");
-             
+
 //            Node source = (Node) keyEvent.getSource();
 //            stage = (Stage) source.getScene().getWindow();
-            
             root = FXMLLoader.load(getClass().getResource("Search Results.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -203,10 +191,9 @@ public class HomeController implements Initializable {
         } else if (event.getSource() == btnClubDetails || event.getSource() == btnMoreDetails) {
             stage = (Stage) btnClubDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
-        }
-        else if (event.getSource() == btnChangeDefaultClub) {
+        } else if (event.getSource() == btnChangeDefaultClub) {
             stage = (Stage) btnChangeDefaultClub.getScene().getWindow();
-            root =  FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+            root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
             stylesheet = "WelcomeFromChangeDefaultClub.css";
         }
         //create a new scene with root and set the stage
@@ -219,9 +206,9 @@ public class HomeController implements Initializable {
 
     @FXML
     public void showSeasonPosition(ActionEvent event) {
-        lblCurrentPosition.setText(Integer.toString(populatePosition(seasonBox.getValue(),teamID)));
+        lblCurrentPosition.setText(Integer.toString(populatePosition(seasonBox.getValue(), teamID)));
     }
-    
+
     public void loadClub(ActionEvent event) {
 
         if (event.getSource() == btnArsenal) {
@@ -264,8 +251,6 @@ public class HomeController implements Initializable {
                 break;
             default:
                 break;
-                
-             
 
         }
 

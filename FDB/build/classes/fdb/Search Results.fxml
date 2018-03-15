@@ -17,7 +17,7 @@
    <children>
       <HBox prefHeight="126.0" prefWidth="814.0" style="-fx-background-color: grey;">
          <children>
-            <Button mnemonicParsing="false" prefHeight="147.0" prefWidth="204.0" text="Home" textAlignment="CENTER">
+            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="147.0" prefWidth="204.0" text="Home" textAlignment="CENTER">
                <font>
                   <Font name="Lato Light" size="30.0" />
                </font>

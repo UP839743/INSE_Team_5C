@@ -59,7 +59,6 @@ public class ClubDetailsController implements Initializable {
     private TableView<Trophy> trophyCabinet;
     @FXML
     private TextField searchBar;
-    
 
     private final String arsenalClubDetailsURL = getClass().getResource("css/ArsenalClubDetails.css").toExternalForm();
     private final String chelseaClubDetailsURL = getClass().getResource("css/ChelseaClubDetails.css").toExternalForm();
@@ -84,15 +83,15 @@ public class ClubDetailsController implements Initializable {
         trophyCabinet.setItems(trophies);
 
     }
-    
-        @FXML
+
+    @FXML
     public void search(KeyEvent keyEvent) throws IOException {
-        if (keyEvent.getCode() == KeyCode.ENTER) {
+        //if key pressed is enter AND text box is not empty
+        if (keyEvent.getCode() == KeyCode.ENTER && !"".equals(searchBar.getText())) {
             searchString = searchBar.getText();
             searchBar.setText("");
-            root = FXMLLoader.load(getClass().getResource("SearchResults.fxml"));
+            root = FXMLLoader.load(getClass().getResource("Search Results.fxml"));
             Scene scene = new Scene(root);
-            System.out.println("Scene: " + scene);
             stage.setScene(scene);
             scene.getStylesheets().add(stylesheet);
             stage.show();

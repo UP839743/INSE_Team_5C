@@ -59,7 +59,6 @@ public class SearchResultsController implements Initializable {
     private TableView<Player> searchTable;
     @FXML
     private Label resultsLabel;
-    
 
     /**
      * Initializes the controller class.
@@ -68,17 +67,19 @@ public class SearchResultsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         ObservableList<Player> playersResults = FXCollections.observableArrayList(searchPlayers(searchString));
         searchTable.setItems(playersResults);
-        if (playersResults.size() != 0){resultsLabel.setText(playersResults.size() + " Result(s) Found");}
-    }    
+        if (playersResults.size() != 0) {
+            resultsLabel.setText(playersResults.size() + " Result(s) Found");
+        }
+    }
 
     @FXML
     public void search(KeyEvent keyEvent) throws IOException {
-        if (keyEvent.getCode() == KeyCode.ENTER) {
+        //if key pressed is enter AND text box is not empty
+        if (keyEvent.getCode() == KeyCode.ENTER && !"".equals(searchBar.getText())) {
             searchString = searchBar.getText();
             searchBar.setText("");
-            root = FXMLLoader.load(getClass().getResource("SearchResults.fxml"));
+            root = FXMLLoader.load(getClass().getResource("Search Results.fxml"));
             Scene scene = new Scene(root);
-            System.out.println("Scene: " + scene);
             stage.setScene(scene);
             scene.getStylesheets().add(stylesheet);
             stage.show();
@@ -86,8 +87,8 @@ public class SearchResultsController implements Initializable {
         //create a new scene with root and set the stage
 
     }
-    
-        @FXML
+
+    @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
         if (event.getSource() == btnChelsea || event.getSource() == btnArsenal || event.getSource() == btnTottenham || event.getSource() == btnManCity || event.getSource() == btnHome) {
             selectClub(event);
@@ -103,8 +104,8 @@ public class SearchResultsController implements Initializable {
         } else if (event.getSource() == btnClubDetails) {
             stage = (Stage) btnClubDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
-        } 
-        
+        }
+
         //create a new scene with root and set the stage
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -112,7 +113,7 @@ public class SearchResultsController implements Initializable {
         stage.show();
 
     }
-    
+
     public void selectClub(ActionEvent event) {
 
         if (event.getSource() == btnArsenal) {
