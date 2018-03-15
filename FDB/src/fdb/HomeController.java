@@ -19,6 +19,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -26,6 +28,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -102,6 +105,8 @@ public class HomeController implements Initializable {
     private Button btnChangeDefaultClub;
     @FXML
     private TextField searchBar;
+    @FXML
+    private AnchorPane homeAP;
     
 
     private final String chelseaThemeUrl = getClass().getResource("css/Chelsea.css").toExternalForm();
@@ -109,6 +114,8 @@ public class HomeController implements Initializable {
     private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
     private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
     private static Boolean intialised = false;
+    
+
     
 
   
@@ -125,14 +132,26 @@ public class HomeController implements Initializable {
             } catch (Exception ex) {
                 Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
             }
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+            try {
+                root = loader.load();
+            } catch (IOException ex) {
+                Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            System.out.println("Stylesheet: "+ root);
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(stylesheet);
+                        System.out.println("Stylesheet: "+ root);
+
         }
-//        //Sets root
-//                
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        scene.getStylesheets().add(stylesheet);
-//        stage.show();
+        //Sets root
+      
+        
+        
         //Stylesheet stuff
+        
+        
+        
         loadHomeStyle();
         lblTeamName.setText(teamName);
         lblFounderName.setText(founder);
@@ -149,12 +168,16 @@ public class HomeController implements Initializable {
     
         @FXML
     public void search(KeyEvent keyEvent) throws IOException {
-        if (keyEvent.getCode() == KeyCode.ENTER) {
+        //if key pressed is enter AND text box is not empty
+        if (keyEvent.getCode() == KeyCode.ENTER && !"".equals(searchBar.getText())) {
             searchString = searchBar.getText();
             searchBar.setText("");
-            root = FXMLLoader.load(getClass().getResource("SearchResults.fxml"));
+             
+//            Node source = (Node) keyEvent.getSource();
+//            stage = (Stage) source.getScene().getWindow();
+            
+            root = FXMLLoader.load(getClass().getResource("Search Results.fxml"));
             Scene scene = new Scene(root);
-            System.out.println("Scene: " + scene);
             stage.setScene(scene);
             scene.getStylesheets().add(stylesheet);
             stage.show();
