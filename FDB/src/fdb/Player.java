@@ -106,7 +106,7 @@ public class Player {
         return clubGoals;
     }
     
-    public int getseasonGoals() {
+    public int getSeasonGoals() {
         return seasonGoals;
     }
     
@@ -114,7 +114,7 @@ public class Player {
         return seasonAssists;
     }
     
-    public int getcleanSheets() {
+    public int getCleanSheets() {
         return cleanSheets;
     }
 }

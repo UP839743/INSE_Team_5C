@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.HomeController">
+<AnchorPane id="AnchorPane" fx:id="homeAP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.HomeController">
    
     <children>
         <Label fx:id="lblTeamName" layoutX="222.0" layoutY="124.0" prefHeight="94.0" prefWidth="425.0" text="Arsenal" textAlignment="CENTER">
@@ -58,7 +58,11 @@
           
         </ComboBox>
       
-        <Label fx:id="lblCurrentPosition" alignment="CENTER" layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" text="werwer" textFill="WHITE" />
+        <Label fx:id="lblCurrentPosition" alignment="CENTER" layoutX="975.0" layoutY="595.0" prefHeight="71.0" prefWidth="113.0" textFill="BLACK">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Label>
         <Label fx:id="lblStadium" layoutX="727.0" layoutY="209.0" text="Stadium:">
             <font>
                 <Font size="21.0" />
@@ -149,7 +153,7 @@
                 </Button>
             </children>
         </VBox>
-        <TextField fx:id="searchField" layoutX="838.0" layoutY="71.0" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." AnchorPane.rightAnchor="105.0" />
+        <TextField fx:id="searchBar" layoutX="838.0" layoutY="71.0" onKeyPressed="#search" prefHeight="53.0" prefWidth="457.0" promptText="Search player by Name, Nationality, Pref Foot or position..." AnchorPane.rightAnchor="105.0" />
       <Label fx:id="lblStadiumName" layoutX="815.0" layoutY="209.0">
          <font>
             <Font size="18.0" />

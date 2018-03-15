@@ -16,8 +16,8 @@ public class Fixture {
     Date matchDate;
     String homeTeam;
     String awayTeam;
-    int homeScore;
-    int awayScore;
+    int homeGoals;
+    int awayGoals;
     
     public Fixture(int match_ID, Date match_Date, String matchHomeTeam, 
             String matchAwayTeam, int matchHomeTeamScore, int matchAwayTeamScore)
@@ -26,8 +26,8 @@ public class Fixture {
     matchDate = match_Date;
     homeTeam = matchHomeTeam;
     awayTeam = matchAwayTeam;
-    homeScore = matchHomeTeamScore;
-    awayScore = matchAwayTeamScore;
+    homeGoals = matchHomeTeamScore;
+    awayGoals = matchAwayTeamScore;
     }
 
     //Getters
@@ -48,10 +48,10 @@ public class Fixture {
     }
     
     public int getHomeTeamScore() {
-        return homeScore;
+        return homeGoals;
     }
     
     public int getAwayTeamScore() {
-        return awayScore;
+        return awayGoals;
     }
 }

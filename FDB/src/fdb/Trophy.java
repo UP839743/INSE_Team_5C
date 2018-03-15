@@ -10,19 +10,19 @@ package fdb;
  * @author accou
  */
 public class Trophy {
-    String Competition;
+    String competition;
     int year;
     int ClubId;
     
     public Trophy(String troCompetition, int troYear, int troClubId) 
     {
-        Competition = troCompetition;
+        competition = troCompetition;
         year = troYear;
         ClubId = troClubId;
     }
     
     public String getCompetition() {
-        return Competition;
+        return competition;
     }
     
     public int getYear() {

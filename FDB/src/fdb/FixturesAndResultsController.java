@@ -5,10 +5,15 @@
  */
 package fdb;
 
+import static fdb.FDB.populateClubPlayers;
+import static fdb.FDB.populatePosition;
 import static fdb.FXMLDocumentController.*;
+import static fdb.TeamDetailsController.searchString;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +21,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -46,6 +56,15 @@ public class FixturesAndResultsController implements Initializable {
     private Label lblTeamName;
     @FXML
     private Button btnChangeDefaultClub;
+    @FXML
+    private TableView<Fixture> fixtureTable;
+    @FXML
+    private TableView<Fixture> resultTable;
+    @FXML
+    private ComboBox resultSeason;
+    @FXML
+    private TextField searchBar;
+
 
     private final String arsenalFixturesURL = getClass().getResource("css/ArsenalFixturesAndResults.css").toExternalForm();
     private final String chelseaFixturesURL = getClass().getResource("css/ChelseaFixturesAndResults.css").toExternalForm();
@@ -60,8 +79,30 @@ public class FixturesAndResultsController implements Initializable {
         lblTeamName.setText(teamName);
         loadFixtureStyle();
         scene.getStylesheets().add(stylesheet);
+        resultSeason.getSelectionModel().selectFirst();
+        ObservableList<Fixture> fixtures = FXCollections.observableArrayList(FDB.populateFixtures(teamName));
+        fixtureTable.setItems(fixtures);
+        String season = (String) resultSeason.getValue();
+        ObservableList<Fixture> results = FXCollections.observableArrayList(FDB.populateResults(teamName,season));
+        resultTable.setItems(results);
     }
 
+        @FXML
+    public void search(KeyEvent keyEvent) throws IOException {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            searchString = searchBar.getText();
+            searchBar.setText("");
+            root = FXMLLoader.load(getClass().getResource("SearchResults.fxml"));
+            Scene scene = new Scene(root);
+            System.out.println("Scene: " + scene);
+            stage.setScene(scene);
+            scene.getStylesheets().add(stylesheet);
+            stage.show();
+        }
+        //create a new scene with root and set the stage
+
+    }
+    
     @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
 
@@ -95,9 +136,16 @@ public class FixturesAndResultsController implements Initializable {
         stage.show();
 
     }
+    
+     @FXML
+    public void showSeasonPosition(ActionEvent event) {
+        String season = (String) resultSeason.getValue();
+        ObservableList<Fixture> results = FXCollections.observableArrayList(FDB.populateResults(teamName,season));
+        resultTable.setItems(results);
+    }
 
     public void loadFixtureStyle() {
-        switch (team) {
+        switch (teamID) {
             case 1:
                 stylesheet = arsenalFixturesURL;
 
@@ -123,16 +171,16 @@ public class FixturesAndResultsController implements Initializable {
 
         if (event.getSource() == btnArsenal) {
             teamName = "Arsenal";
-            team = 1;
+            teamID = 1;
         } else if (event.getSource() == btnChelsea) {
             teamName = "Chelsea";
-            team = 2;
+            teamID = 2;
         } else if (event.getSource() == btnTottenham) {
             teamName = "Tottenham";
-            team = 3;
+            teamID = 3;
         } else if (event.getSource() == btnManCity) {
             teamName = "Man City";
-            team = 4;
+            teamID = 4;
         }
 
     }

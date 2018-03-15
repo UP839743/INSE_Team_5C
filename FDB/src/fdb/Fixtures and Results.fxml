@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -61,29 +62,63 @@
                 <Font size="30.0" />
             </font>
         </Label>
-        <ComboBox layoutX="793.0" layoutY="192.0" prefHeight="36.0" prefWidth="150.0" promptText="Select a Season">
+        <ComboBox fx:id="resultSeason" layoutX="793.0" layoutY="192.0" onAction="#showSeasonPosition" prefHeight="36.0" prefWidth="150.0" promptText="Select a Season">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:id="17_18" fx:value="17/18" />
                     <String fx:id="16_17" fx:value="16/17" />
                     <String fx:id="15_16" fx:value="15/16" />
+                    <String fx:id="14_15" fx:value="14/15" />
                 </FXCollections>
             </items> 
         </ComboBox>
         
-        <TableView layoutX="217.0" layoutY="271.0" prefHeight="635.0" prefWidth="393.0">
+        <TableView fx:id="fixtureTable" layoutX="217.0" layoutY="271.0" prefHeight="635.0" prefWidth="393.0">
             <columns>
-                <TableColumn prefWidth="131.0" text="Team1" />
-                <TableColumn prefWidth="131.0" text="Date" />
-                <TableColumn prefWidth="131.0" text="Team2" />
+                <TableColumn prefWidth="131.0" text="Home">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="homeTeam" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="131.0" text="Date">
+                   <cellValueFactory>
+                        <PropertyValueFactory property="matchDate" />
+                    </cellValueFactory> 
+                </TableColumn>    
+                <TableColumn prefWidth="131.0" text="Away">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="awayTeam" />
+                    </cellValueFactory>
+                </TableColumn>
             </columns>
         </TableView>
-        <TableView layoutX="793.0" layoutY="269.0" prefHeight="635.0" prefWidth="393.0">
+        <TableView fx:id="resultTable" layoutX="793.0" layoutY="269.0" prefHeight="635.0" prefWidth="500.0">
             <columns>
-                <TableColumn prefWidth="98.25" text="Team1" />
-                <TableColumn prefWidth="100.0" text="Score" />
-                <TableColumn prefWidth="98.0" text="Team2" />
-                <TableColumn prefWidth="98.25" text="Date" />
+                <TableColumn prefWidth="98.25" text="Home Team">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="homeTeam" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="100.0" text="Home Score">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="HomeTeamScore" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="100.0" text="Away Score">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="AwayTeamScore" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="98.0" text="Away Team">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="awayTeam" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="98.25" text="Date">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="matchDate" />
+                    </cellValueFactory>
+                </TableColumn>
             </columns>
         </TableView>
         <VBox layoutX="1.0" layoutY="124.0" prefHeight="846.0" prefWidth="204.0">
@@ -126,7 +161,7 @@
                 </Button>
             </children>
         </VBox>
-      <TextField fx:id="searchField" layoutX="838.0" layoutY="71.0" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
+      <TextField fx:id="searchBar" onAction="#search" layoutX="838.0" layoutY="71.0"  prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
       <Button id="btnChangeDefaultClub" fx:id="btnChangeDefaultClub" layoutX="1126.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="37.0" prefWidth="169.0" text="Change Default Club">
          <font>
             <Font size="16.0" />

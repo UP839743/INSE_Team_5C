@@ -185,7 +185,7 @@ public class PlayerTest {
     public void testGetseasonGoals() {
         System.out.println("getseasonGoals");
         int expResult = 878;
-        int result = testPlr.getseasonGoals();
+        int result = testPlr.getSeasonGoals();
         assertEquals(expResult, result);
     }
     
@@ -207,7 +207,7 @@ public class PlayerTest {
     public void testGetcleanSheets() {
         System.out.println("getcleanSheets");
         int expResult = 1000;
-        int result = testPlr.getcleanSheets();
+        int result = testPlr.getCleanSheets();
         assertEquals(expResult, result);
     }
     

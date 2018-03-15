@@ -8,11 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="FDB.jar" size="3942599" download="eager" />
-=======
-    <jar href="FDB.jar" size="3942072" download="eager" />
->>>>>>> 2fd255ea46d31d62dd3ef354b384215c77c33889
+    <jar href="FDB.jar" size="3948813" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.45-bin.jar" size="999810" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="FDB" >
