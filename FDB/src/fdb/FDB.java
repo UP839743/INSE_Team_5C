@@ -22,18 +22,6 @@ import javafx.stage.Stage;
  * @author INSE Team 5C
  */
 public class FDB extends Application {
-<<<<<<< HEAD
-
-
-    @Override
-=======
-   
-//    private String arsenalThemeUrl = getClass().getResource("@css/Arsenal.css").toExternalForm();
-//    private String chelseaThemeUrl = getClass().getResource("@css/Chelsea.css").toExternalForm();
-//    private String tottenhamThemeUrl = getClass().getResource("@css/Tottenham.css").toExternalForm();
-//    private String manCityThemeUrl = getClass().getResource("@css/ManCity.css").toExternalForm();
-    
->>>>>>> 2fd255ea46d31d62dd3ef354b384215c77c33889
     public void start(Stage stage) throws Exception {
         Parent root = null;
         if (team.equals("")){
