@@ -737,8 +737,13 @@ INSERT INTO Fixture (MATCHDATE, HOMETEAM, AWAYTEAM, HOMETEAMSCORE, AWAYTEAMSCORE
 
 INSERT INTO News (CLUBID, TITLE, CONTENT, AUTHOR) VALUES
   (1, "Sample Title", "Sample Content", "Joe Bloggs"),
+  (1, "Sample Title", "Sample Content", "Joe Bloggs"),
+  (1, "Sample Title", "Sample Content", "Joe Bloggs"),
+  (1, "Sample Title", "Sample Content", "Joe Bloggs"),
   (2, "Another Sample Title", "Some more sample content", "Joe Bloggs"),
+  (2, "Sample Title", "Sample Content", "Joe Bloggs"),
   (3, "A third Sample Title", "Some more sample content", "Joe Bloggs"),
+  (3, "Sample Title", "Sample Content", "Joe Bloggs"),
   (4, "Sample Title: IV: A new hope", "Some more sample content", "Joe Bloggs"),
   (4, "Sample Title", "Some content", "Joe Bloggs")
 ;

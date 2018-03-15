@@ -28,7 +28,7 @@
         </Label>
         <VBox fx:id="newsBox" layoutX="222.0" layoutY="263.0" prefHeight="495.0" prefWidth="397.0">
             <children>
-                <Label fx:id="lblStory" text="Story 1" />
+                <Label fx:id="lblStory" alignment="TOP_LEFT" prefHeight="99.0" prefWidth="397.0" text="Story 1" />
             </children>
         </VBox>
         <Label fx:id="lblClubDetails" layoutX="650.0" layoutY="149.0" text="Club Details">

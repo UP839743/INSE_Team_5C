@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.ClubDetailsController">
+<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.ClubDetailsController">
    <children>
       <HBox prefHeight="124.0" prefWidth="815.0">
          <children>
@@ -91,27 +91,22 @@
       </VBox>
       <TableView fx:id="recordTable" layoutX="226.0" layoutY="277.0" prefHeight="678.0" prefWidth="600.0">
          <columns>
-             <TableColumn prefWidth="122.0" text="First Name">
+             <TableColumn prefWidth="150.0" text="First Name">
                  <cellValueFactory>
                         <PropertyValueFactory property="firstName" />
                     </cellValueFactory>
              </TableColumn>
-             <TableColumn prefWidth="122.0" text="Last Name">
+             <TableColumn prefWidth="150.0" text="Last Name">
                  <cellValueFactory>
                         <PropertyValueFactory property="lastName" />
                     </cellValueFactory>
              </TableColumn>
-             <TableColumn prefWidth="122.0" text="Goals">
+             <TableColumn prefWidth="150.0" text="Goals">
                  <cellValueFactory>
                         <PropertyValueFactory property="clubGoals" />
                     </cellValueFactory>
              </TableColumn>
-             <TableColumn prefWidth="122.0" text="Assists(TO DO)">
-                 <cellValueFactory>
-                        <PropertyValueFactory property="clubAssists" />
-                    </cellValueFactory>
-             </TableColumn>
-             <TableColumn prefWidth="122.0" text="Appearances">
+             <TableColumn prefWidth="150.0" text="Appearances">
                  <cellValueFactory>
                         <PropertyValueFactory property="clubApps" />
                     </cellValueFactory>
@@ -142,7 +137,11 @@
           </TableColumn>
         </columns>
       </TableView>
-      <TextField fx:id="searchBar" onAction="#search" layoutX="838.0" layoutY="71.0"  prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
+<<<<<<< HEAD
+      <TextField fx:id="searchBar" layoutX="838.0" layoutY="71.0" onAction="#search" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
+=======
+      <TextField fx:id="searchBar" layoutX="838.0" layoutY="71.0" onKeyPressed="#search" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
+>>>>>>> 31f87c0c89f2a2cbc66dc669594260838825e848
       <Button id="btnChangeDefaultClub" fx:id="btnChangeDefaultClub" layoutX="1126.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="37.0" prefWidth="169.0" text="Change Default Club">
          <font>
             <Font size="16.0" />
