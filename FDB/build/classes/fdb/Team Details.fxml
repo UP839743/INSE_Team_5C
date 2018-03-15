@@ -54,64 +54,64 @@
                 <Font size="30.0" />
             </font>
         </Label>
-        <TableView fx:id="playerTable" layoutX="215.0" layoutY="258.0" prefHeight="704.0" prefWidth="1180.0">
+        <TableView fx:id="playerTable" layoutX="215.0" layoutY="258.0" prefHeight="704.0" prefWidth="1118.0">
             <columns>
                 <TableColumn prefWidth="104.00003051757812" text="First Name">
                     <cellValueFactory>
                         <PropertyValueFactory property="firstName" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="132.0" text="Last Name"> 
+                <TableColumn prefWidth="123.0" text="Last Name"> 
                 <cellValueFactory>
                         <PropertyValueFactory property="lastName" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="121.0" text="Date of Birth"> 
+                <TableColumn prefWidth="98.0" text="Date of Birth"> 
                     <cellValueFactory>
                         <PropertyValueFactory property="DoB" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="60.000030517578125" text="Position">
+                <TableColumn prefWidth="52.0" text="Position">
                     <cellValueFactory>
                         <PropertyValueFactory property="position" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="54.0" text="Height(ft)">
+                <TableColumn prefWidth="78.0" text="Height(ft)">
                     <cellValueFactory>
                         <PropertyValueFactory property="height" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="179.0" text="Pref Foot">
+                <TableColumn prefWidth="61.0" text="Pref Foot">
                     <cellValueFactory>
                         <PropertyValueFactory property="prefFoot" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="191.0" text="Nationality">
+                <TableColumn prefWidth="117.0" text="Nationality">
                     <cellValueFactory>
                         <PropertyValueFactory property="nationality" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="55.0" text="Squad Number">
+                <TableColumn prefWidth="110.0" text="Squad Number">
                     <cellValueFactory>
                         <PropertyValueFactory property="squadNumber" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="55.0" text="Season Apps">
+                <TableColumn prefWidth="94.0" text="Season Apps">
                     <cellValueFactory>
                         <PropertyValueFactory property="seasonApps" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="55.0" text="Season Goals">
+                <TableColumn prefWidth="90.0" text="Season Goals">
                     <cellValueFactory>
                         <PropertyValueFactory property="seasonGoals" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="55.0" text="Season Assists">
+                <TableColumn prefWidth="99.0" text="Season Assists">
                     <cellValueFactory>
                         <PropertyValueFactory property="seasonAssists" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="55.0" text="Cleansheets">
+                <TableColumn prefWidth="88.0" text="Cleansheets">
                     <cellValueFactory>
                         <PropertyValueFactory property="cleanSheets" />
                     </cellValueFactory>
@@ -158,7 +158,7 @@
                 </Button>
             </children>
         </VBox>
-      <TextField fx:id="searchBar" layoutX="838.0" layoutY="71.0" onKeyPressed="#search" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
+      <TextField fx:id="searchBar" layoutX="838.0" layoutY="71.0" onKeyPressed="#search" prefHeight="53.0" prefWidth="457.0" promptText="Search player by Name, Nationality, Pref Foot or position..." />
       <Button id="btnChangeDefaultClub" fx:id="btnChangeDefaultClub" layoutX="1126.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Change Default Club">
          <font>
             <Font size="16.0" />

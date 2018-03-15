@@ -79,34 +79,49 @@
             </Button>
          </children>
       </VBox>
-      <TextField fx:id="searchBar" layoutX="883.0" layoutY="29.0" onKeyPressed="#search" prefHeight="53.0" prefWidth="425.0" promptText="Search" />
-      <TableView fx:id="searchTable" layoutX="215.0" layoutY="268.0" prefHeight="704.0" prefWidth="1180.0">
+      <TextField fx:id="searchBar" layoutX="883.0" layoutY="29.0" onKeyPressed="#search" prefHeight="53.0" prefWidth="425.0" promptText="Search player by Name, Nationality, Pref Foot or position..." />
+      <TableView fx:id="searchTable" layoutX="215.0" layoutY="268.0" prefHeight="704.0" prefWidth="1182.0">
          <columns>
-             <TableColumn prefWidth="236.0" text="First Name">
+             <TableColumn prefWidth="194.0" text="First Name">
                  <cellValueFactory>
                         <PropertyValueFactory property="firstName" />
                     </cellValueFactory>
              </TableColumn>
-             <TableColumn prefWidth="236.0" text="Last Name">
+             <TableColumn prefWidth="194.0" text="Last Name">
                  <cellValueFactory>
                         <PropertyValueFactory property="lastName" />
                     </cellValueFactory>
              </TableColumn>
-             <TableColumn prefWidth="236.0" text="Position">
+             <TableColumn prefWidth="107.0" text="Date of Birth">
+                 <cellValueFactory>
+                        <PropertyValueFactory property="DoB" />
+                    </cellValueFactory>
+             </TableColumn>
+             <TableColumn prefWidth="91.0" text="Position">
                  <cellValueFactory>
                         <PropertyValueFactory property="position" />
                     </cellValueFactory>
              </TableColumn>
-             <TableColumn prefWidth="236.0" text="Height">
+             <TableColumn minWidth="0.0" prefWidth="88.0" text="Height(ft)">
                  <cellValueFactory>
                         <PropertyValueFactory property="height" />
                     </cellValueFactory>
              </TableColumn>
-             <TableColumn prefWidth="236.0" text="Nationality">
-                 <cellValueFactory>
-                        <PropertyValueFactory property="nationality" />
-                    </cellValueFactory>
-             </TableColumn>
+            <TableColumn prefWidth="307.0" text="Nationality" >
+                <cellValueFactory>
+                        <PropertyValueFactory property="nationailty" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="104.0" text="Squad Number" >
+                <cellValueFactory>
+                        <PropertyValueFactory property="squadNumber" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="84.0" text="Cleansheets" >
+                <cellValueFactory>
+                        <PropertyValueFactory property="cleanSheets" />
+                </cellValueFactory>
+            </TableColumn>
          </columns>
       </TableView>
       <Label fx:id="resultsLabel" layoutX="234.0" layoutY="176.0" prefHeight="70.0" prefWidth="369.0" text="No Results Found...">
