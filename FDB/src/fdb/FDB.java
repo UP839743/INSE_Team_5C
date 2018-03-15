@@ -22,21 +22,20 @@ import javafx.stage.Stage;
  * @author INSE Team 5C
  */
 public class FDB extends Application {
-<<<<<<< HEAD
-=======
-
-//    private String arsenalThemeUrl = getClass().getResource("@css/Arsenal.css").toExternalForm();
-//    private String chelseaThemeUrl = getClass().getResource("@css/Chelsea.css").toExternalForm();
-//    private String tottenhamThemeUrl = getClass().getResource("@css/Tottenham.css").toExternalForm();
-//    private String manCityThemeUrl = getClass().getResource("@css/ManCity.css").toExternalForm();
->>>>>>> 0a144c9ef85074aafdb9de1f27e043cbe9702883
-    public void start(Stage stage) throws Exception {
-        Parent root = null;
-        if (teamString.equals("Arsenal") || teamString.equals("Tottenham") || teamString.equals("Man City") || teamString.equals("Chelsea")) {
-            root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        } else {
-            root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+    public void start(Stage stage) throws Exception {       
+        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));       
+        if (teamString.equals("Arsenal")) {
+            root.getStylesheets().add(getClass().getResource("css/Arsenal.css").toExternalForm());
         }
+        else if (teamString.equals("Chelsea")) {
+            root.getStylesheets().add(getClass().getResource("css/Chelsea.css").toExternalForm());
+        }
+        else if (teamString.equals("Tottenham")) {
+            root.getStylesheets().add(getClass().getResource("css/Tottenham.css").toExternalForm());
+        }
+              else if (teamString.equals("Man City")) {
+            root.getStylesheets().add(getClass().getResource("css/Man City.css").toExternalForm());
+                  }       
         Scene scene = new Scene(root);
         stage.setMaxHeight(1000);
         stage.setMaxWidth(1400);
