@@ -97,6 +97,8 @@ public class FDB extends Application {
             loadStadiums(con);
             loadPosHistory(con);
             System.out.println("DB Cached...");
+            
+            
             //Pre GUI imp tests
             int positition = populatePosition("16/17", 3);
             int positition2 = populatePosition("17/18", 3);
@@ -111,10 +113,11 @@ public class FDB extends Application {
             ArrayList<Player> searchedPlayers4 = searchPlayers("England");
             ArrayList<Player> searchedPlayers5 = searchPlayers("L");
             ArrayList<Player> searchedPlayers6 = searchPlayers("Harry");
-            ArrayList<Player> searchedPlayers7 = searchPlayers("Harry Kane");
+            ArrayList<Player> searchedPlayers7 = searchPlayers("HaRry kAne");
             System.out.println(news);
             System.out.println("breakpoint met");
             //End Of Tests
+            
         } else {
             System.out.println("Check connection to database");
         }
@@ -581,11 +584,15 @@ public class FDB extends Application {
 //    }
     public static ArrayList<Player> searchPlayers(String searchString) {
         ArrayList<Player> players = new ArrayList();
+        String formattedSearchString = searchString.toLowerCase();
         for (Player plr : allPlayers) {
             //Used contains for first and last name so that users can input part or all of a name
-            if (searchString.contains(plr.getFirstName()) || searchString.contains(plr.getLastName())
-                    || plr.getNationality().equals(searchString) || plr.getPrefFoot().equals(searchString)
-                    || plr.getPosition().equals(searchString)) {
+            if (formattedSearchString.contains(plr.getFirstName().toLowerCase()) || 
+                formattedSearchString.contains(plr.getLastName().toLowerCase()) || 
+                plr.getNationality().toLowerCase().equals(formattedSearchString) ||
+                plr.getPrefFoot().toLowerCase().equals(formattedSearchString)|| 
+                plr.getPosition().toLowerCase().equals(formattedSearchString)) 
+            {
                 players.add(plr);
             }
         }

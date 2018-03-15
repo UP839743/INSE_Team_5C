@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.SearchResultsController">
+<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.SearchResultsController">
    <children>
       <HBox prefHeight="126.0" prefWidth="814.0" style="-fx-background-color: grey;">
          <children>
@@ -109,7 +109,7 @@
              </TableColumn>
          </columns>
       </TableView>
-      <Label layoutX="234.0" layoutY="176.0" prefHeight="70.0" prefWidth="369.0" text="No Results Found...">
+      <Label fx:id="resultsLabel" layoutX="234.0" layoutY="176.0" prefHeight="70.0" prefWidth="369.0" text="No Results Found...">
          <font>
             <Font size="30.0" />
          </font></Label>
