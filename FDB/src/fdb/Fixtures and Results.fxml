@@ -101,12 +101,12 @@
                 </TableColumn>
                 <TableColumn prefWidth="100.0" text="Home Score">
                     <cellValueFactory>
-                        <PropertyValueFactory property="homeGoals" />
+                        <PropertyValueFactory property="HomeTeamScore" />
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn prefWidth="100.0" text="Away Score">
                     <cellValueFactory>
-                        <PropertyValueFactory property="awayGoals" />
+                        <PropertyValueFactory property="AwayTeamScore" />
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn prefWidth="98.0" text="Away Team">
