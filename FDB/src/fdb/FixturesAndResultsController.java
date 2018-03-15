@@ -5,8 +5,6 @@
  */
 package fdb;
 
-import static fdb.FDB.populateClubPlayers;
-import static fdb.FDB.populatePosition;
 import static fdb.FXMLDocumentController.*;
 import static fdb.TeamDetailsController.searchString;
 import java.io.IOException;
@@ -18,7 +16,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;

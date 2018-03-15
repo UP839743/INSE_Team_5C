@@ -138,7 +138,11 @@
         </columns>
       </TableView>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <TextField fx:id="searchBar" layoutX="838.0" layoutY="71.0" onAction="#search" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
+=======
+      <TextField fx:id="searchBar" layoutX="838.0" layoutY="71.0" onKeyPressed="#search" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
+>>>>>>> 31f87c0c89f2a2cbc66dc669594260838825e848
 =======
       <TextField fx:id="searchBar" layoutX="838.0" layoutY="71.0" onKeyPressed="#search" prefHeight="53.0" prefWidth="457.0" promptText="Search players..." />
 >>>>>>> 31f87c0c89f2a2cbc66dc669594260838825e848

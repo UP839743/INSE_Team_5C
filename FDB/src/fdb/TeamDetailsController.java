@@ -81,7 +81,7 @@ public class TeamDetailsController implements Initializable {
 
     }
 
-    @FXML
+            @FXML
     public void search(KeyEvent keyEvent) throws IOException {
         if (keyEvent.getCode() == KeyCode.ENTER) {
             searchString = searchBar.getText();
