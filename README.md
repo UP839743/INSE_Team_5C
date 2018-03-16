@@ -23,17 +23,9 @@ For Developer Mode - Want to edit the code yourself? Great!
 * [MySQL Java Connector](https://dev.mysql.com/downloads/connector/j/) - The connector for java and the MySQL Database Netbeans (Recommended IDE for Development)
 ```
 
-### Basic Install
+### Install
 
-Download the Jar File located at:
-
-```
-INSE_Team_5C/FDB/dist/FDB.jar
-```
-Run the FDB.jar and you should be welcomed with the welcome screen, pick a team and go!  
-End with an example of getting some data out of the system or using it for a little demo
-
-### Advanced Install
+for a video demo look here: https://www.youtube.com/watch?v=DbqIfk1FLBg
 
 Download the Jar File located at:
 ```
@@ -54,29 +46,3 @@ INSE_Team_5C/Database Scripts/population.sql
 Run the FDB.jar and you should be welcomed with the welcome screen, pick a team and go!  
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
-
-//TODO
-
-### Break down into end to end tests
-
-//TODO
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
