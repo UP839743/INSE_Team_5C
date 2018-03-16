@@ -22,7 +22,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
- *
  * @author INSE Team 5C
  */
 public class FXMLDocumentController implements Initializable {

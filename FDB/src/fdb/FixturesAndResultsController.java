@@ -27,12 +27,12 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Fixtures and Results FXML Controller class
  *
- * @author up816736
+ * @author INSE Team 5C
  */
 public class FixturesAndResultsController implements Initializable {
-
+//  intialised all the used componenets in the UI.
     @FXML
     private Button btnTeamDetails;
     @FXML
@@ -61,6 +61,7 @@ public class FixturesAndResultsController implements Initializable {
     private ComboBox resultSeason;
     @FXML
     private TextField searchBar;
+//  URLs for the CSS files used depending on team selected.
 
     private final String arsenalFixturesURL = getClass().getResource("css/ArsenalFixturesAndResults.css").toExternalForm();
     private final String chelseaFixturesURL = getClass().getResource("css/ChelseaFixturesAndResults.css").toExternalForm();
@@ -69,6 +70,10 @@ public class FixturesAndResultsController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * 
+     * 
+     * @param url The parameter is the url for the controller.
+     * @param rb ResourceBundle used by the controller.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
