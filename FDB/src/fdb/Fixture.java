@@ -89,4 +89,6 @@ public class Fixture {
     public int getAwayTeamScore() {
         return awayGoals;
     }
+    
+    //No setters, data should never be altered
 }

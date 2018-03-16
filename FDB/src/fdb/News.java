@@ -1,47 +1,70 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fdb;
 
 /**
  *
- * @author accou
+ * @author INSE Team 5C
  */
 public class News {
-    int NewsId;
-    int ClubId;
+
+    int NewsID;
+    int ClubID;
     String Title;
     String Content;
     String Author;
-    
-    public News(int nNewsId, int nClubId, String nTitle, String nContent, String nAuthor) 
-    {
-        NewsId = nNewsId;
-        ClubId = nClubId;
-        Title = nTitle;
-        Content = nContent;
-        Author = nAuthor;
+
+    /**
+     * constructor for an article of news
+     * @param news_ID
+     * @param news_ClubId
+     * @param news_Title
+     * @param news_Content
+     * @param news_Author
+     */
+    public News(int news_ID, int news_ClubId, String news_Title, String news_Content, String news_Author) {
+        NewsID = news_ID;
+        ClubID = news_ClubId;
+        Title = news_Title;
+        Content = news_Content;
+        Author = news_Author;
+    }
+    /**
+     * get the ID of the news article
+     * @return NewsID
+     */
+    public int getNewsID() {
+        return NewsID;
     }
     
-    public int getNewsId() {
-        return NewsId;
+    /**
+     * get the ID of the club associated with the news article
+     * @return ClubID
+     */
+    public int getClubID() {
+        return ClubID;
     }
     
-    public int getClubId() {
-        return ClubId;
-    }
-    
+    /**
+     * get the title of the news article
+     * @return title
+     */
     public String getTitle() {
         return Title;
     }
-    public String getContent(){
+    
+    /**
+     * get the content of the news article
+     * @return content
+     */
+    public String getContent() {
         return Content;
     }
-    
-    public String getAuthor(){
+     
+    /**
+     * get the author of the news article
+     * @return author
+     */
+    public String getAuthor() {
         return Author;
     }
-    
+
 }

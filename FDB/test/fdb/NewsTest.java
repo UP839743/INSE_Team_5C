@@ -37,7 +37,7 @@ public class NewsTest {
     public void testGetNewsId() {
         System.out.println("getNewsId");
         int expResult = 5678;
-        int result = testNws.getNewsId();
+        int result = testNws.getNewsID();
         assertEquals(expResult, result);
     }
 
@@ -48,7 +48,7 @@ public class NewsTest {
     public void testGetClubId() {
         System.out.println("getClubId");
         int expResult = 4354;
-        int result = testNws.getClubId();
+        int result = testNws.getClubID();
         assertEquals(expResult, result);
     }
 

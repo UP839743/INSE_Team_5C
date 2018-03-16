@@ -605,7 +605,7 @@ public class FDB extends Application {
         String clubNews = "";
         String clubStory = "";
         for (News nws : allNews) {
-            if (nws.getClubId() == requestedTeam) {
+            if (nws.getClubID() == requestedTeam) {
                 clubStory = "--" + nws.getTitle() + "-- \n"
                         + nws.getAuthor() + "\n"
                         + nws.getContent();
