@@ -33,6 +33,7 @@ import javafx.stage.Stage;
  */
 public class FixturesAndResultsController implements Initializable {
 //  intialised all the used componenets in the UI.
+
     @FXML
     private Button btnTeamDetails;
     @FXML
@@ -69,9 +70,10 @@ public class FixturesAndResultsController implements Initializable {
     private final String mancityFixturesURL = getClass().getResource("css/ManCityFixturesAndResults.css").toExternalForm();
 
     /**
-     * Initializes the controller class.
-     * 
-     * 
+     * Initializes the controller class. Sets up the Fixtures and Results page by
+     * setting the team name for the label, loading the correct style for the
+     * selected team and populating the fixtures and results table.
+     *
      * @param url The parameter is the url for the controller.
      * @param rb ResourceBundle used by the controller.
      */
@@ -80,56 +82,80 @@ public class FixturesAndResultsController implements Initializable {
         lblTeamName.setText(teamName);
         loadFixtureStyle();
         scene.getStylesheets().add(stylesheet);
+        // Shows the first item in the results combo box rather than the prompt text.
         resultSeason.getSelectionModel().selectFirst();
+        // loads the fixtures
         ObservableList<Fixture> fixtures = FXCollections.observableArrayList(FDB.populateFixtures(teamName));
         fixtureTable.setItems(fixtures);
         String season = (String) resultSeason.getValue();
+        //loads the results
         ObservableList<Fixture> results = FXCollections.observableArrayList(FDB.populateResults(teamName, season));
         resultTable.setItems(results);
     }
 
+    /**
+     * Search event triggered by pressing the enter key. calls the search method
+     * when enter is pressed. loads the search page with the queried results.
+     *
+     * @param keyEvent the key pressed.
+     * @throws IOException
+     */
     @FXML
     public void search(KeyEvent keyEvent) throws IOException {
         //if key pressed is enter AND text box is not empty
         if (keyEvent.getCode() == KeyCode.ENTER && !"".equals(searchBar.getText())) {
             searchString = searchBar.getText();
+            //makes the search bar blank again.
             searchBar.setText("");
+            //finds and loads the Search Results.fxml file.
             root = FXMLLoader.load(getClass().getResource("Search Results.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             scene.getStylesheets().add(stylesheet);
             stage.show();
         }
-        //create a new scene with root and set the stage
 
     }
 
+    /**
+     * Button event for all the buttons on the page. Depending on the button
+     * pressed the desired page will load. And set the correct stylesheet.
+     *
+     * @param event The button pressed.
+     * @throws IOException
+     */
     @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
-
+        // loads the home page by pressing the club buttons or home button.
         if (event.getSource() == btnChelsea || event.getSource() == btnArsenal || event.getSource() == btnTottenham || event.getSource() == btnManCity || event.getSource() == btnHome) {
+            // loads the stylesheet for the desired club.
             selectClub(event);
+            // changes the root pane to home.fxml
             Button btn = (Button) event.getSource();
             stage = (Stage) btn.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        } else if (event.getSource() == btnTeamDetails) {
+        }// sets the root and stage to the team details page. 
+        else if (event.getSource() == btnTeamDetails) {
             stage = (Stage) btnTeamDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Team Details.fxml"));
 
-        } else if (event.getSource() == btnFixtures) {
+        } // sets the root and stage to the fixtures and results page. 
+        else if (event.getSource() == btnFixtures) {
             stage = (Stage) btnFixtures.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Fixtures and Results.fxml"));
 
-        } else if (event.getSource() == btnClubDetails) {
+        } // sets the root and stage to the club details page. 
+        else if (event.getSource() == btnClubDetails) {
             stage = (Stage) btnClubDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
 
-        } else if (event.getSource() == btnChangeDefaultClub) {
+        }// sets the root and stage to the welcome page. 
+        else if (event.getSource() == btnChangeDefaultClub) {
             stage = (Stage) btnChangeDefaultClub.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
             stylesheet = "";
         }
-        //create a new scene with root and set the stage
+        //create a new scene with previously set root and sets the stage
         Scene scene = new Scene(root);
         stage.setScene(scene);
         scene.getStylesheets().add(stylesheet);
@@ -137,36 +163,46 @@ public class FixturesAndResultsController implements Initializable {
 
     }
 
+    /**
+     * Changes the list of results in the results table by changing the value selected
+     * in the results combo box.
+     * @param event the value selected in the combo box.
+     */
     @FXML
     public void showSeasonPosition(ActionEvent event) {
         String season = (String) resultSeason.getValue();
         ObservableList<Fixture> results = FXCollections.observableArrayList(FDB.populateResults(teamName, season));
         resultTable.setItems(results);
     }
-
+/**
+ * changes the stylesheet variable depending on the team chosen.
+ */
     public void loadFixtureStyle() {
         switch (teamID) {
+            //Arsenal
             case 1:
                 stylesheet = arsenalFixturesURL;
-
                 break;
+            //Chelsea
             case 2:
                 stylesheet = chelseaFixturesURL;
-
                 break;
+            //Tottenham
             case 3:
                 stylesheet = tottenhamFixturesURL;
-
                 break;
+            //Man City
             case 4:
                 stylesheet = mancityFixturesURL;
-
                 break;
             default:
                 break;
         }
     }
-
+/**
+ * Sets the team name and team id depending on the button pressed
+ * @param event The club buttons
+ */
     public void selectClub(ActionEvent event) {
 
         if (event.getSource() == btnArsenal) {

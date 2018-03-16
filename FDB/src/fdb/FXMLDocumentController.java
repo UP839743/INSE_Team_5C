@@ -15,10 +15,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -34,19 +30,13 @@ public class FXMLDocumentController implements Initializable {
     private Button btnTottenham;
     @FXML
     private Button btnManCity;
-    @FXML
-    private Button btnTeamDetails;
-    @FXML
-    private Button btnFixtures;
-    @FXML
-    private Button btnClubDetails;
-
+// stylesheet URLs
     private final String chelseaThemeUrl = getClass().getResource("css/Chelsea.css").toExternalForm();
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
     private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
     private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
-    //private final String welcomeThemeUrl = getClass().getResource("css/Welcome.css").toExternalForm();
 
+// Global variables
     public static Scene scene;
     public static Stage stage;
     public static Parent root;
@@ -55,15 +45,11 @@ public class FXMLDocumentController implements Initializable {
     public static String teamName = "";
     public static String founder = "";
     public static String chairman = "";
-    @FXML
-    private TextField searchBar;
-    @FXML
-    private TableView<?> searchTable;
-    
+
 
     /**
-     *
-     * @param event
+     * loads the home page and loads a stylesheet depedning on which team was chosen.
+     * @param event the club button that was pressed.
      * @throws IOException
      */
     @FXML
@@ -93,30 +79,38 @@ public class FXMLDocumentController implements Initializable {
         scene.getStylesheets().add(stylesheet);
         stage.show();
     }
-
+/**
+ * Intialise class for the controller.
+ * @param url url of the fxml file.
+ * @param rb The resource bundle used for the fxml file.
+ */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
     }
-
+/**
+ * Selects a stylesheet and sets the team name.
+ * Depending on what club you have picked via a button pressed.
+ * @param event The club button pressed.
+ */
     public void loadClub(ActionEvent event) {
-
+        // Arsenal
         if (event.getSource() == btnArsenal) {
             stylesheet = arsenalThemeUrl;
             teamName = "Arsenal";
-
             teamID = 1;
-        } else if (event.getSource() == btnChelsea) {
+        }// Chelsea
+        else if (event.getSource() == btnChelsea) {
             stylesheet = chelseaThemeUrl;
             teamName = "Chelsea";
-
             teamID = 2;
-        } else if (event.getSource() == btnTottenham) {
+        }// Tottenham
+        else if (event.getSource() == btnTottenham) {
             stylesheet = tottenhamThemeUrl;
             teamName = "Tottenham";
-
             teamID = 3;
-        } else if (event.getSource() == btnManCity) {
+        }// Man City
+        else if (event.getSource() == btnManCity) {
             stylesheet = mancityThemeUrl;
             teamName = "Man City";
             teamID = 4;
@@ -124,8 +118,5 @@ public class FXMLDocumentController implements Initializable {
 
     }
 
-    @FXML
-    private void search(KeyEvent event) {
-    }
 
 }

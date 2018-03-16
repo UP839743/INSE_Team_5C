@@ -19,8 +19,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -28,9 +26,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -43,34 +38,13 @@ public class HomeController implements Initializable {
     @FXML
     private Label lblTeamName;
     @FXML
-    private Label lblNews;
-    @FXML
-    private VBox newsBox;
-    @FXML
     private Label lblStory;
     @FXML
-    private Label lblClubDetails;
     private Button btnMoreDetails;
-    @FXML
-    private Label lblSeason;
-    @FXML
-    private Label lblPosition;
     @FXML
     private ComboBox<String> seasonBox;
     @FXML
     private Label lblCurrentPosition;
-    @FXML
-    private Label lblStadium;
-    @FXML
-    private Label lblFounder;
-    @FXML
-    private Label lblManager;
-    @FXML
-    private Label lblChairman;
-    @FXML
-    private Label lblLeague;
-    @FXML
-    private HBox menuBox;
     @FXML
     private Button btnHome;
     @FXML
@@ -80,8 +54,6 @@ public class HomeController implements Initializable {
     @FXML
     private Button btnClubDetails;
     @FXML
-    private VBox teamBox;
-    @FXML
     private Button btnArsenal;
     @FXML
     private Button btnChelsea;
@@ -89,8 +61,6 @@ public class HomeController implements Initializable {
     private Button btnTottenham;
     @FXML
     private Button btnManCity;
-    @FXML
-    private TextField searchField;
     @FXML
     private Label lblStadiumName;
     @FXML
@@ -105,8 +75,7 @@ public class HomeController implements Initializable {
     private Button btnChangeDefaultClub;
     @FXML
     private TextField searchBar;
-    @FXML
-    private AnchorPane homeAP;
+
 
     private final String chelseaThemeUrl = getClass().getResource("css/Chelsea.css").toExternalForm();
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();

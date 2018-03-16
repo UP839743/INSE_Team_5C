@@ -67,7 +67,8 @@ public class ClubDetailsController implements Initializable {
     private final String mancityClubDetailsURL = getClass().getResource("css/ManCityClubDetails.css").toExternalForm();
 
     /**
-     * Initializes the controller class. Changes lblTeamName to the selected
+     * Initializes the controller class. 
+     * Changes lblTeamName to the selected
      * team. The team stylesheet is loaded and added to the scene. Players and
      * trophies are loaded into the player and trophy tables depending on which
      * team has been selected.
@@ -110,7 +111,6 @@ public class ClubDetailsController implements Initializable {
             scene.getStylesheets().add(stylesheet);
             stage.show();
         }
-        //create a new scene with root and set the stage
 
     }
 
@@ -131,7 +131,7 @@ public class ClubDetailsController implements Initializable {
             Button btn = (Button) event.getSource();
             stage = (Stage) btn.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        } // sets the root and stage to the fixtures and results page.
+        } // sets the root and stage to the team details page.
         else if (event.getSource() == btnTeamDetails) {
             stage = (Stage) btnTeamDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Team Details.fxml"));
