@@ -46,14 +46,17 @@ public class FXMLDocumentController implements Initializable {
     public static String founder = "";
     public static String chairman = "";
 
-
     /**
-     * loads the home page and loads a stylesheet depedning on which team was chosen.
+     * loads the home page and loads a stylesheet depending on which team was
+     * chosen. Also sets the default club by creating the ini file when a team
+     * is chosen.
+     *
      * @param event the club button that was pressed.
      * @throws IOException
      */
     @FXML
     public void handleButtonAction(ActionEvent event) throws IOException, Exception {
+
         if (event.getSource() == btnChelsea) {
             FDB.createIniFile("Chelsea");
 
@@ -67,7 +70,7 @@ public class FXMLDocumentController implements Initializable {
             FDB.createIniFile("Man City");
 
         }
-
+        // Loads the home page
         loadClub(event);
         Button btn = (Button) event.getSource();
         stage = (Stage) btn.getScene().getWindow();
@@ -79,20 +82,24 @@ public class FXMLDocumentController implements Initializable {
         scene.getStylesheets().add(stylesheet);
         stage.show();
     }
-/**
- * Intialise class for the controller.
- * @param url url of the fxml file.
- * @param rb The resource bundle used for the fxml file.
- */
+
+    /**
+     * Intialise class for the controller.
+     *
+     * @param url url of the fxml file.
+     * @param rb The resource bundle used for the fxml file.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
     }
-/**
- * Selects a stylesheet and sets the team name.
- * Depending on what club you have picked via a button pressed.
- * @param event The club button pressed.
- */
+
+    /**
+     * Selects a stylesheet and sets the team name. Depending on what club you
+     * have picked via a button pressed.
+     *
+     * @param event The club button pressed.
+     */
     public void loadClub(ActionEvent event) {
         // Arsenal
         if (event.getSource() == btnArsenal) {
@@ -117,6 +124,5 @@ public class FXMLDocumentController implements Initializable {
         }
 
     }
-
 
 }

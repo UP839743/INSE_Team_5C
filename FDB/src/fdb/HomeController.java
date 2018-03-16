@@ -29,9 +29,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Home FXML Controller class
  *
- * @author up816736
+ * @author INSE Team 5C
  */
 public class HomeController implements Initializable {
 
@@ -39,8 +39,6 @@ public class HomeController implements Initializable {
     private Label lblTeamName;
     @FXML
     private Label lblStory;
-    @FXML
-    private Button btnMoreDetails;
     @FXML
     private ComboBox<String> seasonBox;
     @FXML
@@ -76,41 +74,45 @@ public class HomeController implements Initializable {
     @FXML
     private TextField searchBar;
 
-
+    // stylesheet URLs
     private final String chelseaThemeUrl = getClass().getResource("css/Chelsea.css").toExternalForm();
     private final String arsenalThemeUrl = getClass().getResource("css/Arsenal.css").toExternalForm();
     private final String tottenhamThemeUrl = getClass().getResource("css/Tottenham.css").toExternalForm();
     private final String mancityThemeUrl = getClass().getResource("css/Man City.css").toExternalForm();
+    // variable to check first time set up
     private static Boolean intialised = false;
 
     /**
-     * Initializes the controller class.
+     * Initializes the controller class. Checks if the program is on it's intial
+     * run. If it is the team ID is taken from the ini file.
+     *
+     * @param url url of the controller
+     * @param rb resources used by the controller
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // checks if the program has been intialised
         if (!intialised) {
             try {
+                // reads the ini file to find teamID
                 teamID = FDB.readIniFile();
 
                 intialised = true;
             } catch (Exception ex) {
                 Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
             }
+            // laods the home page
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
             try {
                 root = loader.load();
             } catch (IOException ex) {
                 Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            System.out.println("Stylesheet: " + root);
+            // loads stylesheet
             Scene scene = new Scene(root);
             scene.getStylesheets().add(stylesheet);
-            System.out.println("Stylesheet: " + root);
-
         }
-        //Sets root
-
-        //Stylesheet stuff
+        // updates the page for the selected team.
         loadHomeStyle();
         lblTeamName.setText(teamName);
         lblFounderName.setText(founder);
@@ -124,48 +126,63 @@ public class HomeController implements Initializable {
 
     }
 
+    /**
+     * Search event triggered by pressing the enter key. calls the search method
+     * when enter is pressed. loads the search page with the queried results.
+     *
+     * @param keyEvent the key pressed.
+     * @throws IOException
+     */
     @FXML
     public void search(KeyEvent keyEvent) throws IOException {
         //if key pressed is enter AND text box is not empty
         if (keyEvent.getCode() == KeyCode.ENTER && !"".equals(searchBar.getText())) {
             searchString = searchBar.getText();
+            // resets search bar
             searchBar.setText("");
-
-//            Node source = (Node) keyEvent.getSource();
-//            stage = (Stage) source.getScene().getWindow();
+            // loads the search page
             root = FXMLLoader.load(getClass().getResource("Search Results.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             scene.getStylesheets().add(stylesheet);
             stage.show();
         }
-        //create a new scene with root and set the stage
 
     }
 
+    /**
+     * Button event for all the buttons on the page. Depending on the button
+     * pressed the desired page will load. And set the correct stylesheet.
+     *
+     * @param event The button pressed.
+     * @throws IOException
+     */
     @FXML
     public void handleButtonAction(ActionEvent event) throws IOException {
-
+        // loads the home page by pressing the club buttons or home button.
         if (event.getSource() == btnChelsea || event.getSource() == btnArsenal || event.getSource() == btnTottenham || event.getSource() == btnManCity || event.getSource() == btnHome) {
             loadClub(event);
             Button btn = (Button) event.getSource();
             stage = (Stage) btn.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        } else if (event.getSource() == btnTeamDetails) {
+        }// loads the team details page 
+        else if (event.getSource() == btnTeamDetails) {
             stage = (Stage) btnTeamDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Team Details.fxml"));
-        } else if (event.getSource() == btnFixtures) {
+        }// loads the fixtures page
+        else if (event.getSource() == btnFixtures) {
             stage = (Stage) btnFixtures.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Fixtures and Results.fxml"));
-        } else if (event.getSource() == btnClubDetails || event.getSource() == btnMoreDetails) {
+        }// loads the club details page
+        else if (event.getSource() == btnClubDetails) {
             stage = (Stage) btnClubDetails.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Club Details.fxml"));
-        } else if (event.getSource() == btnChangeDefaultClub) {
+        }// loads the welcome page
+        else if (event.getSource() == btnChangeDefaultClub) {
             stage = (Stage) btnChangeDefaultClub.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
             stylesheet = "WelcomeFromChangeDefaultClub.css";
         }
-        //create a new scene with root and set the stage
         scene = new Scene(root);
         stage.setScene(scene);
         scene.getStylesheets().add(stylesheet);
@@ -173,11 +190,21 @@ public class HomeController implements Initializable {
 
     }
 
+    /**
+     * sets the season position label to the current value of the combo box.
+     *
+     * @param event the value of the selected option from the combo box
+     */
     @FXML
     public void showSeasonPosition(ActionEvent event) {
         lblCurrentPosition.setText(Integer.toString(populatePosition(seasonBox.getValue(), teamID)));
     }
 
+    /**
+     * Sets the team id for the selected club
+     *
+     * @param event the club button pressed.
+     */
     public void loadClub(ActionEvent event) {
 
         if (event.getSource() == btnArsenal) {
@@ -192,6 +219,10 @@ public class HomeController implements Initializable {
 
     }
 
+    /**
+     * Sets the team name, stylesheet, founder and chairman for the selected
+     * team.
+     */
     public void loadHomeStyle() {
         switch (teamID) {
             case 1:
