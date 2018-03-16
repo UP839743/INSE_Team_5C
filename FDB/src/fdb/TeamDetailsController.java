@@ -74,6 +74,7 @@ public class TeamDetailsController implements Initializable {
         lblTeamName.setText(teamName);
 
         loadTeamStyle();
+        System.out.print("hello" + stylesheet);
         scene.getStylesheets().add(stylesheet);
 
         ObservableList<Player> players = FXCollections.observableArrayList(populateClubPlayers(teamID));

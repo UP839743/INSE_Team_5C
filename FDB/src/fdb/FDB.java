@@ -22,28 +22,6 @@ import javafx.stage.Stage;
  * @author INSE Team 5C
  */
 public class FDB extends Application {
-    public void start(Stage stage) throws Exception {       
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));       
-        if (teamString.equals("Arsenal")) {
-            root.getStylesheets().add(getClass().getResource("css/Arsenal.css").toExternalForm());
-        }
-        else if (teamString.equals("Chelsea")) {
-            root.getStylesheets().add(getClass().getResource("css/Chelsea.css").toExternalForm());
-        }
-        else if (teamString.equals("Tottenham")) {
-            root.getStylesheets().add(getClass().getResource("css/Tottenham.css").toExternalForm());
-        }
-              else if (teamString.equals("Man City")) {
-            root.getStylesheets().add(getClass().getResource("css/Man City.css").toExternalForm());
-                  }       
-        Scene scene = new Scene(root);
-        stage.setMaxHeight(1000);
-        stage.setMaxWidth(1400);
-        stage.setMinHeight(1000);
-        stage.setMinWidth(1400);
-        stage.setScene(scene);
-        stage.show();
-    }
 
     static String teamString = "";
     static ArrayList<Player> allPlayers = new ArrayList();
@@ -54,6 +32,36 @@ public class FDB extends Application {
     static ArrayList<Trophy> allTrophies = new ArrayList();
     static ArrayList<Stadium> allStadiums = new ArrayList();
     static ArrayList<PosHist> AllposHists = new ArrayList();
+    
+    public void start(Stage stage) throws Exception {       
+        Parent root = null;       
+        if (teamString.equals("Arsenal")) {
+            root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            root.getStylesheets().add(getClass().getResource("css/Arsenal.css").toExternalForm());
+        }
+        else if (teamString.equals("Chelsea")) {
+            root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            root.getStylesheets().add(getClass().getResource("css/Chelsea.css").toExternalForm());
+        }
+        else if (teamString.equals("Tottenham")) {
+            root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            root.getStylesheets().add(getClass().getResource("css/Tottenham.css").toExternalForm());
+        }
+        else if (teamString.equals("Man City")) {
+            root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            root.getStylesheets().add(getClass().getResource("css/Man City.css").toExternalForm());
+        }
+        else {
+            root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+        }
+        Scene scene = new Scene(root);
+        stage.setMaxHeight(1000);
+        stage.setMaxWidth(1400);
+        stage.setMinHeight(1000);
+        stage.setMinWidth(1400);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public static int teamStringToID(String teamName) {
         int teamID = 0;
@@ -180,9 +188,6 @@ public class FDB extends Application {
 
             //Write teamString to file
             FileWriter writer = new FileWriter(file);
-            if (teamString.equals("")) {
-                teamString = "Arsenal";
-            }
             writer.write(teamString);
             writer.close();
         } catch (Exception e) {
