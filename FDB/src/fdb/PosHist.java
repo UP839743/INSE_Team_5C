@@ -1,43 +1,67 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fdb;
 
 /**
  *
- * @author accou
+ * @author INSE Team 5C
  */
 public class PosHist {
+
     int clubID;
     String competition;
     int year;
     int position;
-    
-    public PosHist(int DBclubID, String DBcompetition, int DByear, int DBposition) 
-    {
-        clubID = DBclubID;
-        competition = DBcompetition;
-        year = DByear;
-        position = DBposition;
+
+    /**
+     * Constructor for position history
+     *
+     * @param db_clubID
+     * @param db_competition
+     * @param db_year
+     * @param db_position
+     */
+    public PosHist(int db_clubID, String db_competition, int db_year, int db_position) {
+        clubID = db_clubID;
+        competition = db_competition;
+        year = db_year;
+        position = db_position;
     }
-    
+
     //Getters
+    /**
+     * get the club ID of the position History record
+     *
+     * @return
+     */
     public int getClubID() {
         return clubID;
     }
-    
+
+    /**
+     * get the competition of the position history record
+     *
+     * @return competition
+     */
     public String getCompetition() {
         return competition;
     }
-    
-    //Year the season concludes
+
+    /**
+     * get the year the season concludes in the position history record
+     *
+     * @return
+     */
     public int getYear() {
         return year;
     }
-    
+
+    /**
+     * get the position of the club in the position history record
+     *
+     * @return
+     */
     public int getPosition() {
         return position;
     }
+    
+//No setters, data should never be altered
 }

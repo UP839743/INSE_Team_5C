@@ -67,4 +67,5 @@ public class News {
         return Author;
     }
 
+    //No setters, data should never be altered
 }

@@ -1,37 +1,52 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fdb;
 
 /**
  *
- * @author accou
+ * @author INSE Team 5C
  */
 public class Trophy {
+
     String competition;
     int year;
     int ClubId;
-    
-    public Trophy(String troCompetition, int troYear, int troClubId) 
-    {
-        competition = troCompetition;
-        year = troYear;
-        ClubId = troClubId;
+
+    /**
+     *
+     * @param tro_Competition
+     * @param tro_Year
+     * @param tro_ClubId
+     */
+    public Trophy(String tro_Competition, int tro_Year, int tro_ClubId) {
+        competition = tro_Competition;
+        year = tro_Year;
+        ClubId = tro_ClubId;
     }
-    
+
+    /**
+     * get the competition the trophy belongs to
+     *
+     * @return competition
+     */
     public String getCompetition() {
         return competition;
     }
-    
+
+    /**
+     * get the year the trophy was won
+     *
+     * @return
+     */
     public int getYear() {
         return year;
     }
-    
 
+    /**
+     * get the clubID the trophy belongs to
+     *
+     * @return
+     */
     public int getClubId() {
         return ClubId;
     }
-    
+    //No setters, data should never be altered
 }
