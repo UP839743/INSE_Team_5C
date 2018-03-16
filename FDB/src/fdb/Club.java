@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fdb;
 
 /**
@@ -10,34 +5,64 @@ package fdb;
  * @author INSE Team 5C
  */
 public class Club {
+
     int clubID;
     String clubName;
-    String stadium;
-    int clubPosititon;
-    
-    public Club(int club_ID, String club_Name, 
-            String clubStadium, int club_Posititon)
-    {
-    clubID = club_ID;
-    clubName = club_Name;
-    stadium = clubStadium;
-    clubPosititon = club_Posititon;
+    String clubStadium;
+    int clubPosition;
+
+    /**
+     * Constructor for club
+     *
+     * @param club_ID
+     * @param club_Name
+     * @param club_Stadium
+     * @param club_Position
+     */
+    public Club(int club_ID, String club_Name,
+            String club_Stadium, int club_Position) {
+        clubID = club_ID;
+        clubName = club_Name;
+        clubStadium = club_Stadium;
+        clubPosition = club_Position;
     }
 
     //Getters
+    /**
+     * get the Id of the Club
+     *
+     * @return ClubID
+     */
     public int getClubID() {
         return clubID;
     }
-    
+
+    /**
+     * get the name of the Club
+     *
+     * @return clubName
+     */
     public String getClubName() {
         return clubName;
     }
-    
+
+    /**
+     * get the Stadium name of the Club
+     *
+     * @return clubStadium
+     */
     public String getClubStadium() {
-        return stadium;
+        return clubStadium;
     }
 
+    /**
+     * get the Position of the Club
+     *
+     * @return clubPosition
+     */
     public int getClubPosititon() {
-        return clubPosititon;
+        return clubPosition;
     }
+
+    //No setters, data should never be altered
 }
