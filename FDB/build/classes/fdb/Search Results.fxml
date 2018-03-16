@@ -14,119 +14,125 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fdb.SearchResultsController">
-   <children>
-      <HBox prefHeight="126.0" prefWidth="814.0" style="-fx-background-color: grey;">
-         <children>
-            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="147.0" prefWidth="204.0" text="Home" textAlignment="CENTER">
-               <font>
-                  <Font name="Lato Light" size="30.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnTeamDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Team Details" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="Lato Light" size="30.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="Lato Light" size="30.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Club Details" textAlignment="CENTER">
-               <font>
-                  <Font name="Lato Light" size="30.0" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
-      <VBox layoutY="126.0" prefHeight="846.0" prefWidth="204.0">
-         <children>
-            <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="204.0">
-               <graphic>
-                  <ImageView fitHeight="132.0" fitWidth="112.0">
-                     <image>
-                        <Image url="@Images/ArsenalLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0" styleClass="btnChelsea">
-               <graphic>
-                  <ImageView fitHeight="114.0" fitWidth="112.0">
-                     <image>
-                        <Image url="@Images/ChelseaLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnTottenham" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
-               <graphic>
-                  <ImageView fitHeight="155.0" fitWidth="155.0">
-                     <image>
-                        <Image url="@Images/TottenhamLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
-               <graphic>
-                  <ImageView fitHeight="114.0" fitWidth="112.0">
-                     <image>
-                        <Image url="@Images/ManCityLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
-      </VBox>
-      <TextField fx:id="searchBar" layoutX="883.0" layoutY="29.0" onKeyPressed="#search" prefHeight="53.0" prefWidth="425.0" promptText="Search player by Name, Nationality, Pref Foot or position..." />
-      <TableView fx:id="searchTable" layoutX="215.0" layoutY="268.0" prefHeight="704.0" prefWidth="1182.0">
-         <columns>
-             <TableColumn prefWidth="194.0" text="First Name">
-                 <cellValueFactory>
+    <children>
+        <HBox prefHeight="126.0" prefWidth="814.0" style="-fx-background-color: grey;">
+            <children>
+                <Button fx:id="btnHome" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="147.0" prefWidth="204.0" text="Home" textAlignment="CENTER">
+                    <font>
+                        <Font name="Lato Light" size="30.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnTeamDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Team Details" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="Lato Light" size="30.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnFixtures" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Fixtures and Results" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="Lato Light" size="30.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnClubDetails" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="124.0" prefWidth="204.0" text="Club Details" textAlignment="CENTER">
+                    <font>
+                        <Font name="Lato Light" size="30.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+        <VBox layoutY="126.0" prefHeight="846.0" prefWidth="204.0">
+            <children>
+                <Button fx:id="btnArsenal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="204.0">
+                    <graphic>
+                        <ImageView fitHeight="132.0" fitWidth="112.0">
+                            <image>
+                                <Image url="@Images/ArsenalLogo.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button id="btnChelsea" fx:id="btnChelsea" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0" styleClass="btnChelsea">
+                    <graphic>
+                        <ImageView fitHeight="114.0" fitWidth="112.0">
+                            <image>
+                                <Image url="@Images/ChelseaLogo.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnTottenham" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
+                    <graphic>
+                        <ImageView fitHeight="155.0" fitWidth="155.0">
+                            <image>
+                                <Image url="@Images/TottenhamLogo.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnManCity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="211.5" prefWidth="205.0">
+                    <graphic>
+                        <ImageView fitHeight="114.0" fitWidth="112.0">
+                            <image>
+                                <Image url="@Images/ManCityLogo.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </VBox>
+        <TextField fx:id="searchBar" layoutX="883.0" layoutY="29.0" onKeyPressed="#search" prefHeight="53.0" prefWidth="425.0" promptText="Search player by Name, Nationality, Pref Foot or position..." />
+        <TableView fx:id="searchTable" layoutX="215.0" layoutY="268.0" prefHeight="704.0" prefWidth="1171.0">
+            <columns>
+                <TableColumn prefWidth="194.0" text="First Name">
+                    <cellValueFactory>
                         <PropertyValueFactory property="firstName" />
                     </cellValueFactory>
-             </TableColumn>
-             <TableColumn prefWidth="194.0" text="Last Name">
-                 <cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="194.0" text="Last Name">
+                    <cellValueFactory>
                         <PropertyValueFactory property="lastName" />
                     </cellValueFactory>
-             </TableColumn>
-             <TableColumn prefWidth="107.0" text="Date of Birth">
-                 <cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="107.0" text="Date of Birth">
+                    <cellValueFactory>
                         <PropertyValueFactory property="DoB" />
                     </cellValueFactory>
-             </TableColumn>
-             <TableColumn prefWidth="91.0" text="Position">
-                 <cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="91.0" text="Position">
+                    <cellValueFactory>
                         <PropertyValueFactory property="position" />
                     </cellValueFactory>
-             </TableColumn>
-             <TableColumn minWidth="0.0" prefWidth="88.0" text="Height(ft)">
-                 <cellValueFactory>
+                </TableColumn>
+                <TableColumn minWidth="0.0" prefWidth="88.0" text="Height(ft)">
+                    <cellValueFactory>
                         <PropertyValueFactory property="height" />
                     </cellValueFactory>
-             </TableColumn>
-            <TableColumn prefWidth="307.0" text="Nationality" >
-                <cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="103.0" text="Nationality">
+                    <cellValueFactory>
                         <PropertyValueFactory property="Nationality" />
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="104.0" text="Squad Number" >
-                <cellValueFactory>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="147.0" text="Squad Number">
+                    <cellValueFactory>
                         <PropertyValueFactory property="squadNumber" />
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="84.0" text="Cleansheets" >
-                <cellValueFactory>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="114.0" text="Cleansheets">
+                    <cellValueFactory>
                         <PropertyValueFactory property="cleanSheets" />
-                </cellValueFactory>
-            </TableColumn>
-         </columns>
-      </TableView>
-      <Label fx:id="resultsLabel" layoutX="234.0" layoutY="176.0" prefHeight="70.0" prefWidth="369.0" text="No Results Found...">
-         <font>
-            <Font size="30.0" />
-         </font></Label>
-   </children>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="132.0" text="Pref Foot" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="prefFoot" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Label fx:id="resultsLabel" layoutX="234.0" layoutY="176.0" prefHeight="70.0" prefWidth="369.0" text="No Results Found...">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Label>
+    </children>
 </AnchorPane>

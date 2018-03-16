@@ -5,7 +5,6 @@
 #btnTottenham, #btnClubDetails {
     -fx-background-color: white;
     -fx-text-fill: black;
-    -fx-background-color: dark-grey;
 }
 
 #btnHome:hover{

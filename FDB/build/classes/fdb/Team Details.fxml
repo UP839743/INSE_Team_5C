@@ -54,64 +54,64 @@
                 <Font size="30.0" />
             </font>
         </Label>
-        <TableView fx:id="playerTable" layoutX="215.0" layoutY="258.0" prefHeight="704.0" prefWidth="1118.0">
+        <TableView fx:id="playerTable" layoutX="215.0" layoutY="258.0" prefHeight="704.0" prefWidth="1173.0">
             <columns>
-                <TableColumn prefWidth="104.00003051757812" text="First Name">
+                <TableColumn prefWidth="97.75" text="First Name">
                     <cellValueFactory>
                         <PropertyValueFactory property="firstName" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="123.0" text="Last Name"> 
+                <TableColumn prefWidth="97.75" text="Last Name"> 
                 <cellValueFactory>
                         <PropertyValueFactory property="lastName" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="98.0" text="Date of Birth"> 
+                <TableColumn prefWidth="97.75" text="Date of Birth"> 
                     <cellValueFactory>
                         <PropertyValueFactory property="DoB" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="52.0" text="Position">
+                <TableColumn prefWidth="97.75" text="Position">
                     <cellValueFactory>
                         <PropertyValueFactory property="position" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="78.0" text="Height(ft)">
+                <TableColumn prefWidth="97.75" text="Height(ft)">
                     <cellValueFactory>
                         <PropertyValueFactory property="height" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="61.0" text="Pref Foot">
+                <TableColumn prefWidth="97.75" text="Pref Foot">
                     <cellValueFactory>
                         <PropertyValueFactory property="prefFoot" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="117.0" text="Nationality">
+                <TableColumn prefWidth="97.75" text="Nationality">
                     <cellValueFactory>
                         <PropertyValueFactory property="nationality" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="110.0" text="Squad Number">
+                <TableColumn prefWidth="97.75" text="Squad Number">
                     <cellValueFactory>
                         <PropertyValueFactory property="squadNumber" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="94.0" text="Season Apps">
+                <TableColumn prefWidth="97.75" text="Season Apps">
                     <cellValueFactory>
                         <PropertyValueFactory property="seasonApps" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="90.0" text="Season Goals">
+                <TableColumn prefWidth="97.75" text="Season Goals">
                     <cellValueFactory>
                         <PropertyValueFactory property="seasonGoals" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="99.0" text="Season Assists">
+                <TableColumn prefWidth="97.75" text="Season Assists">
                     <cellValueFactory>
                         <PropertyValueFactory property="seasonAssists" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn prefWidth="88.0" text="Cleansheets">
+                <TableColumn prefWidth="97.75" text="Cleansheets">
                     <cellValueFactory>
                         <PropertyValueFactory property="cleanSheets" />
                     </cellValueFactory>
