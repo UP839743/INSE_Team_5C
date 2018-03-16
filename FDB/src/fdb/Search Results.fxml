@@ -109,7 +109,7 @@
              </TableColumn>
             <TableColumn prefWidth="307.0" text="Nationality" >
                 <cellValueFactory>
-                        <PropertyValueFactory property="nationailty" />
+                        <PropertyValueFactory property="Nationality" />
                 </cellValueFactory>
             </TableColumn>
             <TableColumn prefWidth="104.0" text="Squad Number" >
