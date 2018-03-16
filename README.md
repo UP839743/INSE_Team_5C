@@ -44,5 +44,3 @@ INSE_Team_5C/Database Scripts/table_creation.sql
 INSE_Team_5C/Database Scripts/population.sql
 ```
 Run the FDB.jar and you should be welcomed with the welcome screen, pick a team and go!  
-End with an example of getting some data out of the system or using it for a little demo
-
