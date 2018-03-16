@@ -7,7 +7,7 @@ package fdb;
 
 /**
  *
- * @author 
+ * @author INSE Team 5C
  */
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;

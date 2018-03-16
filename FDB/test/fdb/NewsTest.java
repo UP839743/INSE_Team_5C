@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fdb;
 
 import org.junit.AfterClass;
@@ -12,20 +7,25 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author up777361
+ * @author INSE Team 5C
  */
-//News(int nNewsId, int nClubId, String nTitle, String nContent)
 public class NewsTest {
     
     News testNws = testNws = new News(5678, 4354, "TestTitle", "TestContent", "TestAuthor");
-    
+    /**
+     * File to Test News Class
+     */ 
     public NewsTest() {
     }
-    
+    /**
+     * Tear down setUp objects in class
+     */
     @BeforeClass
     public static void setUpClass() {
     }
-    
+    /**
+     * Tear down tearDown objects in class
+     */
     @AfterClass
     public static void tearDownClass() {
     }

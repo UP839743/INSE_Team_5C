@@ -15,18 +15,23 @@ import static org.junit.Assert.*;
  * @author up777361
  */
 
-//Trophy(String troCompetition, int troYear, int troClubId)
 public class TrophyTest {
     
     Trophy testTphy = testTphy = new Trophy("TestCup", 2011, 4555);
-    
+    /**
+     * File to Test Trophy Class
+     */ 
     public TrophyTest() {
     }
-    
+    /**
+     * Tear down setUp objects in class
+     */
     @BeforeClass
     public static void setUpClass() {
     }
-    
+    /**
+     * Tear down tearDown objects in class
+     */
     @AfterClass
     public static void tearDownClass() {
     }

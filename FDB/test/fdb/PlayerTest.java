@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fdb;
 
 import java.sql.Date;
@@ -13,7 +8,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author up777361
+ * @author INSE Team 5C
  */
 public class PlayerTest {
     
@@ -22,14 +17,20 @@ public class PlayerTest {
                         "Testil", 9999, "LeftBack", "9f9", 
                         "right", testDate, 9999, 999, "Mongolian",
                         9899, 878, 999,1000);
-    
+    /**
+     * File to Test Player Class
+     */ 
     public PlayerTest() {
     }
-    
+    /**
+     * Tear down setUp objects in class
+     */
     @BeforeClass
     public static void setUpClass() {
     }
-    
+    /**
+     * Tear down tearDown objects in class
+     */
     @AfterClass
     public static void tearDownClass() {
     }

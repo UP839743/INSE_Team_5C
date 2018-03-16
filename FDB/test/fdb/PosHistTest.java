@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fdb;
 
 import org.junit.After;
@@ -14,19 +9,25 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author accou
+ * @author INSE Team 5C
  */
 public class PosHistTest {
     
     PosHist pshstTest = new PosHist(3333, "Test League", 192000, 100);
-    
+    /**
+     * File to Test PosHist Class
+     */ 
     public PosHistTest() {
     }
-    
+    /**
+     * Tear down setUp objects in class
+     */
     @BeforeClass
     public static void setUpClass() {
     }
-    
+    /**
+     * Tear down tearDown objects in class
+     */
     @AfterClass
     public static void tearDownClass() {
     }
